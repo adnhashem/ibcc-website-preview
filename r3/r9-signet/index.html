@@ -1,0 +1,503 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>C&amp;C Ingenieure GmbH · Infrastruktur planen. Verlässlich umsetzen.</title>
+<meta name="description" content="Ingenieurbüro in Bruchsal für Infrastruktur: Objekt- und Tragwerksplanung, Ausschreibung und Vergabe, Bauüberwachung, Projektsteuerung und BIM. Alle HOAI-Leistungsphasen.">
+<meta name="theme-color" content="#0F3D2C">
+<link rel="preload" href="fonts/schibsted-grotesk-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/funnel-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+<script>document.documentElement.classList.add('js')</script>
+<style>
+@font-face{font-family:"Schibsted Grotesk";src:url(fonts/schibsted-grotesk-600.woff2) format("woff2");font-weight:600;font-display:swap}
+@font-face{font-family:"Schibsted Grotesk";src:url(fonts/schibsted-grotesk-700.woff2) format("woff2");font-weight:700;font-display:swap}
+@font-face{font-family:"Schibsted Grotesk";src:url(fonts/schibsted-grotesk-800.woff2) format("woff2");font-weight:800;font-display:swap}
+@font-face{font-family:"Funnel Sans";src:url(fonts/funnel-sans-400.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Funnel Sans";src:url(fonts/funnel-sans-500.woff2) format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:"Funnel Sans";src:url(fonts/funnel-sans-600.woff2) format("woff2");font-weight:600;font-display:swap}
+@font-face{font-family:"Funnel Sans";src:url(fonts/funnel-sans-700.woff2) format("woff2");font-weight:700;font-display:swap}
+:root{
+  --g:#0F3D2C;--g-deep:#0A2C1F;--w:#FFFFFF;--ink:#16211C;--ink-2:#3C4A44;--slate:#4A5A73;
+  --mist:#CDD5DE;--sg-on-g:#AEBACA;--rule-w:#D3D9DF;--rule-g:#4F6377;--ph:#E7EAEE;
+  --slope:.344173;
+  --pad:clamp(20px,4.45vw,64px);
+  --k:1.5;--A:42vw;
+  --o2:0px;--o3:0px;--o4:0px;--o5:0px;--o6:0px;--o7:0px;--o8:0px;
+  --disp:"Schibsted Grotesk",system-ui,sans-serif;--sans:"Funnel Sans",system-ui,sans-serif;
+  color-scheme:light;
+  scrollbar-color:var(--g) #E9ECEF;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{margin:0;background:var(--w);color:var(--ink);font:400 17px/1.55 var(--sans);font-feature-settings:"kern","tnum" 0;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:var(--g);color:#fff}
+.on-g ::selection,.on-g::selection{background:#fff;color:var(--g)}
+::-webkit-scrollbar{width:12px;height:12px}::-webkit-scrollbar-track{background:#E9ECEF}::-webkit-scrollbar-thumb{background:var(--g);border:3px solid #E9ECEF}
+a{color:inherit;text-decoration-thickness:1.5px;text-underline-offset:.22em}
+:focus-visible{outline:3px solid var(--g);outline-offset:3px}
+.on-g :focus-visible,.on-g:focus-visible{outline-color:#fff}
+img,svg{display:block}
+figure{margin:0}
+[hidden]{display:none!important}
+h1,h2,h3,p,ul,ol,dl,dd{margin:0}
+ul,ol{list-style:none;padding:0}
+.vh{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:absolute;left:var(--pad);top:-80px;z-index:50;background:var(--g);color:#fff;padding:12px 18px;font-weight:600}
+.skip:focus{top:12px}
+.num{font-variant-numeric:tabular-nums lining-nums}
+.hd{position:absolute;z-index:6;inset:0 0 auto 0;height:84px;display:flex;align-items:center;justify-content:space-between;padding:0 var(--pad)}
+.brand{display:flex;align-items:center;gap:14px;text-decoration:none;color:#000;background:#fff;padding:8px 14px 8px var(--pad);margin-left:calc(-1*var(--pad))}
+.brand img{width:58px;height:auto}
+.brand span{font:400 19px/1 Arial,Helvetica,sans-serif;color:#000;letter-spacing:0;white-space:nowrap}
+.nav{display:flex;align-items:center;gap:6px}
+.nav ul{display:flex;gap:2px}
+.nav a,.lang a,.lang span{position:relative;isolation:isolate;display:block;padding:10px 14px;font:500 15.5px/1 var(--sans);color:#fff;text-decoration:none;white-space:nowrap}
+.fl::before{content:"";position:absolute;inset:0;z-index:-1;background:#fff;transform:skewX(19deg) scaleX(0);transform-origin:0 50%;transition:transform .45s cubic-bezier(.16,1,.3,1)}
+.nav a:hover,.nav a[aria-current=page]{color:var(--g)}
+.nav a:hover::before,.nav a[aria-current=page]::before{transform:skewX(19deg) scaleX(1)}
+.lang{display:flex;align-items:center;margin-left:18px;padding-left:14px;border-left:1px solid var(--rule-g)}
+.lang span{font-weight:700}
+.lang a{color:var(--mist)}
+.lang a:hover{color:#fff;text-decoration:underline}
+.menu-btn{display:none}
+.actions{display:flex;flex-wrap:wrap;gap:14px 30px;align-items:center}
+.btn{position:relative;isolation:isolate;display:inline-flex;margin-left:10px;align-items:center;gap:14px;min-height:56px;padding:0 30px;font:600 17px/1 var(--sans);text-decoration:none;border:0;background:none;cursor:pointer;white-space:nowrap}
+.btn::before{content:"";position:absolute;inset:0;z-index:-1;transform:skewX(19deg);transition:background-color .3s,box-shadow .3s}
+.btn .ar{width:22px;height:12px;transition:transform .35s cubic-bezier(.16,1,.3,1)}
+.btn:hover .ar{transform:translateX(5px)}
+.btn-p{color:#fff}.btn-p::before{background:var(--g)}.btn-p:hover::before{background:var(--g-deep)}
+.btn-s{color:var(--g)}.btn-s::before{box-shadow:inset 0 0 0 2px var(--g)}.btn-s:hover{color:#fff}.btn-s:hover::before{background:var(--g)}
+.btn-w{color:var(--g)}.btn-w::before{background:#fff}.btn-w:hover::before{background:#E4E8EC}
+.lnk{display:inline-flex;align-items:center;gap:12px;font:600 17px/1.3 var(--sans);text-decoration:none}
+.lnk .ar{width:22px;height:12px;flex:none;transition:transform .35s cubic-bezier(.16,1,.3,1)}
+.lnk:hover{text-decoration:underline}.lnk:hover .ar{transform:translateX(5px)}
+.stage{position:relative;overflow:hidden;background:var(--w)}
+.sg{position:absolute;z-index:0;pointer-events:none;overflow:visible;width:calc(var(--k)*980px);height:calc(var(--k)*775px);left:calc(var(--A) - var(--k)*408px);top:calc(var(--k)*-36px)}
+.sg .fld{fill:var(--g)}
+.sg .cl path{stroke:var(--slate)}
+.sg .cr path{stroke:var(--sg-on-g)}
+.sg path{fill:none;stroke-width:5;stroke-linecap:round}
+.hero{position:relative;z-index:1}
+.inv{position:absolute;inset:0;pointer-events:none;z-index:2}
+.inv .hide{visibility:hidden}
+.hero .inv{clip-path:polygon(calc(var(--A) + var(--k)*6.195px) 0,100% 0,100% 3000px,calc(var(--A) + var(--k)*6.195px + 1032.52px) 3000px)}
+.h1{font:700 var(--h1)/.97 var(--disp);letter-spacing:-.035em;color:var(--g)}
+.h1 span{display:block}
+.hero .inv .h1{color:#fff}
+.lead{font:400 19px/1.55 var(--sans);color:var(--ink);max-width:36em}
+.hero-low .actions{margin-top:30px}
+@media (min-width:961px){
+  :root{--h1:min(calc(var(--k)*52px),5.5vw)}
+  .stage.home{height:calc(var(--k)*1010px)}
+  .hero{height:calc(var(--k)*600px)}
+  .hero .h1{position:absolute;left:calc(var(--A) - var(--k)*316.7px);bottom:calc(100% - var(--k)*293.3px)}
+  .hero-low{position:absolute;left:var(--pad);top:calc(var(--k)*333.3px);width:min(560px,40vw)}
+  .statement{position:relative;z-index:1;height:calc(var(--k)*410px)}
+  .st-h{position:absolute;left:var(--pad);top:calc(var(--k)*143.3px);font:600 clamp(38px,3.3vw,50px)/1.03 var(--disp);letter-spacing:-.025em;color:var(--g)}
+  .st-p{position:absolute;left:var(--pad);top:calc(var(--k)*143.3px + 3.09*clamp(38px,3.3vw,50px) + 28px);width:min(560px,40vw);font-size:19px;line-height:1.55}
+  .fact{position:absolute;right:var(--pad);color:#fff}
+  .fact.f1{top:calc(var(--k)*20px);left:calc(var(--A) + var(--k)*219.6px + 52px)}
+  .fact.f2{top:calc(var(--k)*140px);left:calc(var(--A) + var(--k)*260.9px + 52px)}
+  .fact.f3{top:calc(var(--k)*260px);left:calc(var(--A) + var(--k)*302.2px + 52px)}
+}
+@media (min-width:961px) and (max-height:840px){:root{--k:1.35}}
+@media (min-width:961px) and (max-height:740px){:root{--k:1.2}}
+.st-h span{display:block}
+.fact h3{font:600 21px/1.3 var(--disp);letter-spacing:-.01em;color:#fff}
+.fact p{margin-top:8px;font-size:16px;line-height:1.5;color:var(--mist);max-width:30em}
+.sec{position:relative;isolation:isolate;padding:64px var(--pad) 120px;overflow-x:clip}
+.sec::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--g)}
+.gR::before{clip-path:polygon(calc(var(--t) + var(--ot)) 0,100% 0,100% 100%,calc(var(--b) + var(--ob)) 100%)}
+.gL::before{clip-path:polygon(0 0,calc(var(--t) + var(--ot)) 0,calc(var(--b) + var(--ob)) 100%,0 100%)}
+.sec .inv{padding:inherit}
+.gL .inv{clip-path:polygon(calc(var(--t) + var(--ot)) 0,100% 0,100% 100%,calc(var(--b) + var(--ob)) 100%)}
+.s-leis{--t:var(--c2);--b:var(--c3);--ot:var(--o2);--ob:var(--o3)}
+.s-refs{--t:var(--c3);--b:var(--c4);--ot:var(--o3);--ob:var(--o4)}
+.s-lph{--t:var(--c4);--b:var(--c5);--ot:var(--o4);--ob:var(--o5)}
+.s-kon{--t:var(--c5);--b:var(--c6);--ot:var(--o5);--ob:var(--o6)}
+.s-par{--t:var(--c6);--b:var(--c7);--ot:var(--o6);--ob:var(--o7)}
+.s-ft{--t:var(--c7);--b:var(--c8);--ot:var(--o7);--ob:var(--o8)}
+:root{--c2:calc(var(--A) + var(--k)*353.81px);--c3:calc(var(--c2) - 3vw);--c4:calc(var(--c3) - 8vw);--c5:calc(var(--c4) - 15vw);--c6:calc(var(--c5) - 8vw);--c7:calc(var(--c6) - 6vw);--c8:calc(var(--c7) - 4vw)}
+.t{position:relative;margin:0 calc(-1*var(--pad)) 56px;padding:30px var(--pad) 34px;--T:calc(var(--t) + var(--ot));--B:calc(var(--T) + (var(--b) + var(--ob) - var(--t) - var(--ot))*var(--f,.14))}
+.sec > .t:first-child,.sec > .inv > .t:first-child{margin-top:-64px}
+.t h2,.t .h2{position:relative;z-index:1;font:700 clamp(38px,4.2vw,62px)/1 var(--disp);letter-spacing:-.03em;margin:0}
+.t::before{content:"";position:absolute;inset:-1px 0 0 0;z-index:0;clip-path:polygon(var(--T) 0,100% 0,100% 100%,var(--B) 100%);transition:clip-path .95s cubic-bezier(.16,1,.3,1)}
+.t-band{position:absolute;inset:-1px 0 0 0;z-index:2;padding:inherit;pointer-events:none;clip-path:polygon(0 0,var(--T) 0,var(--B) 100%,0 100%);transition:clip-path .95s cubic-bezier(.16,1,.3,1)}
+.js .t:not(.on) .t-band,.js .t:not(.on)::before{clip-path:polygon(var(--T) 0,var(--T) 0,var(--B) 100%,var(--B) 100%)}
+.gR .t h2{color:var(--g)}.gR .t-band{background:var(--g)}.gR .t-band .h2{color:#fff}.gR .t::before{background:#fff}
+.gL .t h2{color:#fff}.gL .t-band{background:#fff}.gL .t-band .h2{color:var(--g)}.gL .t::before{background:var(--g)}
+.seam-w{position:absolute;inset:0;pointer-events:none;z-index:0}
+.seam{position:absolute;overflow:visible;width:calc(var(--sk)*980px);height:calc(var(--sk)*775px);left:calc(var(--b) + var(--ob) - var(--sk)*662px);bottom:calc(var(--sk)*-19px);clip-path:inset(calc(var(--sk)*756px - var(--gap)) -50px -50px -50px)}
+.seam path{fill:none;stroke-width:5;stroke-linecap:round}
+.seam-w.a{clip-path:polygon(0 0,calc(var(--t) + var(--ot)) 0,calc(var(--b) + var(--ob)) 100%,0 100%)}
+.seam-w.b{clip-path:polygon(calc(var(--t) + var(--ot)) 0,100% 0,100% 100%,calc(var(--b) + var(--ob)) 100%)}
+.gR .seam-w.a path,.gL .seam-w.b path{stroke:var(--slate)}
+.gR .seam-w.b path,.gL .seam-w.a path{stroke:var(--sg-on-g)}
+.s-refs,.s-proj{padding-bottom:250px;--gap:205px;--sk:1.6}
+.s-kon{padding-bottom:220px;--gap:180px;--sk:1.25}
+.s-cta{padding-bottom:210px;--gap:170px;--sk:1.3}
+.s-leis .wrap{max-width:calc(var(--c3) - var(--pad) - 120px)}
+.svc-list{border-bottom:1px solid var(--rule-g)}
+.svc{position:relative;isolation:isolate;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr) 26px;gap:12px 48px;align-items:baseline;padding:26px 0 28px;border-top:1px solid var(--rule-g);color:#fff;text-decoration:none;transition:color .25s}
+.svc::before{content:"";position:absolute;z-index:-1;top:-1px;bottom:0;left:calc(-1*var(--pad));width:100vw;background:#fff;clip-path:polygon(110% 0,110% 0,110% 100%,110% 100%);transition:clip-path .55s cubic-bezier(.16,1,.3,1)}
+.svc:hover,.svc:focus-visible{color:var(--g)}
+.svc:hover::before,.svc:focus-visible::before{clip-path:polygon(-40px 0,110% 0,110% 100%,-10px 100%)}
+.svc:focus-visible{outline-offset:-3px;outline-color:var(--g)}
+.svc-n{font:600 clamp(24px,2.1vw,30px)/1.12 var(--disp);letter-spacing:-.015em}
+.svc-d{font-size:17px;line-height:1.5;color:var(--mist);transition:color .25s}
+.svc:hover .svc-d,.svc:focus-visible .svc-d{color:var(--ink-2)}
+.svc .ar{width:24px;height:13px;align-self:center}
+.leis-more{position:absolute;right:var(--pad);bottom:122px;color:var(--g)}
+.refs-more{position:absolute;right:var(--pad);bottom:72px;z-index:3;color:#fff}
+.ref-list{display:grid;gap:44px;max-width:calc(var(--c4) - var(--pad) - 96px)}
+.ref{display:grid;grid-template-columns:minmax(220px,300px) minmax(0,1fr);gap:36px;align-items:start}
+.ref .ph{aspect-ratio:16/10;width:100%}
+.ref h3{font:600 clamp(24px,2.1vw,30px)/1.12 var(--disp);letter-spacing:-.015em;color:var(--g)}
+.ref h3 a{position:relative;isolation:isolate;text-decoration:none;display:inline}
+.ref-meta{margin-top:12px;color:var(--slate);font-size:16px}
+.ref-desc{margin-top:12px;font-size:17px;line-height:1.55;max-width:34em}
+.ref > div{display:flex;flex-direction:column;align-items:flex-start}
+.ref-field{position:absolute;right:var(--pad);max-width:300px;text-align:right;margin-top:3px}
+.bereich{font:600 clamp(18px,1.5vw,22px)/1.3 var(--disp);letter-spacing:-.005em;color:#fff}
+.title-link{position:relative;isolation:isolate}
+.title-link::before{content:"";position:absolute;z-index:-1;inset:-6px -14px -8px -14px;background:var(--g);transform:skewX(19deg) scaleX(0);transform-origin:0 50%;transition:transform .5s cubic-bezier(.16,1,.3,1)}
+.title-link:hover,.title-link:focus-visible{color:#fff}
+.title-link:hover::before,.title-link:focus-visible::before{transform:skewX(19deg) scaleX(1)}
+.ph{position:relative;overflow:hidden;background:#fff;outline:1px solid var(--rule-w);outline-offset:-1px}
+.ph svg{width:100%;height:100%}
+.ph .pf{fill:var(--g)}
+.ph .pl path{stroke:var(--slate)}.ph .pr path{stroke:var(--sg-on-g)}
+.ph path{fill:none;stroke-linecap:round}
+.ph .pl text{fill:var(--g)}.ph .pr text{fill:#fff}
+.ph text{font-family:var(--disp);font-weight:700;letter-spacing:-.03em}
+.ph figcaption{position:absolute;left:10px;top:10px;font:500 12.5px/1 var(--sans);color:var(--slate);background:#fff;padding:4px 6px}
+.lph-wrap{display:grid;grid-template-columns:minmax(0,calc(var(--c5) - var(--pad) - 40px)) minmax(0,1fr);gap:48px}
+.lph-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:36px}
+.lph-grid li{border-top:1px solid var(--rule-g);padding:18px 0 34px;color:#fff}
+.lph-no{display:flex;align-items:baseline;gap:10px;font:800 clamp(52px,4.6vw,72px)/1 var(--disp);letter-spacing:-.03em}
+.lph-no small{font:600 15px/1 var(--sans);letter-spacing:.02em;color:var(--mist)}
+.lph-nm{display:block;margin-top:10px;font:500 19px/1.3 var(--sans)}
+.lph-aside{align-self:end;justify-self:end;max-width:380px;font:600 clamp(22px,1.9vw,27px)/1.3 var(--disp);letter-spacing:-.01em;color:var(--g);padding-bottom:34px}
+.kon{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:48px;align-items:end}
+.kon h2{font:700 clamp(36px,3.6vw,54px)/1.02 var(--disp);letter-spacing:-.03em;color:var(--g);max-width:12em}
+.kon p{margin-top:24px;max-width:31em;font-size:18px}
+.kon-act{display:grid;justify-items:start;gap:22px;color:#fff;padding-bottom:4px}
+.kon-act a.plain{font:500 19px/1.3 var(--sans);text-decoration:none}
+.kon-act a.plain:hover{text-decoration:underline}
+.kon-act .num{color:var(--mist)}
+.par{font:600 clamp(28px,2.9vw,42px)/1.32 var(--disp);letter-spacing:-.02em;color:#fff}
+.par li{display:inline;white-space:nowrap}
+.par li:not(:last-child)::after{content:"";display:inline-block;width:3px;height:.82em;margin:0 .1em 0 .5em;background:currentColor;transform:skewX(19deg);vertical-align:-.06em}
+.s-par .inv .par{color:var(--g)}
+.par-note{margin-top:28px;font-size:15px;color:var(--mist)}
+.ft{padding:84px var(--pad) 40px}
+.ft-grid{display:grid;grid-template-columns:minmax(260px,1fr) minmax(0,1.4fr);gap:56px;align-items:start}
+.ft-brand img{width:248px;height:auto}
+.ft-addr{margin-top:26px;font-style:normal;line-height:1.6}
+.ft dl{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:28px 36px;color:#fff;justify-self:end;width:min(640px,calc(100vw - var(--t) - var(--pad) - 64px))}
+.ft dt{font:600 14px/1.3 var(--sans);color:var(--mist);margin-bottom:8px}
+.ft dd{font-size:16px;line-height:1.6}
+.ft dd a{text-decoration:none}.ft dd a:hover{text-decoration:underline}
+.ft-legal{display:flex;justify-content:flex-end;gap:28px;margin-top:64px;color:#fff;font-size:15px}
+.ft-legal a{text-decoration:none}.ft-legal a:hover{text-decoration:underline}
+.ft-legal span{color:var(--mist)}
+.stage.refp{--kr:1.15;--Hh:700px;--A2:44.4vw}
+.refp .sg{width:calc(var(--kr)*980px);height:calc(var(--kr)*775px);left:calc(var(--A2) + var(--slope)*var(--Hh) - var(--kr)*662px);top:calc(var(--Hh) - var(--kr)*756px)}
+.refp .sg .up{display:none}
+.refp .sg path{stroke-width:5}
+.refp .hero{height:var(--Hh)}
+.refp .hero .inv{clip-path:polygon(var(--A2) 0,100% 0,100% 3000px,calc(var(--A2) + 1032.52px) 3000px)}
+.refp .h1{--h1:clamp(44px,4.7vw,68px);position:absolute;left:var(--pad);top:136px;line-height:1}
+.refp .sub{position:absolute;left:var(--pad);top:312px;max-width:30em;font-size:19px}
+.flt{position:absolute;right:var(--pad);top:352px;width:min(430px,30vw);color:#fff}
+.flt ul{display:grid}
+.flt button{position:relative;isolation:isolate;display:flex;width:100%;height:54px;white-space:nowrap;justify-content:space-between;align-items:center;gap:20px;padding:0;border:0;background:none;color:#fff;font:600 clamp(21px,1.75vw,25px)/1.15 var(--disp);letter-spacing:-.01em;text-align:left;cursor:pointer}
+.flt button .c{font:500 16px/1 var(--sans);color:var(--mist);font-variant-numeric:tabular-nums}
+.flt button::before{content:"";position:absolute;z-index:-1;top:0;bottom:0;left:calc(var(--A2) + var(--slope)*var(--y) - 100vw + var(--pad) + min(430px,30vw) - 6px);right:calc(-1*var(--pad));background:#fff;clip-path:polygon(0 0,0 0,18.6px 100%,18.6px 100%);transition:clip-path .55s cubic-bezier(.16,1,.3,1)}
+.flt button:hover::before{clip-path:polygon(0 0,12px 0,30.6px 100%,18.6px 100%)}
+.flt button[aria-pressed=true]{color:var(--g)}
+.flt button[aria-pressed=true] .c{color:var(--slate)}
+.flt button[aria-pressed=true]::before{clip-path:polygon(0 0,100% 0,100% 100%,18.6px 100%)}
+.flt button:focus-visible{outline-color:#fff;outline-offset:2px}
+.count{margin-top:18px;font:500 17px/1.4 var(--sans);color:var(--mist)}
+.count b{font-weight:600;color:#fff}
+.s-proj{--t:var(--cr1);--b:var(--cr2);--ot:0px;--ob:var(--o3);padding-top:96px}
+.s-cta{--t:var(--cr2);--b:var(--cr3);--ot:var(--o3);--ob:var(--o4)}
+.s-ft.r{--t:var(--cr3);--b:var(--cr4);--ot:var(--o4);--ob:var(--o5)}
+:root{--cr1:calc(44.4vw + 240.92px);--cr2:72vw;--cr3:66vw;--cr4:60vw}
+.proj{display:grid;gap:64px;max-width:calc(var(--cr1) - var(--pad) - 72px)}
+.proj .ref{grid-template-columns:minmax(240px,360px) minmax(0,1fr);gap:40px}
+.empty{display:grid;gap:22px;justify-items:start;padding:40px 0 20px;max-width:34em}
+.empty p{font:600 clamp(24px,2.1vw,30px)/1.2 var(--disp);color:var(--g);letter-spacing:-.015em}
+.cta-r{display:flex;flex-wrap:wrap;gap:28px 64px;align-items:center;justify-content:space-between;max-width:calc(var(--cr3) - var(--pad))}
+.cta-r h2{font:700 clamp(36px,3.6vw,54px)/1.02 var(--disp);letter-spacing:-.03em;color:#fff}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{transition:none!important;animation:none!important}
+  .js .t:not(.on) .t-band{clip-path:polygon(0 0,var(--T) 0,var(--B) 100%,0 100%)}
+  .js .t:not(.on)::before{clip-path:polygon(var(--T) 0,100% 0,100% 100%,var(--B) 100%)}
+}
+@media (min-width:1181px) and (max-width:1380px){.nav a,.lang span,.lang a{padding:10px 9px;font-size:14.5px}.lang{margin-left:8px;padding-left:8px}}
+@media (max-width:1180px){
+  .menu-btn::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--g);transform:skewX(19deg)}
+  .menu-btn{display:inline-flex;align-items:center;gap:10px;position:relative;isolation:isolate;min-height:44px;padding:0 16px 0 18px;border:0;background:none;color:#fff;font:600 16px/1 var(--sans);cursor:pointer}
+  .menu-btn svg{width:22px;height:16px}
+  .menu-btn[aria-expanded=true] .mb-o{display:none}
+  .menu-btn:not([aria-expanded=true]) .mb-x{display:none}
+  .nav{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;padding:12px var(--pad) 28px;background:var(--g)}
+  .nav.open{display:flex}
+  .nav ul{flex-direction:column}
+  .nav a{font:600 26px/1.1 var(--disp);padding:14px 4px}
+  .nav a::before{transform:skewX(0) scaleX(0)}
+  .nav a:hover::before,.nav a[aria-current=page]::before{transform:skewX(0) scaleX(1)}
+  .lang{margin:14px 0 0;padding:14px 0 0;border-left:0;border-top:1px solid var(--rule-g)}
+  .lang a,.lang span{padding:10px 14px 10px 4px;font-size:16px}
+}
+@media (max-width:960px){
+  :root{--k:.78;--A:calc(100vw - 72px);--h1:8.6vw;
+    --c2:100vw;--c2b:86vw;--c3:90vw;--c4:82vw;--c5:90vw;--c6:80vw;--c7:88vw;--c8:80vw;
+    --cr1:100vw;--cr2:88vw;--cr3:84vw;--cr4:90vw}
+  body{font-size:16.5px}
+  .hd{height:64px}
+  .brand{gap:10px;padding:6px 10px 6px var(--pad)}
+  .brand img{width:52px}
+  .brand span{font-size:15px}
+  .sg .lo{display:none}
+  .hero{padding:262px var(--pad) 36px}
+  .hero .h1 span{white-space:nowrap}
+  .h1{line-height:1}
+  .hero .inv{padding:262px var(--pad) 0}
+  .hero-low{margin-top:28px}
+  .lead{font-size:17px;max-width:min(31em,calc(100% - 30px))}
+  .hero-low .actions{margin-top:26px;flex-direction:column;align-items:flex-start;gap:16px}
+  .statement{position:relative;z-index:1;isolation:isolate;padding:60px var(--pad) 64px;color:#fff}
+  .statement::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--g);clip-path:polygon(0 0,var(--c2) 0,var(--c2b) 100%,0 100%)}
+  .st-h{font:600 clamp(32px,8.6vw,42px)/1.05 var(--disp);letter-spacing:-.025em;color:#fff}
+  .st-p{margin-top:22px;font-size:17px;max-width:30em;color:#fff;padding-right:calc(100vw - var(--c2b))}
+  .facts{margin-top:44px;display:grid;gap:30px;padding-right:calc(100vw - var(--c2b))}
+  .fact{border-top:1px solid var(--rule-g);padding-top:18px}
+  .sec{padding:48px var(--pad) 80px}
+  .s-leis{--b:var(--c3)}
+  .s-leis{--t:var(--c2b)}
+  .t{margin-bottom:36px;padding:22px var(--pad) 24px}
+  .sec > .t:first-child,.sec > .inv > .t:first-child{margin-top:-48px}
+  .s-refs,.s-proj{padding-bottom:130px;--gap:105px;--sk:.62}
+  .s-kon,.s-cta{padding-bottom:130px;--gap:105px;--sk:.55}
+  .refs-more{position:static}
+  .t h2,.t .h2{font-size:clamp(32px,8.6vw,42px)}
+  .s-leis .wrap{max-width:none;padding-right:calc(100vw - var(--c3))}
+  .svc{grid-template-columns:minmax(0,1fr) 22px;gap:8px 16px;padding:20px 0 22px}
+  .svc-d{grid-column:1;grid-row:2;font-size:16px}
+  .svc .ar{grid-column:2;grid-row:1}
+  .leis-more{position:static;display:inline-flex;margin-top:30px;color:#fff}
+  .refs-more{position:static;display:inline-flex;margin:0 0 30px;color:var(--g)}
+  .ref-list{max-width:none;padding-right:calc(100vw - var(--c4) + 14px);gap:44px}
+  .proj{max-width:none;padding-right:calc(100vw - var(--cr2) + 14px);gap:44px}
+  .ref,.proj .ref{grid-template-columns:1fr;gap:18px}
+  .ref-field{position:static;order:9;text-align:left;max-width:none;margin-top:10px}
+  .bereich{color:var(--slate);font:500 15px/1.35 var(--sans)}
+  .lph-wrap{grid-template-columns:1fr;gap:20px}
+  .lph-grid{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:20px;padding-right:calc(100vw - var(--c4) + 6px)}
+  .lph-aside{order:-1;justify-self:start;color:#fff;padding:0 calc(100vw - var(--c4) + 10px) 10px 0;font-size:21px}
+  .lph-no{font-size:48px}
+  .lph-nm{font-size:17px}
+  .kon{grid-template-columns:1fr;gap:34px}
+  .kon > div:first-child{padding-right:calc(100vw - var(--c6) + 10px)}
+  .kon-act{background:var(--g);margin:0 calc(-1*var(--pad));padding:30px var(--pad) 32px}
+  .par{font-size:clamp(24px,6.6vw,30px)}
+  .ft-grid{grid-template-columns:1fr;gap:40px}
+  .ft dl{grid-template-columns:1fr;justify-self:stretch;width:auto;color:var(--ink)}
+  .ft-green{background:var(--g);margin:0 calc(-1*var(--pad));padding:32px var(--pad)}
+  .ft dl{color:#fff}
+  .ft-legal{justify-content:flex-start;flex-wrap:wrap;gap:12px 24px;margin-top:0;padding:24px 0 0;color:var(--ink)}
+  .ft-legal span{color:var(--slate)}
+  .ft-brand img{width:224px}
+  
+  .refp{--Hh:auto}
+  .refp .sg{display:none}
+  .refp .hero{height:auto;padding:118px var(--pad) 40px}
+  .refp .hero::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--g);clip-path:polygon(var(--A) 0,100% 0,100% 3000px,calc(var(--A) + 1032.52px) 3000px)}
+  .refp .hero{isolation:isolate}
+  .refp .hero .inv{clip-path:polygon(var(--A) 0,100% 0,100% 3000px,calc(var(--A) + 1032.52px) 3000px);padding:118px var(--pad) 0}
+  .refp .h1,.refp .sub{position:static}
+  .refp .h1{--h1:clamp(34px,9.4vw,44px)}
+  .refp .sub{margin-top:20px;font-size:17px;max-width:calc(100% - 20px)}
+  .flt{position:relative;right:auto;top:auto;width:auto;margin:36px calc(-1*var(--pad)) -40px;padding:20px var(--pad) 26px;background:var(--g)}
+  .flt button::before{left:calc(-1*var(--pad));clip-path:polygon(0 0,0 0,0 100%,0 100%)}
+  .flt button[aria-pressed=true]::before{clip-path:polygon(0 0,100% 0,100% 100%,0 100%)}
+  .flt button{height:50px}
+  .s-proj{padding-top:64px}
+  .cta-r{max-width:none;padding-right:calc(100vw - var(--cr3))}
+}
+@media (max-width:960px) and (min-width:600px){.lph-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Zum Inhalt springen</a>
+<header class="hd">
+<a class="brand" href="index.html" aria-label="C&amp;C Ingenieure GmbH, Startseite"><img src="../assets/logo-mark-small.svg" width="58" height="46" alt=""><span>C&amp;C Ingenieure GmbH</span></a>
+<button class="menu-btn on-g" type="button" aria-expanded="false" aria-controls="nav">Menü<svg viewBox="0 0 22 16" aria-hidden="true" focusable="false"><path class="mb-o" d="M0 2h22M0 8h22M0 14h22" stroke="currentColor" stroke-width="2"/><path class="mb-x" d="M4 1l14 14M18 1 4 15" stroke="currentColor" stroke-width="2"/></svg></button>
+<nav class="nav on-g" id="nav" aria-label="Hauptnavigation"><ul><li><a class="fl" href="index.html" aria-current="page">Startseite</a></li><li><a class="fl" href="leistungen.html">Leistungen</a></li><li><a class="fl" href="referenzen.html">Referenzen</a></li><li><a class="fl" href="karriere.html">Karriere</a></li><li><a class="fl" href="ueber-uns.html">Über uns</a></li><li><a class="fl" href="kontakt.html">Kontakt</a></li></ul>
+<div class="lang" aria-label="Sprache"><span aria-current="true">DE</span><a href="#en" lang="en" hreflang="en">EN</a></div></nav>
+</header>
+<main id="main">
+<div class="stage home">
+<svg class="sg" viewBox="220 70 980 775" aria-hidden="true" focusable="false">
+<defs><clipPath id="sgL" clipPathUnits="userSpaceOnUse"><polygon points="120,-1388 1390,2302 -9000,2302 -9000,-1388"/></clipPath><clipPath id="sgR" clipPathUnits="userSpaceOnUse"><polygon points="120,-1388 1390,2302 9000,2302 9000,-1388"/></clipPath></defs>
+<polygon class="fld" points="120,-1388 1390,2302 9000,2302 9000,-1388"/>
+<g class="cl" clip-path="url(#sgL)"><path class="up" d="M628 88 C470 182 228 298 242 364 C256 418 430 418 700 416 L1180 407"/><path class="lo" d="M890 412 C760 500 432 700 445 764 C456 816 620 823 882 826"/></g><g class="cr" clip-path="url(#sgR)"><path class="up" d="M628 88 C470 182 228 298 242 364 C256 418 430 418 700 416 L1180 407"/><path class="lo" d="M890 412 C760 500 432 700 445 764 C456 816 620 823 882 826"/></g></svg>
+<section class="hero" aria-labelledby="h1">
+<h1 class="h1" id="h1"><span>Infrastruktur planen.</span><span>Verlässlich umsetzen.</span></h1>
+<div class="hero-low">
+<p class="lead">C&amp;C Ingenieure begleitet Ihr Vorhaben von der Planung bis zur Bauüberwachung: Objekt- und Tragwerks&shy;planung, Ausschreibung und Vergabe, Projektsteuerung und BIM.</p>
+<div class="actions"><a class="btn btn-p" href="mailto:info@ib-cc.de">Kontakt aufnehmen <svg class="ar" viewBox="0 0 22 12" aria-hidden="true" focusable="false"><path d="M0 6h20M15 1.2 20 6l-5 4.8" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></a><a class="btn btn-s" href="#leistungen">Unsere Leistungen</a></div>
+</div>
+<div class="inv" aria-hidden="true"><p class="h1"><span>Infrastruktur planen.</span><span>Verlässlich umsetzen.</span></p></div>
+</section>
+<section class="statement" aria-labelledby="st">
+<h2 class="st-h" id="st"><span>Partner&shy;schaftlich,</span><span>transparent,</span><span>verlässlich.</span></h2>
+<p class="st-p">Wir verstehen jede Zusammenarbeit als vertrauensvolle Partnerschaft, geprägt von Respekt, Transparenz und einem klaren Fokus auf gemeinsame Ziele. Unser Anspruch sind nachhaltige Lösungen, die höchsten Qualitäts&shy;ansprüchen genügen und langfristig überzeugen.</p>
+<ul class="facts on-g" aria-label="Was uns auszeichnet">
+<li class="fact f1"><h3>Alle HOAI-Leistungs&shy;phasen</h3><p>Von der Grundlagen&shy;ermittlung bis zur Objektbetreuung aus einer Hand.</p></li>
+<li class="fact f2"><h3>Bau&shy;vorlage&shy;berechtigt nach VV&nbsp;BAU</h3><p>Fachtechnische Prüfung und Freigabe für bahnspezifische Projekte.</p></li>
+<li class="fact f3"><h3>Spezialisiert auf Infrastruktur</h3><p>Konstruktiver Ingenieurbau, Verkehrs&shy;anlagen, Bahnbau und Tiefbau.</p></li>
+</ul>
+</section>
+</div>
+<section class="sec gL s-leis on-g" id="leistungen" aria-labelledby="h-leis" data-swing="3">
+<div class="t"><h2 id="h-leis">Unsere Leistungen im Überblick</h2><div class="t-band" aria-hidden="true"><p class="h2">Unsere Leistungen im Überblick</p></div></div>
+<div class="wrap"><ul class="svc-list">
+<li><a class="svc" href="leistungen.html#bvb"><span class="svc-n">BVB nach VV&nbsp;BAU</span><span class="svc-d">Prüfung und Freigabe von Ausführungs&shy;unterlagen für Bahnprojekte.</span><svg class="ar" viewBox="0 0 22 12" aria-hidden="true" focusable="false"><path d="M0 6h20M15 1.2 20 6l-5 4.8" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></a></li>
+<li><a class="svc" href="leistungen.html#objektplanung"><span class="svc-n">Objektplanung</span><span class="svc-d">Konstruktiver Ingenieurbau, Verkehrs&shy;anlagen, Hochbau und Tiefbau nach HOAI.</span><svg class="ar" viewBox="0 0 22 12" aria-hidden="true" focusable="false"><path d="M0 6h20M15 1.2 20 6l-5 4.8" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></a></li>
+<li><a class="svc" href="leistungen.html#tragwerksplanung"><span class="svc-n">Tragwerks&shy;planung</span><span class="svc-d">Statik, Konstruktion und Bewehrungs&shy;planung, auch für Bestands&shy;bauwerke.</span><svg class="ar" viewBox="0 0 22 12" aria-hidden="true" focusable="false"><path d="M0 6h20M15 1.2 20 6l-5 4.8" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></a></li>
+<li><a class="svc" href="leistungen.html#ausschreibung"><span class="svc-n">Ausschreibung &amp; Vergabe</span><span class="svc-d">Leistungs&shy;verzeichnisse, Kosten&shy;ermittlung und Vergabe&shy;empfehlung.</span><svg class="ar" viewBox="0 0 22 12" aria-hidden="true" focusable="false"><path d="M0 6h20M15 1.2 20 6l-5 4.8" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></a></li>
+<li><a class="svc" href="leistungen.html#bauueberwachung"><span class="svc-n">Bau&shy;überwachung &amp; Bau&shy;ober&shy;leitung</span><span class="svc-d">Qualitäts-, Termin- und Kostenkontrolle bis zur Abnahme.</span><svg class="ar" viewBox="0 0 22 12" aria-hidden="true" focusable="false"><path d="M0 6h20M15 1.2 20 6l-5 4.8" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></a></li>
+<li><a class="svc" href="leistungen.html#projektsteuerung"><span class="svc-n">Projekt&shy;steuerung</span><span class="svc-d">Organisation, Termine, Kosten und Risiken im Blick.</span><svg class="ar" viewBox="0 0 22 12" aria-hidden="true" focusable="false"><path d="M0 6h20M15 1.2 20 6l-5 4.8" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></a></li>
+<li><a class="svc" href="leistungen.html#bim"><span class="svc-n"><span lang="en">Building Information Modeling</span></span><span class="svc-d">Digitale Modelle für Planung, Koordination und Betrieb.</span><svg class="ar" viewBox="0 0 22 12" aria-hidden="true" focusable="false"><path d="M0 6h20M15 1.2 20 6l-5 4.8" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></a></li>
+</ul></div>
+<a class="lnk leis-more" href="leistungen.html">Alle Leistungen ansehen <svg class="ar" viewBox="0 0 22 12" aria-hidden="true" focusable="false"><path d="M0 6h20M15 1.2 20 6l-5 4.8" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></a>
+</section>
+<section class="sec gR s-refs" aria-labelledby="h-refs" data-swing="4">
+<div class="t"><h2 id="h-refs">Ausgewählte Referenzen</h2><div class="t-band" aria-hidden="true"><p class="h2">Ausgewählte Referenzen</p></div></div>
+<a class="lnk refs-more" href="referenzen.html">Alle Referenzen <svg class="ar" viewBox="0 0 22 12" aria-hidden="true" focusable="false"><path d="M0 6h20M15 1.2 20 6l-5 4.8" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></a>
+<div class="ref-list">
+<article class="ref" data-field="kib">
+<figure class="ph"><svg viewBox="0 0 360 225" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+<defs><clipPath id="h1L"><polygon points="170.1,-20 -40,-20 -40,245 261.3,245"/></clipPath><clipPath id="h1R"><polygon points="170.1,-20 400,-20 400,245 261.3,245"/></clipPath></defs>
+<polygon class="pf" points="170.1,-20 400,-20 400,245 261.3,245"/><g class="pl" clip-path="url(#h1L)"><g transform="translate(-221.4 -80.6) scale(0.62)"><path d="M628 88 C470 182 228 298 242 364 C256 418 430 418 700 416 L1180 407" stroke-width="5"/><path d="M890 412 C760 500 432 700 445 764 C456 816 620 823 882 826" stroke-width="5"/></g><text x="16" y="203" font-size="63">Heidelberg</text></g><g class="pr" clip-path="url(#h1R)"><g transform="translate(-221.4 -80.6) scale(0.62)"><path d="M628 88 C470 182 228 298 242 364 C256 418 430 418 700 416 L1180 407" stroke-width="5"/><path d="M890 412 C760 500 432 700 445 764 C456 816 620 823 882 826" stroke-width="5"/></g><text x="16" y="203" font-size="63">Heidelberg</text></g></svg>
+<figcaption>Projektfoto folgt</figcaption></figure>
+<div><p class="ref-field bereich"><span class="vh">Bereich: </span>Konstruktiver Ingenieur&shy;bau</p><h3><a class="title-link" href="referenzen.html#ref-1">Montpellier Carré: Stützwand Czernyring</a></h3><p class="ref-meta num">Heidelberg · 2026 · Tragwerks&shy;planung</p></div>
+</article>
+<article class="ref" data-field="vab">
+<figure class="ph"><svg viewBox="0 0 360 225" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+<defs><clipPath id="h2L"><polygon points="202.3,-20 -40,-20 -40,245 293.5,245"/></clipPath><clipPath id="h2R"><polygon points="202.3,-20 400,-20 400,245 293.5,245"/></clipPath></defs>
+<polygon class="pf" points="202.3,-20 400,-20 400,245 293.5,245"/><g class="pl" clip-path="url(#h2L)"><g transform="translate(-12.1 -17.7) scale(0.36)"><path d="M628 88 C470 182 228 298 242 364 C256 418 430 418 700 416 L1180 407" stroke-width="5"/><path d="M890 412 C760 500 432 700 445 764 C456 816 620 823 882 826" stroke-width="5"/></g><text x="16" y="203" font-size="79">Rimbach</text></g><g class="pr" clip-path="url(#h2R)"><g transform="translate(-12.1 -17.7) scale(0.36)"><path d="M628 88 C470 182 228 298 242 364 C256 418 430 418 700 416 L1180 407" stroke-width="5"/><path d="M890 412 C760 500 432 700 445 764 C456 816 620 823 882 826" stroke-width="5"/></g><text x="16" y="203" font-size="79">Rimbach</text></g></svg>
+<figcaption>Projektfoto folgt</figcaption></figure>
+<div><p class="ref-field bereich"><span class="vh">Bereich: </span>Verkehrs&shy;anlagen / Bahnbau</p><h3><a class="title-link" href="referenzen.html#ref-3">Bahnhof Rimbach: Bahnsteige und Wetter&shy;schutz&shy;haus</a></h3><p class="ref-meta num">Rimbach (Hessen) · 2026 · DB InfraGO AG, DB Bahnbau Gruppe</p></div>
+</article>
+<article class="ref" data-field="kib">
+<figure class="ph"><svg viewBox="0 0 360 225" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+<defs><clipPath id="h3L"><polygon points="329.2,-20 -40,-20 -40,245 420.4,245"/></clipPath><clipPath id="h3R"><polygon points="329.2,-20 400,-20 400,245 420.4,245"/></clipPath></defs>
+<polygon class="pf" points="329.2,-20 400,-20 400,245 420.4,245"/><g class="pl" clip-path="url(#h3L)"><g transform="translate(-346.6 -333.6) scale(0.95)"><path d="M628 88 C470 182 228 298 242 364 C256 418 430 418 700 416 L1180 407" stroke-width="5"/><path d="M890 412 C760 500 432 700 445 764 C456 816 620 823 882 826" stroke-width="5"/></g><text x="16" y="203" font-size="89">Wetzlar</text></g><g class="pr" clip-path="url(#h3R)"><g transform="translate(-346.6 -333.6) scale(0.95)"><path d="M628 88 C470 182 228 298 242 364 C256 418 430 418 700 416 L1180 407" stroke-width="5"/><path d="M890 412 C760 500 432 700 445 764 C456 816 620 823 882 826" stroke-width="5"/></g><text x="16" y="203" font-size="89">Wetzlar</text></g></svg>
+<figcaption>Projektfoto folgt</figcaption></figure>
+<div><p class="ref-field bereich"><span class="vh">Bereich: </span>Konstruktiver Ingenieur&shy;bau</p><h3><a class="title-link" href="referenzen.html#ref-2">Stützwand Solmserstraße</a></h3><p class="ref-meta num">Wetzlar · 2026 · Objekt- und Tragwerks&shy;planung</p></div>
+</article>
+</div>
+<div class="seam-w a" aria-hidden="true"><svg class="seam" viewBox="220 70 980 775" aria-hidden="true" focusable="false"><path d="M890 412 C760 500 432 700 445 764 C456 816 620 823 882 826"/></svg></div><div class="seam-w b" aria-hidden="true"><svg class="seam" viewBox="220 70 980 775" aria-hidden="true" focusable="false"><path d="M890 412 C760 500 432 700 445 764 C456 816 620 823 882 826"/></svg></div>
+</section>
+<section class="sec gL s-lph on-g" aria-labelledby="h-lph" data-swing="5">
+<div class="t"><h2 id="h-lph">Alle Leistungs&shy;phasen der HOAI</h2><div class="t-band" aria-hidden="true"><p class="h2">Alle Leistungs&shy;phasen der HOAI</p></div></div>
+<div class="lph-wrap">
+<ol class="lph-grid">
+<li><span class="lph-no num"><small>LPH</small>1</span><span class="lph-nm">Grundlagen&shy;ermittlung</span></li>
+<li><span class="lph-no num"><small>LPH</small>2</span><span class="lph-nm">Vorplanung</span></li>
+<li><span class="lph-no num"><small>LPH</small>3</span><span class="lph-nm">Entwurfs&shy;planung</span></li>
+<li><span class="lph-no num"><small>LPH</small>4</span><span class="lph-nm">Genehmigungs&shy;planung</span></li>
+<li><span class="lph-no num"><small>LPH</small>5</span><span class="lph-nm">Ausführungs&shy;planung</span></li>
+<li><span class="lph-no num"><small>LPH</small>6</span><span class="lph-nm">Vorbereitung der Vergabe</span></li>
+<li><span class="lph-no num"><small>LPH</small>7</span><span class="lph-nm">Mitwirkung bei der Vergabe</span></li>
+<li><span class="lph-no num"><small>LPH</small>8</span><span class="lph-nm">Objekt&shy;überwachung</span></li>
+<li><span class="lph-no num"><small>LPH</small>9</span><span class="lph-nm">Objekt&shy;betreuung</span></li>
+</ol>
+<p class="lph-aside">Wir übernehmen die Leistungs&shy;phasen, die Ihr Projekt braucht, einzeln oder durchgängig.</p>
+</div>
+</section>
+<section class="sec gR s-kon" id="kontakt" aria-labelledby="h-kon" data-swing="6">
+<div class="kon">
+<div><h2 id="h-kon">Wie können wir Sie bei Ihrem Vorhaben unterstützen?</h2>
+<p>Wenn Sie Wert auf Verlässlichkeit, Fairness und eine partnerschaftliche Zusammenarbeit legen, stehen wir Ihnen gerne zur Seite. Wir freuen uns darauf, Ihr Projekt gemeinsam voranzubringen.</p></div>
+<div class="kon-act on-g"><a class="btn btn-w" href="mailto:info@ib-cc.de">Kontakt aufnehmen <svg class="ar" viewBox="0 0 22 12" aria-hidden="true" focusable="false"><path d="M0 6h20M15 1.2 20 6l-5 4.8" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></a>
+<a class="plain num" href="tel:+491736992298">Tel +49 173 6992298</a><a class="plain" href="mailto:info@ib-cc.de">info@ib-cc.de</a></div>
+</div>
+<div class="seam-w a" aria-hidden="true"><svg class="seam" viewBox="220 70 980 775" aria-hidden="true" focusable="false"><path d="M890 412 C760 500 432 700 445 764 C456 816 620 823 882 826"/></svg></div><div class="seam-w b" aria-hidden="true"><svg class="seam" viewBox="220 70 980 775" aria-hidden="true" focusable="false"><path d="M890 412 C760 500 432 700 445 764 C456 816 620 823 882 826"/></svg></div>
+</section>
+<section class="sec gL s-par on-g" aria-labelledby="h-par" data-swing="7">
+<div class="t"><h2 id="h-par">Unsere Partner</h2><div class="t-band" aria-hidden="true"><p class="h2">Unsere Partner</p></div></div>
+<ul class="par"><li>DB InfraGO AG</li> <li>DB Bahnbau Gruppe GmbH</li> <li>Autobahn GmbH</li> <li>Stadt Heidelberg</li> <li>Stadt Wetzlar</li> <li>Stadt Frankfurt am Main</li> <li>Stadt Altena</li> <li>RNV</li> <li>Lipoid</li></ul>
+<div class="inv" aria-hidden="true"><div class="t hide"><p class="h2">Unsere Partner</p></div><ul class="par"><li>DB InfraGO AG</li> <li>DB Bahnbau Gruppe GmbH</li> <li>Autobahn GmbH</li> <li>Stadt Heidelberg</li> <li>Stadt Wetzlar</li> <li>Stadt Frankfurt am Main</li> <li>Stadt Altena</li> <li>RNV</li> <li>Lipoid</li></ul></div>
+</section>
+</main>
+<footer class="sec ft gR s-ft h" data-swing="8">
+<div class="ft-grid">
+<div class="ft-brand"><img src="../assets/logo-lockup.svg" width="248" height="196" alt="C&amp;C Ingenieure GmbH">
+<address class="ft-addr">C&amp;C Ingenieure GmbH<br>Werner-von-Siemens-Straße 2-6<br>Gebäude 5110b<br>76646 Bruchsal</address></div>
+<div class="ft-green on-g"><dl>
+<div><dt>Kontakt</dt><dd><a class="num" href="tel:+491736992298">Tel +49 173 6992298</a><br><a href="mailto:info@ib-cc.de">info@ib-cc.de</a></dd></div>
+<div><dt>Geschäftsführer</dt><dd>M.Eng. Hüsnü Cetinkaya</dd></div>
+<div><dt>Handelsregister</dt><dd class="num">HRB 743910 Mannheim<br>USt-IdNr. DE353174530</dd></div>
+</dl></div></div>
+<div class="ft-legal on-g"><span>© 2026 C&amp;C Ingenieure GmbH</span><nav aria-label="Rechtliches"><a href="impressum.html">Impressum</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="datenschutz.html">Datenschutz</a></nav></div>
+</footer>
+<script>
+(function(){
+  var root=document.documentElement;
+  var btn=document.querySelector('.menu-btn'),nav=document.getElementById('nav');
+  if(btn&&nav){
+    btn.addEventListener('click',function(){var o=btn.getAttribute('aria-expanded')!=='true';btn.setAttribute('aria-expanded',o);nav.classList.toggle('open',o);});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape'&&nav.classList.contains('open')){nav.classList.remove('open');btn.setAttribute('aria-expanded','false');btn.focus();}});
+  }
+  var still=window.matchMedia('(prefers-reduced-motion: reduce)');
+  var titles=[].slice.call(document.querySelectorAll('.t'));
+  var secs=[].slice.call(document.querySelectorAll('[data-swing]'));
+  function px(sec,prop){var p=document.createElement('div');p.style.cssText='position:absolute;left:0;top:0;height:0;visibility:hidden;width:var('+prop+')';sec.appendChild(p);var w=p.getBoundingClientRect().width;p.remove();return w;}
+  var amp=[];
+  function measure(){
+    secs.forEach(function(s){var t=s.querySelector(':scope > .t');if(t)s.style.setProperty('--f',(t.offsetHeight/Math.max(s.offsetHeight,1)).toFixed(4));});
+    amp=secs.map(function(s,i){
+      var top=px(s,'--t'),bot=px(s,'--b'),h=s.offsetHeight,slope=0.344173;
+      var prev=secs[i-1];
+      if(prev){slope=(px(prev,'--b')-px(prev,'--t'))/Math.max(prev.offsetHeight,1);}
+      var d=Math.abs(top+slope*h-bot),m=window.innerWidth<961?0.4:1;
+      return Math.max(36,Math.min(84,d))*m;
+    });
+  }
+  function ease(p){return p>=1?1:1-Math.pow(2,-10*p);}
+  var ticking=false;
+  function frame(){
+    ticking=false;
+    var vh=window.innerHeight;
+    if(!still.matches){
+      secs.forEach(function(s,i){
+        var r=s.getBoundingClientRect();
+        var p=Math.max(0,Math.min(1,(vh-r.top)/(vh*.8)));
+        root.style.setProperty('--o'+s.getAttribute('data-swing'),(amp[i]*(1-ease(p))).toFixed(1)+'px');
+      });
+    }
+    var act=null;
+    titles.forEach(function(t){var r=t.getBoundingClientRect();if(r.top<vh*.62&&r.bottom>0)act=t;});
+    titles.forEach(function(t){t.classList.toggle('on',t===act);});
+  }
+  function req(){if(!ticking){ticking=true;requestAnimationFrame(frame);}}
+  function reset(){secs.forEach(function(s){root.style.setProperty('--o'+s.getAttribute('data-swing'),'0px');});}
+  measure();frame();
+  window.addEventListener('scroll',req,{passive:true});
+  window.addEventListener('resize',function(){reset();measure();req();});
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(function(){reset();measure();req();});
+  still.addEventListener&&still.addEventListener('change',function(){reset();measure();req();});
+})();
+
+</script>
+</body>
+</html>
