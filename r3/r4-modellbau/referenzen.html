@@ -1,0 +1,599 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8"><meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Referenzen · C&amp;C Ingenieure GmbH</title>
+<meta name="description" content="Referenzen der C&amp;C Ingenieure GmbH aus konstruktivem Ingenieurbau, Verkehrsanlagen und Bahnbau, Tiefbau und Hochbau.">
+<style>
+@font-face{font-family:"Onest";src:url(fonts/onest-400.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Onest";src:url(fonts/onest-500.woff2) format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:"Onest";src:url(fonts/onest-600.woff2) format("woff2");font-weight:600;font-display:swap}
+@font-face{font-family:"Onest";src:url(fonts/onest-700.woff2) format("woff2");font-weight:700;font-display:swap}
+@font-face{font-family:"Red Hat Mono";src:url(fonts/redhatmono-400.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Red Hat Mono";src:url(fonts/redhatmono-500.woff2) format("woff2");font-weight:500;font-display:swap}
+@font-face{font-family:"Red Hat Mono";src:url(fonts/redhatmono-600.woff2) format("woff2");font-weight:600;font-display:swap}
+
+:root{
+  --ground:#10291F; --ground-2:#143124; --ground-3:#18392B; --base:#0C2018;
+  --bone:#EDF0EA; --mist:#AFC2B8; --rule:rgba(237,240,234,.16);
+  --acr-t:#245742; --acr-f:#2F6E55; --acr-s:#265D47; --acr-edge:#4F9677;
+  --pl-t:#1C4637; --pl-f:#1A4434; --pl-s:#12352A;
+  --gb-t:#C1BEB5; --gb-f:#A9A69D; --gb-s:#8E8B83; --gb-ink:#13221B;
+  --rd-t:#56544E; --rd-f:#47453F; --rd-s:#3A3934;
+  --paper:#F5F4EF; --paper-ink:#0F2A20;
+  --lamp:#F3DFA4; --lamp-rgb:243,223,164;
+  --ease:cubic-bezier(.16,1,.3,1);
+  --mono:"Red Hat Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+  --noise:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .16 0'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+*,*::before,*::after{box-sizing:border-box}
+html{background:var(--ground);color:var(--bone);scrollbar-color:#2F6450 var(--ground);-webkit-text-size-adjust:100%}
+body{margin:0;font:400 17px/1.6 "Onest",system-ui,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+::selection{background:var(--lamp);color:var(--ground)}
+::-webkit-scrollbar{width:12px;height:12px}
+::-webkit-scrollbar-track{background:var(--ground)}
+::-webkit-scrollbar-thumb{background:#2F6450;border:3px solid var(--ground);border-radius:6px}
+a{color:inherit;text-decoration-thickness:1px;text-underline-offset:.22em}
+:focus-visible{outline:2px solid var(--lamp);outline-offset:3px;border-radius:2px}
+img,svg{display:block}
+h1,h2,h3,p,ul,ol{margin:0}
+ul,ol{padding:0;list-style:none}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.wrap{max-width:1240px;margin:0 auto;padding:0 40px}
+.vh{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:absolute;left:16px;top:-60px;z-index:50;background:var(--paper);color:var(--paper-ink);padding:10px 14px;font-weight:600;text-decoration:none;transition:top .2s}
+.skip:focus{top:12px}
+.ar{width:18px;height:18px;flex:none}
+
+/* ---------- header ---------- */
+.top{position:relative;z-index:20}
+.bar{display:flex;align-items:center;gap:32px;height:96px}
+.brand{display:flex;text-decoration:none;flex:none}
+.plate-logo{display:flex;align-items:center;gap:11px;background:var(--paper);padding:8px 18px 8px 12px;border-radius:2px;box-shadow:0 1px 0 #D5D3CA,0 8px 18px -6px rgba(0,0,0,.55)}
+.plate-logo img{width:56px;height:auto}
+.wm{font-family:Arial,Helvetica,sans-serif;color:#111;font-size:18px;line-height:1;letter-spacing:0;white-space:nowrap}
+.nav{margin-left:auto;display:flex;align-items:center;gap:30px}
+.nav ul{display:flex;gap:26px}
+.nav a{text-decoration:none;font-size:15.5px;color:var(--mist);padding:6px 0;position:relative;transition:color .25s}
+.nav a:hover{color:var(--bone)}
+.nav a[aria-current="page"]{color:var(--bone)}
+.nav ul a[aria-current="page"]::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:2px;background:var(--lamp)}
+.lang{display:flex;gap:2px;font-weight:600;font-size:13px;border:1px solid var(--rule);border-radius:2px;padding:2px}
+.lang a{padding:3px 8px;color:var(--mist);border-radius:1px}
+.lang a[aria-current="true"]{background:var(--bone);color:var(--ground)}
+.menu-btn{display:none;margin-left:auto;align-items:center;gap:10px;background:none;border:1px solid var(--rule);color:var(--bone);font:500 15px "Onest",sans-serif;padding:9px 14px;border-radius:2px;cursor:pointer}
+.menu-btn svg{width:18px;height:18px}
+
+/* ---------- 3D primitives ---------- */
+.stage{--u:min(.76vw,11px);--T:17;--rx:58deg;--rz:-12deg;--rzi:12deg;--sinx:.848;position:relative;height:calc(var(--u)*(44 + var(--T)))}
+.world{position:absolute;left:50%;top:calc(var(--u)*4);width:calc(var(--u)*100);height:calc(var(--u)*46);margin-left:calc(var(--u)*-50);transform-style:preserve-3d;transform:rotateX(var(--rx)) rotateZ(var(--rz))}
+.ly,.geo,.hit,.bx,.bb{transform-style:preserve-3d}
+.ly{position:absolute;inset:0}
+.geo{position:absolute;inset:0;pointer-events:none;transform:translateZ(calc(var(--lift,0)*var(--u)));transition:transform .9s var(--ease)}
+.hit{position:absolute;inset:0}
+.hit .t,.hit .f,.hit .s{background:none!important;box-shadow:none!important}
+.hit .t::after,.hit .f::after{display:none}
+.hit .shd{display:none}
+.bx{position:absolute;left:calc(var(--x)*var(--u));top:calc(var(--y)*var(--u));width:calc(var(--w)*var(--u));height:calc(var(--d)*var(--u));transform:translateZ(calc(var(--z)*var(--u)))}
+.bx>.t,.bx>.f,.bx>.s{position:absolute;display:block;backface-visibility:visible}
+.bx>.t{inset:0;transform:translateZ(calc(var(--h)*var(--u)))}
+.bx>.f{left:0;right:0;bottom:0;height:calc(var(--h)*var(--u));transform-origin:50% 100%;transform:rotateX(-90deg)}
+.bx>.s{top:0;bottom:0;left:0;width:calc(var(--h)*var(--u));transform-origin:0 50%;transform:rotateY(-90deg)}
+.ly .t::after,.ly .f::after{content:"";position:absolute;inset:0;opacity:var(--glow,0);transition:opacity .7s var(--ease);pointer-events:none}
+.ly .t::after{box-shadow:inset 0 0 0 1px rgba(var(--lamp-rgb),.95)}
+.ly .gb>.t::after{background:radial-gradient(closest-side,rgba(var(--lamp-rgb),.32),rgba(var(--lamp-rgb),0))}
+.ly .f::after{box-shadow:inset 0 2px 0 rgba(var(--lamp-rgb),1)}
+.ly .gb>.f::after{background:linear-gradient(0deg,rgba(var(--lamp-rgb),.22),rgba(var(--lamp-rgb),0))}
+
+/* materials */
+.gb>.t{background-color:var(--gb-t);background-image:var(--noise)}
+.gb>.f{background-color:var(--gb-f);background-image:var(--noise),repeating-linear-gradient(0deg,rgba(20,20,16,.07) 0 1px,transparent 1px 3px);box-shadow:inset 0 1px 0 rgba(255,255,255,.28)}
+.gb>.s{background-color:var(--gb-s);background-image:var(--noise),repeating-linear-gradient(90deg,rgba(20,20,16,.08) 0 1px,transparent 1px 3px)}
+.ac>.t{background:linear-gradient(118deg,rgba(255,255,255,0) 28%,rgba(220,245,232,.17) 45%,rgba(255,255,255,0) 60%),linear-gradient(160deg,rgba(255,255,255,.05),rgba(0,0,0,.10)),var(--acr-t);box-shadow:inset 0 0 0 1px rgba(150,215,182,.6)}
+.ac>.f{background:linear-gradient(180deg,#3E8466,var(--acr-f) 45%,#28634B);box-shadow:inset 0 1px 0 rgba(195,240,218,.75)}
+.ac>.s{background:linear-gradient(180deg,#2F6D54,var(--acr-s));box-shadow:inset -1px 0 0 rgba(175,228,202,.5)}
+.pl>.t{background:linear-gradient(150deg,rgba(255,255,255,.05),rgba(255,255,255,0) 50%),var(--pl-t);box-shadow:inset 0 0 0 1px rgba(110,180,145,.2)}
+.pl>.f{background:linear-gradient(180deg,#235441,var(--pl-f) 38%,#163B2D);box-shadow:inset 0 1px 0 rgba(170,225,198,.6)}
+.pl>.s{background:var(--pl-s);box-shadow:inset -1px 0 0 rgba(130,200,165,.25)}
+.rd>.t{background-color:var(--rd-t);background-image:var(--noise),repeating-linear-gradient(180deg,rgba(245,244,239,.92) 0 calc(var(--u)*1.3),transparent 0 calc(var(--u)*2.6));background-size:auto,calc(var(--u)*.32) 100%;background-position:0 0,50% 0;background-repeat:repeat,no-repeat}
+.rd.rx>.t{background-image:var(--noise),repeating-linear-gradient(90deg,rgba(245,244,239,.92) 0 calc(var(--u)*1.3),transparent 0 calc(var(--u)*2.6));background-size:auto,100% calc(var(--u)*.3);background-position:0 0,0 50%}
+.rd>.f{background:var(--rd-f)}
+.rd>.s{background:var(--rd-s)}
+.bl>.t{background-color:#7C7971;background-image:var(--noise),repeating-linear-gradient(90deg,#5E5B54 0 calc(var(--u)*.45),transparent 0 calc(var(--u)*1.25))}
+.bl>.f{background:#68655E}
+.bl>.s{background:#58554F}
+.st>.t{background:#E2E3DE}
+.st>.f{background:#A9ABA5}
+.st>.s{background:#8E908A}
+.dk>.t{background-color:#8B887F;background-image:var(--noise)}
+.dk>.f{background:#77746C}
+.dk>.s{background:#66635C}
+.win>.f{background:repeating-linear-gradient(180deg,#2F6E55 0 calc(var(--u)*.9),#143528 calc(var(--u)*.9) calc(var(--u)*1.5));box-shadow:inset 0 1px 0 rgba(195,240,218,.7)}
+.stone>.f{background-color:#A9A69D;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='16'%3E%3Cg fill='none' stroke='%23615E57' stroke-width='1' opacity='.75'%3E%3Cpath d='M0 .5h36M0 8.5h36M9 .5v8M27 .5v8M0 8.5v8M18 8.5v8M36 8.5v8'/%3E%3C/g%3E%3C/svg%3E"),var(--noise);background-size:calc(var(--u)*2.4) calc(var(--u)*1.06),auto}
+
+/* shadows */
+.shd{position:absolute;left:calc(var(--x)*var(--u));top:calc(var(--y)*var(--u));width:calc(var(--w)*var(--u));height:calc(var(--d)*var(--u));transform:translateZ(calc(var(--z)*var(--u) + .6px)) translate(calc(var(--sp,0)*var(--u)*2.2),calc(var(--sp,0)*var(--u)*3.2));background:rgba(3,10,7,var(--a,.5));filter:blur(calc(var(--b,6px) + var(--sp,0)*12px));opacity:calc(1 - var(--sp,0)*.5);border-radius:2px;pointer-events:none;transition:transform .9s var(--ease),filter .9s var(--ease),opacity .9s var(--ease),background-color .9s var(--ease)}
+
+/* billboard: faces the viewer, anchored on a pin */
+.bb{position:absolute;left:calc(var(--x)*var(--u));top:calc(var(--y)*var(--u));width:0;height:0;transform:translateZ(calc((var(--z) + var(--p,0))*var(--u))) rotateZ(var(--rzi)) rotateX(calc(var(--rx)*-1))}
+.pin{position:absolute;left:-1px;top:0;width:2px;height:calc(var(--p,0)*var(--u)*var(--sinx));background:linear-gradient(90deg,#7F8782,#E9ECE7 60%,#9AA19C);border-radius:1px;pointer-events:none}
+.pin::after{content:"";position:absolute;left:-2px;bottom:-2px;width:6px;height:3px;border-radius:50%;background:rgba(0,0,0,.45);filter:blur(1px)}
+.tag{position:absolute;left:0;bottom:0;transform:translateX(-50%);display:flex;align-items:center;gap:9px;white-space:nowrap;background:var(--paper);color:var(--paper-ink);text-decoration:none;padding:7px 11px 7px 8px;border-radius:2px;box-shadow:0 1px 0 #CFCDC4,0 10px 16px -8px rgba(0,0,0,.6);transition:background-color .5s var(--ease),box-shadow .5s var(--ease),transform .5s var(--ease)}
+.tag .id{font-family:var(--mono);font-size:11.5px;font-weight:600;line-height:1;padding:4px 5px;background:var(--paper-ink);color:var(--paper);border-radius:1px}
+.tag b{display:block;font-weight:600;font-size:14px;line-height:1.15}
+.tag small{display:block;font-size:12.5px;line-height:1.25;color:#35503F}
+.ly.lit .tag,.tag:hover,.tag:focus-visible{background:#FFF8E2;box-shadow:0 1px 0 #E9DDB4,0 0 0 1px rgba(var(--lamp-rgb),.9),0 14px 26px -6px rgba(var(--lamp-rgb),.55)}
+
+/* ---------- hero ---------- */
+.hero{position:relative;padding:4px 0 36px;overflow:hidden;background:linear-gradient(180deg,var(--ground) 0%,#173A2B 45%,var(--ground) 100%)}
+.mat{position:absolute;left:calc(var(--u)*-95);top:calc(var(--u)*-48);width:calc(var(--u)*290);height:calc(var(--u)*150);transform:translateZ(calc(var(--T)*var(--u)*-1));background-image:repeating-linear-gradient(0deg,rgba(190,225,205,.10) 0 1px,transparent 1px calc(var(--u)*10)),repeating-linear-gradient(90deg,rgba(190,225,205,.10) 0 1px,transparent 1px calc(var(--u)*10)),repeating-linear-gradient(0deg,rgba(190,225,205,.045) 0 1px,transparent 1px calc(var(--u)*2)),repeating-linear-gradient(90deg,rgba(190,225,205,.045) 0 1px,transparent 1px calc(var(--u)*2));background-position:calc(var(--u)*5) calc(var(--u)*8);-webkit-mask-image:radial-gradient(closest-side,#000 35%,transparent 100%);mask-image:radial-gradient(closest-side,#000 35%,transparent 100%);pointer-events:none}
+.plinth{--z:calc(var(--T)*-1);--h:var(--T)}
+.bb-lead{--x:63;--y:57;--z:calc(var(--T)*-1);--p:0}
+.bb-cta{--x:95;--y:43;--z:0;--p:6}
+.plinth>.f{display:flex;align-items:center;justify-content:space-between;gap:calc(var(--u)*3);padding:0 calc(var(--u)*4.2) calc(var(--u)*.6)}
+.plinth>.f::before{content:"";position:absolute;left:calc(var(--u)*1.6);right:calc(var(--u)*1.6);top:calc(var(--u)*1.4);bottom:calc(var(--u)*1.4);border:1px solid rgba(175,194,184,.16);pointer-events:none}
+.h1{font-weight:600;font-size:calc(var(--u)*6.1);line-height:1.02;letter-spacing:-.025em;color:var(--bone);white-space:nowrap}
+.h1 span{display:block;color:#CFE0D6;font-weight:500}
+.plinth .cap{position:absolute;right:calc(var(--u)*4.2);top:calc(var(--u)*2.7);font-size:12px;font-weight:500;letter-spacing:.02em;color:#BCD0C4;white-space:nowrap}
+.lead-card{position:absolute;left:0;bottom:0;width:min(420px,calc(var(--u)*39));background:var(--paper);color:var(--paper-ink);padding:22px 24px 20px;border-radius:2px;box-shadow:0 1px 0 #D1CFC6,0 24px 40px -16px rgba(0,0,0,.75),0 6px 12px -6px rgba(0,0,0,.4)}
+.lead-card p{font-size:16.5px;line-height:1.55;color:#203A2E}
+.lead-card .lnk{margin-top:14px}
+.lnk{display:inline-flex;align-items:center;gap:8px;font-weight:600;text-decoration:underline;text-decoration-color:rgba(15,42,32,.35);transition:gap .4s var(--ease),text-decoration-color .3s}
+.lnk:hover{gap:12px;text-decoration-color:currentColor}
+.cta-tag{position:absolute;left:0;bottom:0;transform:translateX(-50%);display:flex;align-items:stretch;white-space:nowrap;text-decoration:none;color:var(--paper-ink);background:var(--paper);border-radius:2px;box-shadow:0 1px 0 #CFCDC4,0 14px 22px -10px rgba(0,0,0,.7);transition:background-color .5s var(--ease),box-shadow .5s var(--ease)}
+.cta-tag span{padding:12px 16px 12px 18px;font-weight:600;font-size:17px;line-height:1.2}
+.cta-tag i{display:flex;align-items:center;padding:0 13px;background:var(--acr-f);color:var(--bone);border-radius:0 2px 2px 0;transition:background-color .5s var(--ease)}
+.cta-tag:hover,.cta-tag:focus-visible{background:#FFF8E2;box-shadow:0 1px 0 #E9DDB4,0 0 0 1px rgba(var(--lamp-rgb),.9),0 18px 34px -8px rgba(var(--lamp-rgb),.6)}
+.cta-tag:hover i,.cta-tag:focus-visible i{background:#2C6A51}
+
+/* layer legend (phones) */
+.legend{display:none;position:absolute;left:20px;right:20px;top:calc(var(--u)*93);gap:5px}
+.legend li{flex:1 1 auto}
+.legend button{width:100%;display:flex;align-items:center;justify-content:center;gap:5px;font:500 12.5px/1 "Onest",sans-serif;color:var(--bone);background:rgba(237,240,234,.06);border:1px solid rgba(237,240,234,.26);border-radius:2px;padding:9px 6px;cursor:pointer;white-space:nowrap;transition:background-color .4s var(--ease),color .3s,box-shadow .4s var(--ease)}
+.legend .id{font-family:var(--mono);font-size:11.5px;font-weight:600}
+.legend button[aria-pressed="true"]{background:#FFF8E2;color:var(--paper-ink);border-color:#FFF8E2;box-shadow:0 0 0 1px rgba(var(--lamp-rgb),.9),3px 10px 18px -6px rgba(var(--lamp-rgb),.45)}
+
+/* layer lift states */
+.stage[data-lift="1"] :is(.l1,.l2,.l3,.l4),
+.stage[data-lift="2"] :is(.l2,.l3,.l4),
+.stage[data-lift="3"] :is(.l3,.l4),
+.stage[data-lift="4"] .l4{--lift:5}
+.stage[data-lift="1"] .l1,.stage[data-lift="2"] .l2,.stage[data-lift="3"] .l3,.stage[data-lift="4"] .l4{--glow:1}
+.stage[data-lift="1"] .shd:is(.r0):is(.c1,.c2,.c3,.c4),
+.stage[data-lift="2"] .shd:is(.r0,.r1):is(.c2,.c3,.c4),
+.stage[data-lift="3"] .shd:is(.r0,.r1,.r2):is(.c3,.c4),
+.stage[data-lift="4"] .shd:is(.r0,.r1,.r2,.r3).c4{--sp:1}
+.stage[data-lift="1"] .shd.c1,.stage[data-lift="2"] .shd.c2,.stage[data-lift="3"] .shd.c3,.stage[data-lift="4"] .shd.c4{background-color:rgba(var(--lamp-rgb),.34);--a:1}
+
+/* ---------- sections ---------- */
+.sec{padding:104px 0}
+.tel{font-variant-numeric:tabular-nums;white-space:nowrap}
+.h2{font-weight:600;font-size:clamp(2rem,3.1vw,2.85rem);line-height:1.08;letter-spacing:-.02em;text-wrap:balance}
+.head-row{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:48px}
+.head-row .lnk{color:var(--bone);text-decoration-color:rgba(237,240,234,.35);white-space:nowrap}
+.sub{color:var(--mist);max-width:60ch;margin-top:16px}
+
+.partner{padding-top:96px}
+.partner .grid2{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:64px;align-items:start}
+.partner .h2{font-size:clamp(2.1rem,3.6vw,3.3rem)}
+.partner .grid2 p{color:var(--mist);font-size:19px;line-height:1.6;max-width:56ch;padding-top:10px}
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:88px}
+.facts li{position:relative;padding:34px 36px 0 0}
+.facts li+li{padding-left:36px;border-left:1px solid var(--rule)}
+.facts li::before{content:"";position:absolute;top:0;left:0;right:0;height:7px;background:linear-gradient(180deg,#3E8466,#2F6E55);box-shadow:inset 0 1px 0 rgba(195,240,218,.7),3px 6px 10px -4px rgba(0,0,0,.5)}
+.facts li+li::before{left:-1px}
+.facts h3{font-weight:600;font-size:21px;line-height:1.25;letter-spacing:-.01em}
+.facts p{color:var(--mist);margin-top:10px;max-width:34ch}
+
+/* services: cut sheets laid on the table, seen from above */
+.stack{display:grid;gap:8px}
+.slab{position:relative;display:grid;grid-template-columns:minmax(0,21rem) minmax(0,1fr) auto;gap:32px;align-items:center;padding:22px 30px 22px 28px;background-color:var(--gb-t);background-image:var(--noise),linear-gradient(135deg,rgba(255,255,255,.18),rgba(255,255,255,0) 45%);color:var(--gb-ink);text-decoration:none;border-radius:1px;box-shadow:inset 0 0 0 1px rgba(60,56,46,.3),inset 0 1px 0 rgba(255,255,255,.5),3px 5px 8px rgba(2,10,6,.42),1px 1px 1px rgba(2,10,6,.45);transition:transform .7s var(--ease),box-shadow .7s var(--ease),background-color .6s var(--ease)}
+.slab:hover,.slab:focus-visible{transform:translate(-3px,-5px);background-color:#E6DEC6;box-shadow:inset 0 0 0 1px rgba(var(--lamp-rgb),.95),inset 0 -36px 50px -26px rgba(var(--lamp-rgb),.85),14px 22px 30px rgba(2,10,6,.5),4px 6px 8px rgba(2,10,6,.3)}
+.slab .nm{font-weight:600;font-size:21px;line-height:1.2;letter-spacing:-.01em}
+.slab .ds{color:#24332B;font-size:16.5px}
+.slab .ar{color:#2A3A31;transition:transform .6s var(--ease)}
+.slab:hover .ar,.slab:focus-visible .ar{transform:translateX(4px)}
+.slab:focus-visible{outline-offset:6px}
+
+/* references: model plates */
+.refs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:56px 40px}
+.ref{position:relative}
+.mini{container-type:inline-size}
+.mini .stage{--u:calc(100cqw / 50);--T:4;height:calc(var(--u)*36)}
+.mini .world{top:calc(var(--u)*12);width:calc(var(--u)*40);height:calc(var(--u)*24);margin-left:calc(var(--u)*-20)}
+.mini .pl>.f{display:flex;align-items:center;justify-content:flex-end;padding:0 calc(var(--u)*1.4)}
+.mini .pl>.f .cap{font-size:11px;font-weight:500;letter-spacing:.02em;color:#BCD0C4;white-space:nowrap}
+.mini .tag{padding:6px 10px;font-size:12.5px;font-weight:600}
+.ref:hover .ly.top{--lift:2.6;--glow:1}
+.ref:hover .shd.c1{--sp:1;background-color:rgba(var(--lamp-rgb),.3)}
+.ref:hover .tag{background:#FFF8E2;box-shadow:0 1px 0 #E9DDB4,0 0 0 1px rgba(var(--lamp-rgb),.9),0 14px 26px -6px rgba(var(--lamp-rgb),.55)}
+.ref :is(h2,h3){font-weight:600;font-size:21px;line-height:1.25;letter-spacing:-.01em;margin-top:6px;text-wrap:balance}
+.ref .meta{color:var(--mist);font-size:15px;margin-top:8px}
+.ref .meta .mono{font-size:14px}
+.ref .desc{color:var(--mist);margin-top:12px;font-size:16px;max-width:42ch}
+
+/* HOAI: nine acrylic sheets, one cut */
+.hoai .head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:end;margin-bottom:56px}
+.hoai .sub{margin-top:0}
+.lph{display:grid;grid-template-columns:repeat(9,minmax(0,1fr));gap:6px}
+.lph li{position:relative;padding:15px 10px 20px;display:flex;flex-direction:column;gap:12px;background:linear-gradient(118deg,rgba(255,255,255,0) 28%,rgba(220,245,232,.12) 46%,rgba(255,255,255,0) 62%),var(--acr-t);border-radius:1px;box-shadow:inset 0 0 0 1px rgba(150,215,182,.6),3px 5px 8px rgba(2,10,6,.45),1px 1px 1px rgba(2,10,6,.5);transition:transform .7s var(--ease),box-shadow .7s var(--ease)}
+.lph li:hover{transform:translate(-3px,-5px);box-shadow:inset 0 0 0 1px rgba(var(--lamp-rgb),.95),inset 0 2px 0 rgba(var(--lamp-rgb),1),14px 22px 30px rgba(2,10,6,.55),4px 6px 8px rgba(2,10,6,.3)}
+.lph .n{font-family:var(--mono);font-size:13px;font-weight:600;letter-spacing:.02em;color:#CFE0D6}
+.lph .nm{font-weight:500;font-size:13.5px;line-height:1.3;hyphens:manual;-webkit-hyphens:manual;color:var(--bone)}
+
+/* contact */
+.contact .box{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:56px;align-items:end;padding-top:56px;border-top:1px solid var(--rule)}
+.contact .h2{font-size:clamp(2.1rem,3.6vw,3.3rem);max-width:17ch}
+.contact p{color:var(--mist);font-size:18px;margin-top:22px;max-width:56ch}
+.direct{display:flex;flex-direction:column;gap:22px;align-items:flex-start}
+.direct dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:6px 18px;font-size:16px}
+.direct dt{color:var(--mist)}
+.direct dd{margin:0}
+.direct dd a{text-decoration-color:rgba(237,240,234,.35)}
+.btn{display:inline-flex;align-items:stretch;text-decoration:none;color:var(--paper-ink);background:var(--paper);border-radius:2px;box-shadow:0 1px 0 #CFCDC4,0 14px 22px -10px rgba(0,0,0,.7);transition:background-color .5s var(--ease),box-shadow .5s var(--ease)}
+.btn span{padding:14px 18px 14px 20px;font-weight:600;font-size:17px}
+.btn i{display:flex;align-items:center;padding:0 14px;background:var(--acr-f);color:var(--bone);border-radius:0 2px 2px 0;transition:background-color .5s var(--ease)}
+.btn:hover,.btn:focus-visible{background:#FFF8E2;box-shadow:0 1px 0 #E9DDB4,0 0 0 1px rgba(var(--lamp-rgb),.9),0 18px 34px -8px rgba(var(--lamp-rgb),.55)}
+.btn:hover i,.btn:focus-visible i{background:#2C6A51}
+
+/* partners */
+.partners{padding-top:40px}
+.plist{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--rule);margin-top:36px}
+.plist li{padding:22px 24px 22px 0;border-bottom:1px solid var(--rule);font-size:19px;font-weight:500;color:var(--bone)}
+.plist li:not(:nth-child(3n+1)){padding-left:24px;border-left:1px solid var(--rule)}
+
+/* footer */
+.foot{margin-top:40px;background:var(--base);border-top:1px solid var(--rule);padding:64px 0 36px;font-size:15px;color:var(--mist)}
+.foot .cols{display:grid;grid-template-columns:minmax(0,1.3fr) repeat(3,minmax(0,1fr));gap:40px}
+.lockup{background:var(--paper);display:inline-block;padding:14px 18px 12px;border-radius:2px;box-shadow:0 1px 0 #D5D3CA,0 10px 18px -8px rgba(0,0,0,.55)}
+.lockup img{width:240px;height:auto}
+.foot address{font-style:normal;margin-top:22px;line-height:1.65}
+.foot h2{font-size:14px;font-weight:600;color:var(--bone);margin-bottom:10px}
+.foot p{line-height:1.7}
+.foot a{text-decoration-color:rgba(175,194,184,.4)}
+.foot a:hover{color:var(--bone)}
+.foot .base{display:flex;justify-content:space-between;gap:24px;margin-top:56px;padding-top:22px;border-top:1px solid var(--rule)}
+.foot .base ul{display:flex;gap:24px}
+
+/* ---------- responsive ---------- */
+@media (max-width:1100px){
+  .slab{grid-template-columns:minmax(0,16rem) minmax(0,1fr) auto}
+  .lph{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .lph .nm{font-size:16px}
+  .refs{gap:48px 28px}
+}
+@media (max-width:980px){
+  .nav{display:none;position:absolute;left:0;right:0;top:96px;flex-direction:column;align-items:stretch;gap:0;background:var(--ground-2);border-bottom:1px solid var(--rule);padding:8px 20px 22px;box-shadow:0 24px 40px -20px rgba(0,0,0,.7)}
+  .nav.open{display:flex}
+  .nav ul{flex-direction:column;gap:0}
+  .nav ul a{display:block;padding:14px 0;border-bottom:1px solid var(--rule);font-size:17px}
+  .nav ul a[aria-current="page"]::after{left:-20px;right:auto;top:14px;bottom:14px;width:3px;height:auto}
+  .lang{align-self:flex-start;margin-top:18px}
+  .menu-btn{display:inline-flex}
+  .refs{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .foot .cols{grid-template-columns:1fr 1fr}
+}
+@media (max-width:760px){
+  .wrap{padding:0 20px}
+  .bar{height:84px;gap:12px}
+  .nav{top:84px}
+  .wm{font-size:14px}
+  .plate-logo{gap:9px;padding:7px 12px 7px 9px}
+  .plate-logo img{width:52px}
+  .menu-btn{padding:9px 12px}
+  .stage{--u:calc((100vw - 40px)/108);--T:46;--rz:-7deg;--rzi:7deg}
+  .hero .stage{height:calc(var(--u)*192)}
+  .hero .world{top:calc(var(--u)*13)}
+  .h1{font-size:30px;max-width:none}
+  .plinth>.f{flex-direction:column;align-items:flex-start;justify-content:center;gap:10px;padding:0 calc(var(--u)*5)}
+  .plinth .cap{position:static;align-self:flex-start;margin:0;font-size:11px}
+  .hero .tag .tx{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .hero .tag{padding:4px;gap:0}
+  .legend{display:flex}
+  .bb-lead{--x:-29;--y:230}
+  .bb-cta{--x:42;--y:114;--z:calc(var(--T)*-1);--p:4}
+  .lead-card{width:calc(100vw - 48px);padding:18px 18px 16px}
+  .lead-card p{font-size:16px}
+  .cta-tag span{font-size:16px;padding:11px 13px 11px 15px}
+  .sec{padding:84px 0}
+  .partner .grid2{grid-template-columns:1fr;gap:20px}
+  .partner .grid2 p{font-size:17px}
+  .facts{grid-template-columns:1fr;margin-top:48px;gap:34px}
+  .facts li,.facts li+li{padding:26px 0 0;border-left:0}
+  .facts li+li::before{left:0}
+  .head-row{flex-direction:column;align-items:flex-start;margin-bottom:36px}
+  .slab{grid-template-columns:minmax(0,1fr) auto;gap:6px 16px;padding:18px 18px 18px 18px}
+  .slab .nm{font-size:19px;grid-column:1}
+  .slab .ds{grid-column:1;font-size:15.5px}
+  .slab .ar{grid-column:2;grid-row:1 / span 2}
+  .refs{grid-template-columns:1fr;gap:56px}
+  .hoai .head{grid-template-columns:1fr;gap:16px;margin-bottom:44px}
+  .lph{gap:5px}
+  .lph li{padding:12px 7px 16px;gap:8px}
+  .lph .nm{font-size:13px;letter-spacing:-.005em}
+  .contact .box{grid-template-columns:1fr;gap:36px}
+  .plist{grid-template-columns:1fr 1fr}
+  .plist li,.plist li:not(:nth-child(3n+1)){padding:16px 12px 16px 0;border-left:0;font-size:16.5px}
+  .plist li:nth-child(2n){padding-left:14px;border-left:1px solid var(--rule)}
+  .foot .cols{grid-template-columns:1fr;gap:30px}
+  .foot .base{flex-direction:column}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{transition:none!important;animation:none!important}
+}
+
+/* referenzen */
+.rhero .stage{--T:23;height:calc(var(--u)*54)}
+.rhero .world{top:calc(var(--u)*10);height:calc(var(--u)*24)}
+.rhero .plinth>.f{align-items:center}
+.rh1{font-size:calc(var(--u)*5.6)}
+.rsub{color:#C9DACF;font-size:calc(var(--u)*1.8);line-height:1.4;margin-top:calc(var(--u)*1.5);white-space:normal}
+.rhero .count{align-self:flex-end;margin-bottom:calc(var(--u)*2.8);color:#C9DACF;font-size:17px;white-space:nowrap}
+.rhero .count .mono{color:var(--bone)}
+.filters{position:absolute;inset:0;transform-style:preserve-3d}
+.fl{--y:12;--z:0;--p:6}
+.f1{--x:7}.f2{--x:24}.f3{--x:50}.f4{--x:71}.f5{--x:86}
+.fbtn{position:absolute;left:0;bottom:0;transform:translateX(-50%);display:flex;align-items:center;gap:9px;white-space:nowrap;font:600 15px/1.15 "Onest",sans-serif;color:var(--paper-ink);background:var(--paper);border:0;border-radius:2px;padding:9px 11px 9px 13px;cursor:pointer;box-shadow:0 1px 0 #CFCDC4,0 10px 16px -8px rgba(0,0,0,.6);transition:background-color .5s var(--ease),box-shadow .5s var(--ease)}
+.fbtn .mono{font-size:12px;font-weight:600;line-height:1;padding:4px 5px;border-radius:1px;background:rgba(15,42,32,.1);color:#2C4537}
+.fbtn:hover{background:#FFF8E2}
+.fbtn[aria-pressed="true"]{background:#FFF8E2;box-shadow:0 1px 0 #E9DDB4,0 0 0 2px rgba(var(--lamp-rgb),1),3px 16px 28px -6px rgba(var(--lamp-rgb),.55)}
+.fbtn[aria-pressed="true"] .mono{background:var(--paper-ink);color:var(--paper)}
+.rlist{padding-top:56px}
+.rlist .refs{gap:72px 40px}
+.empty{display:grid;grid-template-columns:minmax(0,380px) minmax(0,1fr);gap:48px;align-items:center}
+.empty[hidden]{display:none}
+.empty .h3{font-weight:600;font-size:24px;line-height:1.25;letter-spacing:-.01em}
+.empty p{color:var(--mist);margin:12px 0 24px}
+.empty .btn{border:0;cursor:pointer;font:inherit;padding:0}
+.note{margin-top:72px;padding-top:20px;border-top:1px solid var(--rule);color:var(--mist);font-size:14.5px;max-width:90ch}
+.rcontact{padding-top:40px}
+.rcontact .box{align-items:center}
+@media (max-width:760px){
+  .rhero .stage{--T:70;height:calc(var(--u)*143)}
+  .rhero .world{top:calc(var(--u)*59)}
+  .rh1{font-size:30px}
+  .rsub{font-size:16px;margin-top:10px}
+  .rhero .count{align-self:flex-start;margin:0;font-size:15px}
+  .fbtn{font-size:14px;padding:8px 9px 8px 11px;transform:translateX(-12px)}
+  .f1{--x:2;--p:64}.f2{--x:9.5;--p:49}.f3{--x:17;--p:34}.f4{--x:24.5;--p:19}.f5{--x:32;--p:4}
+  .rlist{padding-top:44px}
+  .empty{grid-template-columns:1fr;gap:20px}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Zum Inhalt springen</a>
+<header class="top">
+  <div class="wrap bar">
+    <a class="brand" href="index.html" aria-label="C&amp;C Ingenieure GmbH, zur Startseite">
+      <span class="plate-logo"><img src="../assets/logo-mark-small.svg" alt="" width="56" height="44"><span class="wm">C&amp;C Ingenieure GmbH</span></span>
+    </a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">
+      <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M2 5h16M2 10h16M2 15h16" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>Menü
+    </button>
+    <nav class="nav" id="nav" aria-label="Hauptnavigation">
+      <ul>
+        <li><a href="index.html">Startseite</a></li>
+        <li><a href="index.html#leistungen">Leistungen</a></li>
+        <li><a href="referenzen.html" aria-current="page">Referenzen</a></li>
+        <li><a href="karriere.html">Karriere</a></li>
+        <li><a href="ueber-uns.html">Über uns</a></li>
+        <li><a href="index.html#kontakt">Kontakt</a></li>
+      </ul>
+      <div class="lang" aria-label="Sprache">
+        <a href="referenzen.html" aria-current="true" lang="de">DE</a>
+        <a href="#en" lang="en" hreflang="en">EN</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero rhero" aria-labelledby="h1">
+    <div class="stage" id="plate">
+      <div class="world">
+        <div class="mat" aria-hidden="true"></div>
+        <span class="shd" aria-hidden="true" style="--x:1;--y:2;--z:0;--w:101;--d:26;--a:.55;--b:22px;transform:translateZ(calc(var(--T)*var(--u)*-1 + 1px)) translate(calc(var(--u)*3),calc(var(--u)*5))"></span>
+        <div class="bx pl plinth" style="--x:0;--y:0;--w:100;--d:24">
+          <div class="t" aria-hidden="true"></div>
+          <div class="f">
+            <div class="rtx">
+              <h1 class="h1 rh1" id="h1">Projekte, die wir <span>begleitet haben</span></h1>
+              <p class="rsub">Eine Auswahl aus Ingenieurbau, Bahn, Tiefbau und Hochbau.</p>
+            </div>
+            <p class="count" aria-live="polite"><span class="mono" id="count-n">6</span> <span id="count-w">Projekte</span></p>
+          </div>
+          <div class="s" aria-hidden="true"></div>
+        </div>
+        <div class="filters" role="group" aria-label="Nach Bereich filtern">
+          <div class="bb fl f1"><span class="pin" aria-hidden="true"></span><button class="fbtn" type="button" data-f="all" aria-pressed="true">Alle <span class="mono">6</span></button></div>
+          <div class="bb fl f2"><span class="pin" aria-hidden="true"></span><button class="fbtn" type="button" data-f="ki" aria-pressed="false">Konstruktiver Ingenieurbau <span class="mono">2</span></button></div>
+          <div class="bb fl f3"><span class="pin" aria-hidden="true"></span><button class="fbtn" type="button" data-f="vb" aria-pressed="false">Verkehrsanlagen / Bahnbau <span class="mono">2</span></button></div>
+          <div class="bb fl f4"><span class="pin" aria-hidden="true"></span><button class="fbtn" type="button" data-f="tb" aria-pressed="false">Tiefbau <span class="mono">1</span></button></div>
+          <div class="bb fl f5"><span class="pin" aria-hidden="true"></span><button class="fbtn" type="button" data-f="hb" aria-pressed="false">Hochbau <span class="mono">1</span></button></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec rlist" aria-label="Projektliste">
+    <div class="wrap">
+      <div class="refs" id="refs">
+        <article class="ref" data-f="ki">
+          <div class="mini" aria-hidden="true"><div class="stage"><div class="world">
+            <span class="shd" style="--x:1;--y:1.5;--z:-4;--w:41;--d:25;--b:12px;--a:.6;transform:translateZ(calc(var(--u)*-4 + 1px)) translate(calc(var(--u)*1.5),calc(var(--u)*2.5))"></span>
+            <div class="bx pl" style="--x:0;--y:0;--z:-4;--w:40;--d:24;--h:4"><span class="t"></span><span class="f"><span class="cap">Schematische Darstellung</span></span><span class="s"></span></div>
+            <div class="ly">
+              <span class="shd" style="--x:1;--y:10;--z:0;--w:38;--d:2.5;--b:3px;--a:.45"></span>
+              <div class="geo">
+                <span class="bx gb" style="--x:1;--y:1;--z:0;--w:38;--d:9;--h:5"><span class="t"></span><span class="f"></span><span class="s"></span></span>
+                <span class="bx gb" style="--x:1;--y:1;--z:5;--w:38;--d:5;--h:2.5"><span class="t"></span><span class="f"></span><span class="s"></span></span>
+                <span class="bx rd rx" style="--x:1;--y:15.5;--z:0;--w:38;--d:7.5;--h:.5"><span class="t"></span><span class="f"></span><span class="s"></span></span>
+              </div>
+            </div>
+            <div class="ly top">
+              <span class="shd c1" style="--x:1;--y:12.6;--z:0;--w:38;--d:3.2;--b:4px;--a:.55"></span>
+              <div class="geo">
+                <span class="bx ac" style="--x:1;--y:9.8;--z:0;--w:38;--d:1.6;--h:7"><span class="t"></span><span class="f"></span><span class="s"></span></span>
+                <span class="bx ac" style="--x:1;--y:11.4;--z:0;--w:38;--d:1.6;--h:.8"><span class="t"></span><span class="f"></span><span class="s"></span></span>
+              </div>
+            </div>
+            <div class="bb" style="--x:9;--y:5;--z:7.5;--p:6"><span class="pin"></span><span class="tag">Konstruktiver Ingenieurbau</span></div>
+          </div></div></div>
+          <h2 class="rt">Montpellier Carré: Stützwand Czernyring</h2>
+          <p class="meta">Heidelberg · <span class="mono">2026</span> · Tragwerksplanung</p>
+          <p class="desc">Statik sowie Schal- und Bewehrungspläne für die Stützwand am Czernyring (Ausführungsplanung). Abgeschlossen.</p>
+        </article>
+        <article class="ref" data-f="ki">
+          <div class="mini" aria-hidden="true"><div class="stage"><div class="world">
+            <span class="shd" style="--x:1;--y:1.5;--z:-4;--w:41;--d:25;--b:12px;--a:.6;transform:translateZ(calc(var(--u)*-4 + 1px)) translate(calc(var(--u)*1.5),calc(var(--u)*2.5))"></span>
+            <div class="bx pl" style="--x:0;--y:0;--z:-4;--w:40;--d:24;--h:4"><span class="t"></span><span class="f"><span class="cap">Schematische Darstellung</span></span><span class="s"></span></div>
+            <div class="ly">
+              <div class="geo">
+                <span class="bx gb" style="--x:1;--y:1;--z:0;--w:38;--d:8;--h:4.5"><span class="t"></span><span class="f"></span><span class="s"></span></span>
+                <span class="bx gb" style="--x:1;--y:1;--z:4.5;--w:38;--d:4;--h:2"><span class="t"></span><span class="f"></span><span class="s"></span></span>
+                <span class="bx dk" style="--x:1;--y:11;--z:0;--w:38;--d:2;--h:.6"><span class="t"></span><span class="f"></span><span class="s"></span></span>
+                <span class="bx rd rx" style="--x:1;--y:13.5;--z:0;--w:38;--d:9;--h:.5"><span class="t"></span><span class="f"></span><span class="s"></span></span>
+              </div>
+            </div>
+            <div class="ly top">
+              <span class="shd c1" style="--x:1;--y:10.6;--z:.6;--w:38;--d:2.4;--b:3px;--a:.5"></span>
+              <div class="geo">
+                <span class="bx gb stone" style="--x:1;--y:9;--z:0;--w:38;--d:1.8;--h:5.2"><span class="t"></span><span class="f"></span><span class="s"></span></span>
+              </div>
+            </div>
+            <div class="bb" style="--x:8;--y:3;--z:6.5;--p:5"><span class="pin"></span><span class="tag">Konstruktiver Ingenieurbau</span></div>
+          </div></div></div>
+          <h2 class="rt">Stützwand Solmserstraße</h2>
+          <p class="meta">Wetzlar · <span class="mono">2026</span> · Objekt- und Tragwerksplanung</p>
+          <p class="desc">Instandsetzung oder Neubau einer rund 200&nbsp;m langen Natursteinstützmauer im Zuge der Straßenerneuerung, mit Varianten bis zum Erhalt des vorhandenen Mauerwerks.</p>
+        </article>
+        <article class="ref" data-f="vb">
+          <div class="mini" aria-hidden="true"><div class="stage"><div class="world">
+            <span class="shd" style="--x:1;--y:1.5;--z:-4;--w:41;--d:25;--b:12px;--a:.6;transform:translateZ(calc(var(--u)*-4 + 1px)) translate(calc(var(--u)*1.5),calc(var(--u)*2.5))"></span>
+            <div class="bx pl" style="--x:0;--y:0;--z:-4;--w:40;--d:24;--h:4"><span class="t"></span><span class="f"><span class="cap">Schematische Darstellung</span></span><span class="s"></span></div>
+            <div class="ly">
+              <div class="geo">
+                <span class="bx bl" style="--x:1;--y:9;--z:0;--w:38;--d:6;--h:.7"><span class="t"></span><span class="f"></span><span class="s"></span></span>
+                <span class="bx st" style="--x:1;--y:10.5;--z:.7;--w:38;--d:.4;--h:.35"><span class="t"></span><span class="f"></span><span class="s"></span></span>
+                <span class="bx st" style="--x:1;--y:13.1;--z:.7;--w:38;--d:.4;--h:.35"><span class="t"></span><span class="f"></span><span class="s"></span></span>
+              </div>
+            </div>
+            <div class="ly top">
+              <span class="shd c1" style="--x:3;--y:8.4;--z:0;--w:36;--d:1.3;--b:2px;--a:.5"></span>
+              <span class="shd c1" style="--x:3;--y:21;--z:0;--w:36;--d:1.3;--b:2px;--a:.5"></span>
+              <div class="geo">
+                <span class="bx gb" style="--x:2;--y:3;--z:0;--w:36;--d:5.4;--h:2.2"><span class="t"></span><span class="f"></span><span class="s"></span></span>
+                <span class="bx gb" style="--x:2;--y:15.6;--z:0;--w:36;--d:5.4;--h:2.2"><span class="t"></span><span class="f"></span><span class="s"></span></span>
+                <span class="shd" style="--x:12;--y:17;--z:2.2;--w:17;--d:4;--b:3px;--a:.35"></span>
+                <span class="bx gb" style="--x:11;--y:20;--z:2.2;--w:16;--d:.4;--h:3.8"><span class="t"></span><span class="f"></span><span class="s"></span></span>
+                <span class="bx gb" style="--x:11.5;--y:16.4;--z:2.2;--w:.45;--d:.45;--h:3.8"><span class="t"></span><span class="f"></span><span class="s"></span></span>
+                <span class="bx gb" style="--x:26;--y:16.4;--z:2.2;--w:.45;--d:.45;--h:3.8"><span class="t"></span><span class="f"></span><span class="s"></span></span>
+                <span class="bx ac" style="--x:10;--y:15.9;--z:6;--w:18;--d:4.8;--h:.55"><span class="t"></span><span class="f"></span><span class="s"></span></span>
+              </div>
+            </div>
+            <div class="bb" style="--x:31;--y:5.5;--z:2.2;--p:7"><span class="pin"></span><span class="tag">Verkehrsanlagen / Bahnbau</span></div>
+          </div></div></div>
+          <h2 class="rt">Bahnhof Rimbach: Bahnsteige und Wetterschutzhaus</h2>
+          <p class="meta">Rimbach (Hessen) · <span class="mono">2026</span> · DB InfraGO AG, DB Bahnbau Gruppe</p>
+          <p class="desc">Erneuerung beider Bahnsteige und Neubau eines Wetterschutzhauses. Ausführungsplanung, Statik und Dokumentation nach Ril 813.</p>
+        </article>
+        <article class="ref" data-f="vb">
+          <div class="mini" aria-hidden="true"><div class="stage"><div class="world"><span class="shd" style="--x:1;--y:1.5;--z:-4;--w:41;--d:25;--b:12px;--a:.6;transform:translateZ(calc(var(--u)*-4 + 1px)) translate(calc(var(--u)*1.5),calc(var(--u)*2.5))"></span><div class="bx pl" style="--x:0;--y:0;--z:-4;--w:40;--d:24;--h:4"><span class="t"></span><span class="f"><span class="cap">Schematische Darstellung</span></span><span class="s"></span></div><div class="ly"><div class="geo"><span class="bx bl" style="--x:1;--y:13;--z:0;--w:38;--d:6;--h:0.7"><span class="t"></span><span class="f"></span><span class="s"></span></span><span class="bx st" style="--x:1;--y:14.4;--z:0.7;--w:38;--d:0.4;--h:0.35"><span class="t"></span><span class="f"></span><span class="s"></span></span><span class="bx st" style="--x:1;--y:17.1;--z:0.7;--w:38;--d:0.4;--h:0.35"><span class="t"></span><span class="f"></span><span class="s"></span></span></div></div><div class="ly top"><span class="shd c1" style="--x:3.5;--y:12;--z:0;--w:31;--d:1.4;--b:2px;--a:.5"></span><span class="shd c1" style="--x:31;--y:5.5;--z:0;--w:8;--d:1.6;--b:3px;--a:.45"></span><div class="geo"><span class="bx gb" style="--x:3;--y:6;--z:0;--w:31;--d:6;--h:2.2"><span class="t"></span><span class="f"></span><span class="s"></span></span><span class="shd" style="--x:9;--y:7.5;--z:2.2;--w:10;--d:4;--b:3px;--a:.35"></span><span class="bx gb" style="--x:9;--y:10;--z:2.2;--w:0.45;--d:0.45;--h:3.4"><span class="t"></span><span class="f"></span><span class="s"></span></span><span class="bx gb" style="--x:16.6;--y:10;--z:2.2;--w:0.45;--d:0.45;--h:3.4"><span class="t"></span><span class="f"></span><span class="s"></span></span><span class="bx ac" style="--x:8;--y:7;--z:5.6;--w:11;--d:4;--h:0.5"><span class="t"></span><span class="f"></span><span class="s"></span></span><span class="bx ac win" style="--x:30;--y:1;--z:0;--w:8;--d:4.5;--h:4.5"><span class="t"></span><span class="f"></span><span class="s"></span></span></div></div><div class="bb" style="--x:22;--y:9;--z:2.2;--p:6"><span class="pin"></span><span class="tag">Verkehrsanlagen / Bahnbau</span></div></div></div></div>
+          <h2 class="rt">Verkehrsstation Marbach</h2>
+          <p class="meta"><span class="mono">2025/26</span> · Deutsche Bahn</p>
+          <p class="desc">Planung der Verkehrsstation, aktuell in der Vorbereitung der Vergabe (Leistungsphase 6).</p>
+        </article>
+        <article class="ref" data-f="tb">
+          <div class="mini" aria-hidden="true"><div class="stage"><div class="world"><span class="shd" style="--x:1;--y:1.5;--z:-4;--w:41;--d:25;--b:12px;--a:.6;transform:translateZ(calc(var(--u)*-4 + 1px)) translate(calc(var(--u)*1.5),calc(var(--u)*2.5))"></span><div class="bx pl" style="--x:0;--y:0;--z:-4;--w:40;--d:24;--h:4"><span class="t"></span><span class="f"><span class="cap">Schematische Darstellung</span></span><span class="s"></span></div><div class="ly"><div class="geo"><span class="bx gb" style="--x:1;--y:1;--z:0;--w:38;--d:8;--h:3"><span class="t"></span><span class="f"></span><span class="s"></span></span><span class="bx dk" style="--x:1;--y:9;--z:0;--w:38;--d:5;--h:0.4"><span class="t"></span><span class="f"></span><span class="s"></span></span><span class="bx gb" style="--x:1;--y:14;--z:0;--w:38;--d:9;--h:3"><span class="t"></span><span class="f"></span><span class="s"></span></span><span class="bx rd rx" style="--x:1;--y:16;--z:3;--w:38;--d:6;--h:0.4"><span class="t"></span><span class="f"></span><span class="s"></span></span></div></div><div class="ly top"><span class="shd c1" style="--x:1;--y:12.4;--z:0.4;--w:38;--d:1.6;--b:2px;--a:.5"></span><div class="geo"><span class="bx ac" style="--x:1;--y:10.5;--z:0.4;--w:38;--d:2;--h:1.6"><span class="t"></span><span class="f"></span><span class="s"></span></span><span class="bx ac" style="--x:18;--y:9.6;--z:0.4;--w:3.5;--d:3.8;--h:3.2"><span class="t"></span><span class="f"></span><span class="s"></span></span></div></div><div class="bb" style="--x:30;--y:11.5;--z:2;--p:7"><span class="pin"></span><span class="tag">Tiefbau</span></div></div></div></div>
+          <h2 class="rt">Autobahn GmbH: Dorotheenstraße</h2>
+          <p class="meta"><span class="mono">2026</span> · Autobahn GmbH · Tiefbau</p>
+          <p class="desc">Tiefbauplanung für die Autobahn GmbH. Abgeschlossen.</p>
+        </article>
+        <article class="ref" data-f="hb">
+          <div class="mini" aria-hidden="true"><div class="stage"><div class="world"><span class="shd" style="--x:1;--y:1.5;--z:-4;--w:41;--d:25;--b:12px;--a:.6;transform:translateZ(calc(var(--u)*-4 + 1px)) translate(calc(var(--u)*1.5),calc(var(--u)*2.5))"></span><div class="bx pl" style="--x:0;--y:0;--z:-4;--w:40;--d:24;--h:4"><span class="t"></span><span class="f"><span class="cap">Schematische Darstellung</span></span><span class="s"></span></div><div class="ly"><div class="geo"><span class="bx gb" style="--x:3;--y:3;--z:0;--w:34;--d:18;--h:0.4"><span class="t"></span><span class="f"></span><span class="s"></span></span></div></div><div class="ly top"><span class="shd c1" style="--x:8;--y:18;--z:0.4;--w:22;--d:2;--b:4px;--a:.5"></span><span class="shd c1" style="--x:29.5;--y:17;--z:0.4;--w:6;--d:1.6;--b:3px;--a:.45"></span><div class="geo"><span class="bx ac win" style="--x:7;--y:6;--z:0.4;--w:22;--d:12;--h:6"><span class="t"></span><span class="f"></span><span class="s"></span></span><span class="bx gb" style="--x:9;--y:7.5;--z:6.4;--w:16;--d:9;--h:4"><span class="t"></span><span class="f"></span><span class="s"></span></span><span class="bx ac win" style="--x:29;--y:10;--z:0.4;--w:6;--d:7;--h:3"><span class="t"></span><span class="f"></span><span class="s"></span></span></div></div><div class="bb" style="--x:32;--y:13;--z:3.4;--p:6"><span class="pin"></span><span class="tag">Hochbau</span></div></div></div></div>
+          <h2 class="rt">Lipoid</h2>
+          <p class="meta"><span class="mono">2026</span> · Hochbau</p>
+          <p class="desc">Hochbauprojekt in Bearbeitung.</p>
+        </article>
+      </div>
+      <div class="empty" id="empty" hidden>
+        <div class="empty-plate"><div class="mini" aria-hidden="true"><div class="stage"><div class="world"><span class="shd" style="--x:1;--y:1.5;--z:-4;--w:41;--d:25;--b:12px;--a:.6;transform:translateZ(calc(var(--u)*-4 + 1px)) translate(calc(var(--u)*1.5),calc(var(--u)*2.5))"></span><div class="bx pl" style="--x:0;--y:0;--z:-4;--w:40;--d:24;--h:4"><span class="t"></span><span class="f"></span><span class="s"></span></div></div></div></div></div>
+        <div>
+          <h2 class="h3">In diesem Bereich ist noch kein Projekt eingetragen.</h2>
+          <p>Wählen Sie einen anderen Bereich oder sehen Sie sich alle Projekte an.</p>
+          <button class="btn" type="button" id="show-all"><span>Alle Projekte zeigen</span><i><svg class="ar" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></i></button>
+        </div>
+      </div>
+      <p class="note">Entwurf: Projekttexte sind aus unserer Projektverwaltung übernommen und vor Veröffentlichung zu prüfen. Fotos folgen. Neue Projekte lassen sich später selbst ergänzen.</p>
+    </div>
+  </section>
+
+  <section class="sec contact rcontact" aria-labelledby="kontakt-h">
+    <div class="wrap">
+      <div class="box">
+        <h2 class="h2" id="kontakt-h">Ein ähnliches Vorhaben geplant?</h2>
+        <div class="direct">
+          <a class="btn" href="index.html#kontakt"><span>Kontakt aufnehmen</span><i><svg class="ar" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <span class="lockup"><img src="../assets/logo-lockup.svg" alt="C&amp;C Ingenieure GmbH" width="240" height="190"></span>
+        <address>C&amp;C Ingenieure GmbH<br>Werner-von-Siemens-Straße 2-6<br>Gebäude 5110b<br>76646 Bruchsal</address>
+      </div>
+      <div>
+        <h2>Kontakt</h2>
+        <p>Tel <a class="tel" href="tel:+491736992298">+49 173 6992298</a><br><a href="mailto:info@ib-cc.de">info@ib-cc.de</a></p>
+      </div>
+      <div>
+        <h2>Geschäftsführer</h2>
+        <p>M.Eng. Hüsnü Cetinkaya</p>
+      </div>
+      <div>
+        <h2>Handelsregister</h2>
+        <p>HRB <span class="mono">743910</span> Mannheim<br>USt-IdNr. <span class="mono">DE353174530</span></p>
+      </div>
+    </div>
+    <div class="base">
+      <p class="tel">© 2026 C&amp;C Ingenieure GmbH</p>
+      <ul><li><a href="impressum.html">Impressum</a></li><li><a href="datenschutz.html">Datenschutz</a></li></ul>
+    </div>
+  </div>
+</footer>
+
+<script>
+(() => {
+  const btn = document.querySelector('.menu-btn'), nav = document.getElementById('nav');
+  btn.addEventListener('click', () => {
+    const open = btn.getAttribute('aria-expanded') !== 'true';
+    btn.setAttribute('aria-expanded', open); nav.classList.toggle('open', open);
+  });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && nav.classList.contains('open')) { nav.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); btn.focus(); } });
+
+  const items = [...document.querySelectorAll('#refs [data-f]')];
+  const btns = [...document.querySelectorAll('.fbtn')];
+  const n = document.getElementById('count-n'), w = document.getElementById('count-w');
+  const empty = document.getElementById('empty');
+  btns.forEach(b => { const f = b.dataset.f; b.querySelector('.mono').textContent = f === 'all' ? items.length : items.filter(i => i.dataset.f === f).length; });
+  const apply = f => {
+    let c = 0;
+    items.forEach(i => { const on = f === 'all' || i.dataset.f === f; i.hidden = !on; if (on) c++; });
+    btns.forEach(b => b.setAttribute('aria-pressed', b.dataset.f === f));
+    n.textContent = c; w.textContent = c === 1 ? 'Projekt' : 'Projekte';
+    empty.hidden = c > 0;
+  };
+  btns.forEach(b => b.addEventListener('click', () => apply(b.dataset.f)));
+  document.getElementById('show-all').addEventListener('click', () => { apply('all'); btns[0].focus(); });
+  apply('all');
+})();
+</script>
+</body>
+</html>

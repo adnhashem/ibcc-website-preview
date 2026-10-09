@@ -1,0 +1,1175 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8"><meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>C&amp;C Ingenieure GmbH · Infrastruktur planen. Verlässlich umsetzen.</title>
+<meta name="description" content="C&amp;C Ingenieure begleitet Ihr Vorhaben von der Planung bis zur Bauüberwachung: Objekt- und Tragwerksplanung, Ausschreibung und Vergabe, Projektsteuerung und BIM.">
+<meta name="theme-color" content="#0E2218">
+<link rel="preload" href="fonts/schibsted-grotesk-600.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Schibsted Grotesk";src:url(fonts/schibsted-grotesk-400.woff2) format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Schibsted Grotesk";src:url(fonts/schibsted-grotesk-500.woff2) format("woff2");font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:"Schibsted Grotesk";src:url(fonts/schibsted-grotesk-600.woff2) format("woff2");font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:"Schibsted Grotesk";src:url(fonts/schibsted-grotesk-700.woff2) format("woff2");font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:"Martian Mono";src:url(fonts/martian-mono-400.woff2) format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Martian Mono";src:url(fonts/martian-mono-500.woff2) format("woff2");font-weight:500;font-style:normal;font-display:swap}
+
+:root{
+  --g0:#0E2218;--g1:#122A1E;--g2:#163224;--g3:#1A3F2C;--deep:#2A5E44;
+  --bone:#ECE7DA;--bone-2:#C3CCBF;--bone-3:#9DB0A0;
+  --rule:rgba(236,231,218,.13);--rule-2:rgba(236,231,218,.3);
+  --sans:"Schibsted Grotesk",ui-sans-serif,system-ui,sans-serif;
+  --mono:"Martian Mono",ui-monospace,Menlo,monospace;
+  --ease:cubic-bezier(.16,1,.3,1);
+  --gut:clamp(20px,5.5vw,80px);
+  --wrap:1280px;
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{background:var(--g0);color:var(--bone);font:400 17px/1.6 var(--sans);-webkit-text-size-adjust:100%;text-size-adjust:100%;scrollbar-color:var(--deep) var(--g0);scroll-padding-top:104px}
+body{margin:0;min-width:320px}
+::selection{background:#2E6B4E;color:#FFFFFF}
+::-webkit-scrollbar{width:12px;height:12px}
+::-webkit-scrollbar-track{background:var(--g0)}
+::-webkit-scrollbar-thumb{background:var(--deep);border:3px solid var(--g0);border-radius:6px}
+:focus-visible{outline:2px solid var(--bone);outline-offset:3px;border-radius:1px}
+a{color:inherit;text-decoration-thickness:1px;text-underline-offset:.28em}
+img,svg,canvas{display:block}
+h1,h2,h3{font-weight:600;margin:0;text-wrap:balance}
+p{margin:0}
+ul,ol{list-style:none;margin:0;padding:0}
+.wrap{width:100%;max-width:calc(var(--wrap) + 2 * var(--gut));margin-inline:auto;padding-inline:var(--gut)}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums;letter-spacing:0}
+.vh{position:absolute!important;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+
+.skip{position:absolute;left:12px;top:-60px;z-index:50;background:var(--bone);color:var(--g0);padding:12px 18px;font-weight:600;text-decoration:none}
+.skip:focus{top:12px}
+
+/* header */
+.site-head{position:sticky;top:0;z-index:30;background:var(--g0);border-bottom:1px solid var(--rule)}
+.head-row{display:flex;align-items:center;gap:28px;height:80px}
+.brand{display:flex;align-items:center;gap:14px;text-decoration:none;flex:none}
+.plate{display:grid;place-items:center;width:56px;height:46px;background:#EFECE4;border-radius:2px}
+.plate img{width:46px;height:36px}
+.wordmark{font-family:Arial,Helvetica,sans-serif;font-size:17px;color:var(--bone);white-space:nowrap}
+.nav{margin-left:auto;display:flex;align-items:center;gap:34px}
+.nav ul{display:flex;gap:28px}
+.nav a{font-size:15px;color:var(--bone-2);text-decoration:none;padding:8px 0;transition:color .25s var(--ease)}
+.nav a:hover{color:var(--bone)}
+.nav a[aria-current="page"]{color:var(--bone);text-decoration:underline;text-underline-offset:10px;text-decoration-color:var(--bone)}
+.lang{display:flex;align-items:center;gap:4px;font-size:13px;font-weight:600;letter-spacing:.02em}
+.lang a{padding:5px 8px;border:1px solid transparent;border-radius:2px}
+.lang a[aria-current="true"]{border-color:var(--rule-2);color:var(--bone)}
+.menu-btn{display:none;margin-left:auto;align-items:center;gap:10px;min-height:44px;padding:0 14px;background:transparent;color:var(--bone);border:1px solid var(--rule-2);border-radius:2px;font:600 15px/1 var(--sans);cursor:pointer}
+.menu-btn svg{width:18px;height:18px}
+.menu-btn .x{display:none}
+.menu-btn[aria-expanded="true"] .x{display:block}
+.menu-btn[aria-expanded="true"] .bars{display:none}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:52px;padding:0 24px;font:600 16px/1.1 var(--sans);text-decoration:none;border-radius:2px;border:1px solid transparent;cursor:pointer;transition:background-color .3s var(--ease),border-color .3s var(--ease),color .3s var(--ease)}
+.btn svg{width:18px;height:18px;flex:none;transition:transform .35s var(--ease)}
+.btn:hover svg{transform:translateX(3px)}
+.btn-primary{background:var(--bone);color:var(--g0)}
+.btn-primary:hover{background:#FFFFFF}
+.btn-quiet{border-color:var(--rule-2);color:var(--bone);background:transparent}
+.btn-quiet:hover{border-color:var(--bone);background:var(--g1)}
+.more{display:inline-flex;align-items:center;gap:10px;font-weight:500;font-size:16px;color:var(--bone);text-decoration:none;white-space:nowrap;border-bottom:1px solid var(--rule-2);padding-bottom:4px;transition:border-color .3s var(--ease)}
+.more:hover{border-color:var(--bone)}
+.more svg{width:16px;height:16px}
+
+/* sections */
+.sec{padding-block:clamp(88px,10vw,148px)}
+.sec + .sec{border-top:1px solid var(--rule)}
+h2{font-size:clamp(2rem,1.25rem + 2.3vw,3.3rem);line-height:1.04;letter-spacing:-.03em}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px 48px;flex-wrap:wrap;margin-bottom:clamp(40px,5vw,64px)}
+
+/* project cards */
+.ref-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));gap:56px 32px}
+.ref-card{display:block;text-decoration:none;color:inherit}
+.ref-cloud{display:block;position:relative;aspect-ratio:3/2;background:var(--g1);border:1px solid var(--rule);overflow:hidden;transition:border-color .35s var(--ease)}
+.ref-cloud canvas{position:absolute;inset:0;width:100%;height:100%}
+.ref-field{position:absolute;left:14px;top:11px;font-size:13px;color:var(--bone-2);max-width:calc(100% - 190px)}
+.ref-schem{position:absolute;right:14px;top:12px;font-size:12px;color:var(--bone-3)}
+.ref-card:hover .ref-cloud,.ref-card:focus-visible .ref-cloud{border-color:var(--rule-2)}
+.ref-card:focus-visible{outline-offset:6px}
+.ref-card h3{margin-top:22px;font-size:clamp(1.2rem,1.05rem + .45vw,1.45rem);line-height:1.3;letter-spacing:-.015em;text-decoration:underline;text-decoration-color:transparent;text-underline-offset:.2em;transition:text-decoration-color .3s var(--ease)}
+.ref-card:hover h3,.ref-card:focus-visible h3{text-decoration-color:var(--bone-3)}
+.ref-meta{margin-top:8px;font-size:15px;color:var(--bone-2);font-variant-numeric:tabular-nums}
+.ref-desc{margin-top:12px;font-size:16px;line-height:1.55;color:var(--bone-2);max-width:62ch}
+
+/* partners */
+.partners h2{margin-bottom:clamp(36px,4vw,56px)}
+.partner-list{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:32px;border-top:1px solid rgb(64,128,95);padding-top:0}
+.partner-list::before{content:"";position:absolute;left:0;right:0;top:-8px;height:7px;background:repeating-linear-gradient(to right,rgba(157,176,160,.55) 0 1px,transparent 1px 100%);background-size:calc(100% / 36) 7px}
+.partner-list .pk{flex:none;width:52px;font-size:11px;font-weight:400;color:var(--bone-3)}
+.partner-list li{display:flex;align-items:baseline;gap:16px;padding:22px 0 24px;border-bottom:1px solid rgb(31,80,57);font-size:clamp(1.05rem,1rem + .3vw,1.3rem);font-weight:500;letter-spacing:-.01em;color:var(--bone)}
+
+/* contact band */
+.callout{background:var(--g3)}
+.callout .wrap{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:40px 64px;align-items:end}
+.callout p{margin-top:24px;font-size:18px;color:var(--bone-2);max-width:56ch}
+.callout .direct{display:flex;flex-direction:column;align-items:flex-start;gap:20px}
+.callout .lines{display:flex;flex-direction:column;gap:6px;font-size:16px}
+.callout .lines a{text-decoration:none;border-bottom:1px solid var(--rule-2);transition:border-color .3s var(--ease)}
+.callout .lines a:hover{border-color:var(--bone)}
+.tel{font-variant-numeric:tabular-nums;letter-spacing:.01em}
+
+/* footer */
+.site-foot{background:var(--g0);border-top:1px solid var(--rule);padding-block:72px 40px;font-size:15px;color:var(--bone-2)}
+.foot-grid{display:grid;grid-template-columns:minmax(0,1.1fr) repeat(3,minmax(0,1fr));gap:40px 48px}
+.foot-plate{display:inline-block;background:#EFECE4;padding:16px 18px;border-radius:2px}
+.foot-plate img{width:150px;height:auto}
+.site-foot address{font-style:normal;line-height:1.7}
+.site-foot address strong{color:var(--bone);font-weight:600}
+.site-foot dl{margin:0;display:grid;gap:14px;align-content:start}
+.site-foot dt{font-size:13px;color:var(--bone-3)}
+.site-foot dd{margin:2px 0 0;color:var(--bone)}
+.site-foot dd .mono{font-size:13px}
+.site-foot dd .tel{font-size:15px}
+.site-foot a{text-decoration:none;border-bottom:1px solid var(--rule-2)}
+.site-foot a:hover{border-color:var(--bone)}
+.foot-base{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:64px;padding-top:24px;border-top:1px solid var(--rule);font-size:14px}
+.foot-base ul{display:flex;gap:24px}
+
+@media (max-width:1100px){
+  .menu-btn{display:inline-flex}
+  .js .nav{display:none}
+  .nav{position:absolute;left:0;right:0;top:100%;flex-direction:column;align-items:stretch;gap:0;background:var(--g0);border-bottom:1px solid var(--rule);padding:8px var(--gut) 28px}
+  .js .nav[data-open]{display:flex}
+  .nav ul{flex-direction:column;gap:0}
+  .nav li{border-bottom:1px solid var(--rule)}
+  .nav a{display:block;padding:16px 0;font-size:18px}
+  .nav a[aria-current="page"]{text-underline-offset:6px}
+  .lang{margin-top:20px}
+  .lang a{padding:10px 14px}
+  .head-row{position:relative}
+  .wrap.head-row{position:static}
+  .site-head .wrap{position:relative}
+}
+@media (max-width:860px){
+  .callout .wrap{grid-template-columns:1fr}
+  .partner-list{grid-template-columns:1fr 1fr}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:600px){
+  .ref-schem{top:auto;bottom:10px}
+  .ref-field{max-width:calc(100% - 28px)}
+}
+@media (max-width:520px){
+  .wordmark{font-size:15px}
+  .head-row{height:68px;gap:12px}
+  .plate{width:50px;height:41px}
+  .plate img{width:41px;height:32px}
+  .foot-grid{grid-template-columns:1fr}
+  .partner-list{grid-template-columns:1fr}
+  .btn{width:100%}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important}
+}
+
+/* hero */
+.hero{position:relative;height:clamp(640px,calc(100svh - 81px),860px);overflow:hidden;border-bottom:1px solid var(--rule)}
+.hero-stage{position:absolute;inset:0}
+.hero-stage canvas{width:100%;height:100%}
+.hero-copy{position:relative;z-index:1;height:100%;display:flex;flex-direction:column;justify-content:center;padding-bottom:72px;pointer-events:none}
+.hero-copy > *{pointer-events:auto}
+h1{font-size:clamp(2.6rem,.9rem + 4.35vw,5.15rem);line-height:.97;letter-spacing:-.04em;max-width:7.6em}
+h1 span{display:block}
+.lead{margin-top:30px;font-size:clamp(1.06rem,.96rem + .38vw,1.24rem);line-height:1.55;color:var(--bone-2);max-width:30rem}
+.actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:38px}
+.hero-meta{position:absolute;left:0;right:0;bottom:0;z-index:1;border-top:1px solid var(--rule);background:rgba(14,34,24,.88)}
+.meta-row{display:flex;justify-content:space-between;align-items:center;gap:10px 28px;min-height:52px;font-size:13px;color:var(--bone-3);flex-wrap:wrap}
+.readout{display:flex;gap:28px;align-items:center;flex-wrap:wrap}
+.readout b{font-weight:500;color:var(--bone);font-size:11.5px;margin-left:8px}
+.ramp{display:flex;align-items:center}
+.ramp i{display:block;width:13px;height:7px}
+.ramp i:first-of-type{margin-left:10px}
+.ramp i:nth-of-type(1){background:rgb(24,60,44)}.ramp i:nth-of-type(2){background:rgb(31,80,57)}.ramp i:nth-of-type(3){background:rgb(43,103,74)}
+.ramp i:nth-of-type(4){background:rgb(64,128,95)}.ramp i:nth-of-type(5){background:rgb(132,166,142)}.ramp i:nth-of-type(6){background:rgb(228,224,210)}
+
+/* statement + section drawing */
+.st-grid{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:28px 80px;align-items:start}
+.st-grid h2{font-size:clamp(2.2rem,1.2rem + 3vw,4.1rem);line-height:1;letter-spacing:-.035em;max-width:10em}
+.st-grid p{font-size:clamp(1.05rem,1rem + .3vw,1.2rem);line-height:1.6;color:var(--bone-2);max-width:50ch;padding-top:.5em}
+.schnitt{margin:clamp(56px,7vw,104px) 0 0}
+.schnitt svg{width:100%;height:auto;aspect-ratio:17.4/5.65;overflow:hidden}
+.schnitt text{font-family:var(--sans);font-size:.2px;fill:var(--bone-2);paint-order:stroke;stroke:#0E2218;stroke-width:.06px;stroke-linejoin:round}
+.schnitt text.num{font-family:var(--mono);font-size:.15px;fill:var(--bone)}
+.schnitt figcaption{display:flex;justify-content:space-between;gap:8px 24px;flex-wrap:wrap;margin-top:20px;padding-top:14px;border-top:1px solid var(--rule);font-size:14px;color:var(--bone-2)}
+.schnitt .schem{color:var(--bone-3)}
+.schnitt .m-only,.schnitt .cap-part{display:none}
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:36px 48px;margin-top:clamp(56px,6vw,88px)}
+.facts li{border-top:1px solid var(--bone);padding-top:22px}
+.facts h3{font-size:clamp(1.15rem,1.05rem + .35vw,1.35rem);line-height:1.25;letter-spacing:-.012em}
+.facts p{margin-top:10px;color:var(--bone-2);max-width:34ch}
+
+/* services */
+.svc-list{border-top:1px solid rgb(64,128,95)}
+.svc-list a{position:relative;display:grid;grid-template-columns:76px minmax(0,5fr) minmax(0,6fr) 22px;gap:8px 40px;align-items:baseline;padding:27px 0 29px;border-bottom:1px solid rgb(31,80,57);text-decoration:none}
+.svc-st{font-size:11.5px;color:var(--bone-3);transition:color .3s var(--ease)}
+.svc-list a::before{content:"";position:absolute;left:0;top:-1px;bottom:-1px;width:0;border-left:1.5px solid var(--bone);transform:scaleY(0);transform-origin:top;transition:transform .55s var(--ease)}
+.svc-list a:hover::before,.svc-list a:focus-visible::before{transform:scaleY(1)}
+.svc-list a:hover .svc-st,.svc-list a:focus-visible .svc-st{color:var(--bone)}
+.svc-list a{padding-left:0}
+.svc-list .svc-st{padding-left:14px}
+.svc-list a::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:1px;background:rgb(132,166,142);transform:scaleX(0);transform-origin:left;transition:transform .7s var(--ease)}
+.svc-list a:hover::after,.svc-list a:focus-visible::after{transform:scaleX(1)}
+.svc-list a:focus-visible::after{background:var(--bone)}
+.svc-name{font-size:clamp(1.3rem,1.1rem + .7vw,1.8rem);font-weight:500;letter-spacing:-.022em;line-height:1.18}
+.svc-desc{color:var(--bone-2);font-size:17px;max-width:46ch}
+.svc-list svg{width:20px;height:20px;align-self:center;color:var(--bone-3);transition:transform .45s var(--ease),color .3s var(--ease)}
+.svc-list a:hover svg,.svc-list a:focus-visible svg{transform:translateX(4px);color:var(--bone)}
+.svc-list a:focus-visible{outline-offset:-2px}
+
+/* references */
+.ref-grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+
+/* phases rail */
+.lph{background:var(--g1)}
+.lph-head{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:20px 80px;align-items:end}
+.lph-head p{color:var(--bone-2);font-size:clamp(1.05rem,1rem + .3vw,1.2rem);max-width:40ch}
+.rail-wrap{margin-top:clamp(64px,7vw,104px);margin-right:calc(-1 * var(--gut) - max(0px,(100vw - var(--wrap) - 2 * var(--gut)) / 2))}
+.rail{position:relative;display:grid;grid-template-columns:repeat(9,minmax(0,1fr)) minmax(var(--gut),.6fr);min-height:252px}
+.rail::before{content:"";position:absolute;left:0;right:0;top:40px;height:7px;background:repeating-linear-gradient(to right,rgba(157,176,160,.55) 0 1px,transparent 1px 100%);background-size:calc((100% - 0px) / 9.6 / 4) 7px}
+.rail::after{content:"";grid-column:10}
+.rail li{position:relative}
+.rail li::before{content:"";position:absolute;left:0;right:0;top:46px;border-top:2px dashed var(--bone);opacity:.6}
+.rail li.run::before{border-top-style:solid;opacity:1}
+.rail li:last-child::before{right:-60%;border-top:1px dashed var(--bone-3);opacity:1}
+.rail button{appearance:none;background:none;border:0;padding:0;margin:0;color:inherit;font:inherit;text-align:left;cursor:pointer;display:block;width:100%;height:100%;min-height:96px}
+.rail button::before{content:"";position:absolute;left:-5px;top:42px;width:10px;height:10px;border:2px solid var(--bone);background:var(--g1);transition:background-color .3s var(--ease)}
+.rail button[aria-pressed="true"]::before{background:var(--bone)}
+.rail button::after{content:"";position:absolute;left:0;top:52px;height:var(--h,28px);border-left:1px dashed var(--bone-3)}
+.rail button[aria-pressed="true"]::after{border-left:1px solid var(--bone)}
+.rail li:nth-child(3n):not(:last-child) .nm{max-width:calc(100% - 12px)}
+.rail li:nth-child(3n+1){--h:154px}.rail li:nth-child(3n+2){--h:90px}.rail li:nth-child(3n){--h:26px}
+.rail .no{position:absolute;left:0;top:0;font-size:12px;font-weight:500;color:var(--bone)}
+.rail .nm{position:absolute;left:-1px;top:calc(60px + var(--h,28px));width:max-content;max-width:none;z-index:2;padding:2px 6px 4px 12px;background:var(--g1);font-size:15.5px;hyphens:manual;line-height:1.3;font-weight:500;color:var(--bone)}
+.rail button[aria-pressed="false"] .nm,.rail button[aria-pressed="false"] .no{color:var(--bone-3)}
+.rail button[aria-pressed="false"] .nm{font-weight:400}
+.rail button:hover .nm{text-decoration:underline;text-underline-offset:.25em}
+.rail button:focus-visible{outline:none}
+.rail button:focus-visible .nm{outline:2px solid var(--bone);outline-offset:5px}
+.rail-out{display:flex;align-items:center;justify-content:space-between;gap:16px 40px;flex-wrap:wrap;margin-top:56px;padding-top:28px;border-top:1px solid var(--rule)}
+.sel{font-size:16px;color:var(--bone-2)}
+.sel b{color:var(--bone);font-weight:500;font-size:14px;margin-left:10px}
+
+.callout .lines{margin-top:0}
+
+@media (max-width:1100px){
+  .facts{grid-template-columns:1fr 1fr}
+}
+@media (max-width:900px){
+  .hero{height:auto;display:flex;flex-direction:column}
+  .hero-copy{order:1;height:auto;padding-top:clamp(40px,9vw,72px);padding-bottom:28px}
+  .hero-stage{order:2;position:relative;height:min(96vw,440px)}
+  .hero-meta{order:3;position:static}
+  .meta-row{flex-direction:column;align-items:flex-start;padding-block:14px;gap:6px}
+  .readout{gap:8px 20px}
+  .st-grid,.lph-head{grid-template-columns:1fr}
+  .ref-grid-3{grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr))}
+  .rail-wrap{margin-right:0}
+  .rail{grid-template-columns:1fr;min-height:0}
+  .rail::before{left:16px;right:auto;top:0;bottom:0;width:7px;height:auto;background:repeating-linear-gradient(to bottom,rgba(157,176,160,.55) 0 1px,transparent 1px 100%);background-size:7px 16px}
+  .rail::after{display:none}
+  .rail li{min-height:76px}
+  .rail li::before{left:22px;right:auto;top:10px;bottom:-10px;border-top:0;border-left:2px dashed var(--bone)}
+  .rail li.run::before{border-left-style:solid;border-top:0}
+  .rail li:last-child::before{display:none}
+  .rail button{position:static;display:flex;flex-direction:column;gap:2px;padding:0 0 22px 64px;min-height:76px}
+  .rail button::before{left:18px;top:5px}
+  .rail button::after{left:34px;top:10px;width:22px;height:0;border-left:0;border-top:1px dashed var(--bone-3)}
+  .rail button[aria-pressed="true"]::after{border-left:0;border-top:1px solid var(--bone)}
+  .rail .no,.rail .nm{position:static;padding:0;max-width:none!important;width:auto;background:none}
+  .rail .nm{font-size:17px}
+}
+@media (max-width:600px){
+  .schnitt svg{aspect-ratio:7.4/3.4}
+  .schnitt text{font-size:.27px;stroke-width:.07px}
+  .schnitt text.num{font-size:.21px}
+  .schnitt .m-only,.schnitt .cap-part{display:inline}
+  .schnitt .d-only,.schnitt .cap-full{display:none}
+}
+@media (max-width:640px){
+  .facts{grid-template-columns:1fr}
+  .svc-list a{grid-template-columns:minmax(0,1fr) 22px;gap:6px 16px}
+  .svc-st{grid-column:1;grid-row:1}
+  .svc-name{grid-column:1;grid-row:2}
+  .svc-desc{grid-column:1;grid-row:3}
+  .svc-list svg{grid-column:2;grid-row:1 / span 3}
+}
+
+</style>
+</head>
+<body>
+<a class="skip" href="#inhalt">Zum Inhalt springen</a>
+<header class="site-head">
+  <div class="wrap head-row">
+    <a class="brand" href="index.html">
+      <span class="plate"><img src="../assets/logo-mark-small.svg" alt="" width="46" height="36"></span>
+      <span class="wordmark">C&amp;C Ingenieure GmbH</span>
+    </a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="hauptnav">Menü
+      <svg class="bars" viewBox="0 0 20 20" aria-hidden="true"><path d="M2 6h16M2 14h16" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+      <svg class="x" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 4l12 12M16 4L4 16" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+    </button>
+    <nav class="nav" id="hauptnav" aria-label="Hauptnavigation">
+      <ul>
+        <li><a href="index.html" aria-current="page">Startseite</a></li>
+        <li><a href="leistungen.html">Leistungen</a></li>
+        <li><a href="referenzen.html">Referenzen</a></li>
+        <li><a href="karriere.html">Karriere</a></li>
+        <li><a href="ueber-uns.html">Über uns</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+      <div class="lang" role="group" aria-label="Sprache">
+        <a href="index.html" lang="de" aria-current="true">DE</a>
+        <a href="#en" lang="en" hreflang="en">EN</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="inhalt">
+
+<section class="hero" aria-labelledby="h1">
+  <div class="hero-stage">
+    <canvas id="cloud" aria-hidden="true"></canvas>
+  </div>
+  <div class="wrap hero-copy">
+    <h1 id="h1"><span>Infrastruktur planen.</span> <span>Verlässlich umsetzen.</span></h1>
+    <p class="lead">C&amp;C Ingenieure begleitet Ihr Vorhaben von der Planung bis zur Bauüberwachung: Objekt- und Tragwerksplanung, Ausschreibung und Vergabe, Projektsteuerung und BIM.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="kontakt.html">Kontakt aufnehmen<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
+      <a class="btn btn-quiet" href="#leistungen">Unsere Leistungen</a>
+    </div>
+  </div>
+  <div class="hero-meta">
+    <div class="wrap meta-row">
+      <p class="schem">Schematische Darstellung: Stützwand, Bahnsteig und Gleis als Punktwolke</p>
+      <div class="readout" aria-hidden="true">
+        <span>Punkte <b class="mono" data-points>0</b></span>
+        <span>Schnitt A <b class="mono" data-station>0+000,0</b></span>
+        <span class="ramp">Intensität <i></i><i></i><i></i><i></i><i></i><i></i></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec statement" aria-labelledby="h-partnerschaft">
+  <div class="wrap">
+    <div class="st-grid">
+      <h2 id="h-partnerschaft">Partnerschaftlich, transparent, verlässlich.</h2>
+      <p>Wir verstehen jede Zusammenarbeit als vertrauensvolle Partnerschaft, geprägt von Respekt, Transparenz und einem klaren Fokus auf gemeinsame Ziele. Unser Anspruch sind nachhaltige Lösungen, die höchsten Qualitätsansprüchen genügen und langfristig überzeugen.</p>
+    </div>
+    <figure class="schnitt">
+      <svg viewBox="-6.8 -4.3 17.4 5.65" preserveAspectRatio="xMidYMid meet" data-vb-full="-6.8 -4.3 17.4 5.65" data-vb-part="3.25 -2.05 7.4 3.4" role="img" aria-labelledby="schnitt-cap">
+        <defs>
+          <pattern id="pc" width=".15" height=".15" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2=".15" stroke="#ECE7DA" stroke-opacity=".42" stroke-width=".012"/></pattern>
+          <pattern id="pe" width=".5" height=".3" patternUnits="userSpaceOnUse"><path d="M.02 .07h.13M.27 .22h.13" stroke="#9DB0A0" stroke-opacity=".38" stroke-width=".012"/></pattern>
+          <pattern id="pb" width=".22" height=".19" patternUnits="userSpaceOnUse"><circle cx=".055" cy=".055" r=".034" fill="none" stroke="#9DB0A0" stroke-opacity=".7" stroke-width=".011"/><circle cx=".165" cy=".145" r=".03" fill="none" stroke="#9DB0A0" stroke-opacity=".7" stroke-width=".011"/></pattern>
+        </defs>
+        <polygon points="-6.8,-3.88 -4,-3.6 -1.1,-3.32 -1.1,-3.55 -.55,-3.55 -.42,-.76 5,-.76 5,.18 8.35,.18 9,.62 10.6,.61 10.6,1.35 -6.8,1.35" fill="url(#pe)"/>
+        <g class="cut">
+          <polygon points="-.55,-3.55 -1.1,-3.55 -1.1,.4 -2.8,.4 -2.8,1.05 .6,1.05 .6,.4 -.4,.4 -.42,-.76" fill="#0E2218"/>
+          <polygon points="-.55,-3.55 -1.1,-3.55 -1.1,.4 -2.8,.4 -2.8,1.05 .6,1.05 .6,.4 -.4,.4 -.42,-.76" fill="url(#pc)" stroke="#ECE7DA" stroke-width="1.8" vector-effect="non-scaling-stroke" stroke-linejoin="round"/>
+          <polygon points="4.55,-.76 5,-.76 5,.75 4.55,.75" fill="#0E2218"/>
+          <polygon points="4.55,-.76 5,-.76 5,.75 4.55,.75" fill="url(#pc)" stroke="#ECE7DA" stroke-width="1.8" vector-effect="non-scaling-stroke"/>
+          <polygon points="5,.18 8.35,.18 9,.62 5,.62" fill="#0E2218"/>
+          <polygon points="5,.18 8.35,.18 9,.62 5,.62" fill="url(#pb)" stroke="#ECE7DA" stroke-opacity=".7" stroke-width="1" vector-effect="non-scaling-stroke"/>
+          <rect x="5.35" y=".172" width="2.6" height=".2" fill="#0E2218" stroke="#ECE7DA" stroke-width="1.2" vector-effect="non-scaling-stroke"/>
+          <rect x="5.35" y=".172" width="2.6" height=".2" fill="url(#pc)"/>
+          <path d="M5.8965 0h.072v.05h-.027v.09h.066v.032h-.15v-.032h.066v-.09h-.027z M7.3315 0h.072v.05h-.027v.09h.066v.032h-.15v-.032h.066v-.09h-.027z" fill="#ECE7DA"/>
+        </g>
+        <g fill="none" stroke="#ECE7DA" vector-effect="non-scaling-stroke">
+          <polyline points="-6.8,-3.88 -4,-3.6 -1.1,-3.32" stroke-width="1.3" vector-effect="non-scaling-stroke"/>
+          <line x1="-.42" y1="-.76" x2="4.55" y2="-.76" stroke-width="1.8" vector-effect="non-scaling-stroke"/>
+          <line x1="-.42" y1="-.69" x2="4.55" y2="-.69" stroke-width=".8" stroke-opacity=".6" vector-effect="non-scaling-stroke"/>
+          <line x1="9" y1=".62" x2="10.6" y2=".61" stroke-width="1.3" vector-effect="non-scaling-stroke"/>
+        </g>
+        <g class="dims" fill="none" stroke="#C3CCBF" stroke-width="1" vector-effect="non-scaling-stroke">
+          <line x1="3.6" y1="0" x2="9.25" y2="0" stroke-dasharray="6 4" stroke-opacity=".7" vector-effect="non-scaling-stroke"/>
+          <line x1="3.95" y1="-.76" x2="3.95" y2="0" vector-effect="non-scaling-stroke"/>
+          <path d="M3.89 -.70l.12 -.12M3.89 .06l.12 -.12" vector-effect="non-scaling-stroke"/>
+          <line x1="5.9325" y1="-.05" x2="5.9325" y2="-.5" stroke-opacity=".6" vector-effect="non-scaling-stroke"/>
+          <line x1="7.3675" y1="-.05" x2="7.3675" y2="-.5" stroke-opacity=".6" vector-effect="non-scaling-stroke"/>
+          <line x1="5.8" y1="-.42" x2="7.5" y2="-.42" vector-effect="non-scaling-stroke"/>
+          <path d="M5.8725 -.36l.12 -.12M7.3075 -.36l.12 -.12" vector-effect="non-scaling-stroke"/>
+        </g>
+        <g class="lbl">
+          <text x="3.82" y="-.38" transform="rotate(-90 3.82 -.38)" text-anchor="middle" class="num">0,76</text>
+          <text x="6.65" y="-.5" text-anchor="middle" class="num">1,435</text>
+          <text x="9.32" y="-.07" class="num">SO ±0,00</text>
+          <text x=".12" y="-2.55">Stützwand</text>
+          <text x="1.3" y="-1.02" class="d-only">Bahnsteig</text>
+          <text x="6.65" y="-.86" text-anchor="middle">Gleis</text>
+          <text x="3.42" y="-1.06" class="m-only">Bahnsteig</text>
+          <text x="-3" y=".8" text-anchor="end">Fundament</text>
+          <text x="-6.5" y="-4.03">Gelände</text>
+        </g>
+      </svg>
+      <figcaption id="schnitt-cap"><span class="cap-full">Schnitt A–A durch Stützwand, Bahnsteig und Gleis</span><span class="cap-part">Schnitt A–A, Ausschnitt Bahnsteigkante und Gleis</span><span class="schem">Schematische Darstellung</span></figcaption>
+    </figure>
+    <ul class="facts">
+      <li><h3>Alle HOAI-Leistungsphasen</h3><p>Von der Grundlagenermittlung bis zur Objektbetreuung aus einer Hand.</p></li>
+      <li><h3>Bauvorlageberechtigt nach VV BAU</h3><p>Fachtechnische Prüfung und Freigabe für bahnspezifische Projekte.</p></li>
+      <li><h3>Spezialisiert auf Infrastruktur</h3><p>Konstruktiver Ingenieurbau, Verkehrsanlagen, Bahnbau und Tiefbau.</p></li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec services" id="leistungen" aria-labelledby="h-leistungen">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="h-leistungen">Unsere Leistungen im Überblick</h2>
+      <a class="more" href="leistungen.html">Alle Leistungen ansehen<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
+    </div>
+    <ul class="svc-list">
+      <li><a href="leistungen.html#bvb"><span class="svc-st mono" aria-hidden="true">0+000</span><span class="svc-name">BVB nach VV BAU</span><span class="svc-desc">Prüfung und Freigabe von Ausführungsunterlagen für Bahnprojekte.</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a></li>
+      <li><a href="leistungen.html#objektplanung"><span class="svc-st mono" aria-hidden="true">0+005</span><span class="svc-name">Objektplanung</span><span class="svc-desc">Konstruktiver Ingenieurbau, Verkehrsanlagen, Hochbau und Tiefbau nach HOAI.</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a></li>
+      <li><a href="leistungen.html#tragwerksplanung"><span class="svc-st mono" aria-hidden="true">0+010</span><span class="svc-name">Tragwerksplanung</span><span class="svc-desc">Statik, Konstruktion und Bewehrungsplanung, auch für Bestandsbauwerke.</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a></li>
+      <li><a href="leistungen.html#ausschreibung"><span class="svc-st mono" aria-hidden="true">0+015</span><span class="svc-name">Ausschreibung &amp; Vergabe</span><span class="svc-desc">Leistungsverzeichnisse, Kostenermittlung und Vergabeempfehlung.</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a></li>
+      <li><a href="leistungen.html#bauueberwachung"><span class="svc-st mono" aria-hidden="true">0+020</span><span class="svc-name">Bauüberwachung &amp; Bauoberleitung</span><span class="svc-desc">Qualitäts-, Termin- und Kostenkontrolle bis zur Abnahme.</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a></li>
+      <li><a href="leistungen.html#projektsteuerung"><span class="svc-st mono" aria-hidden="true">0+025</span><span class="svc-name">Projektsteuerung</span><span class="svc-desc">Organisation, Termine, Kosten und Risiken im Blick.</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a></li>
+      <li><a href="leistungen.html#bim"><span class="svc-st mono" aria-hidden="true">0+030</span><span class="svc-name" lang="en">Building Information Modeling</span><span class="svc-desc">Digitale Modelle für Planung, Koordination und Betrieb.</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a></li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec refs" aria-labelledby="h-referenzen">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="h-referenzen">Ausgewählte Referenzen</h2>
+      <a class="more" href="referenzen.html">Alle Referenzen<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
+    </div>
+    <ul class="ref-grid ref-grid-3">
+      <li>
+        <a class="ref-card" href="referenzen.html#ref-czernyring">
+          <span class="ref-cloud"><canvas data-scene="stuetzwand" aria-hidden="true"></canvas><span class="ref-field">Konstruktiver Ingenieurbau</span><span class="ref-schem">Schematische Darstellung</span></span>
+          <h3>Montpellier Carré: Stützwand Czernyring</h3>
+          <p class="ref-meta">Heidelberg · 2026</p>
+        </a>
+      </li>
+      <li>
+        <a class="ref-card" href="referenzen.html#ref-rimbach">
+          <span class="ref-cloud"><canvas data-scene="bahnsteige" aria-hidden="true"></canvas><span class="ref-field">Verkehrsanlagen / Bahnbau</span><span class="ref-schem">Schematische Darstellung</span></span>
+          <h3>Bahnhof Rimbach: Bahnsteige und Wetterschutzhaus</h3>
+          <p class="ref-meta">Rimbach (Hessen) · 2026</p>
+        </a>
+      </li>
+      <li>
+        <a class="ref-card" href="referenzen.html#ref-solmserstrasse">
+          <span class="ref-cloud"><canvas data-scene="naturstein" aria-hidden="true"></canvas><span class="ref-field">Konstruktiver Ingenieurbau</span><span class="ref-schem">Schematische Darstellung</span></span>
+          <h3>Stützwand Solmserstraße</h3>
+          <p class="ref-meta">Wetzlar · 2026</p>
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec lph" aria-labelledby="h-lph">
+  <div class="wrap">
+    <div class="lph-head">
+      <h2 id="h-lph">Alle Leistungsphasen der HOAI</h2>
+      <p>Wir übernehmen die Leistungsphasen, die Ihr Projekt braucht, einzeln oder durchgängig.</p>
+    </div>
+    <div class="rail-wrap">
+      <ol class="rail" role="group" aria-label="Leistungsphasen für Ihre Anfrage auswählen">
+        <li><button type="button" aria-pressed="true" data-lph="1"><span class="no mono">LPH 1</span><span class="nm">Grundlagenermittlung</span></button></li>
+        <li><button type="button" aria-pressed="true" data-lph="2"><span class="no mono">LPH 2</span><span class="nm">Vorplanung</span></button></li>
+        <li><button type="button" aria-pressed="true" data-lph="3"><span class="no mono">LPH 3</span><span class="nm">Entwurfs&shy;planung</span></button></li>
+        <li><button type="button" aria-pressed="true" data-lph="4"><span class="no mono">LPH 4</span><span class="nm">Genehmigungsplanung</span></button></li>
+        <li><button type="button" aria-pressed="true" data-lph="5"><span class="no mono">LPH 5</span><span class="nm">Ausführungsplanung</span></button></li>
+        <li><button type="button" aria-pressed="true" data-lph="6"><span class="no mono">LPH 6</span><span class="nm">Vorbereitung der Vergabe</span></button></li>
+        <li><button type="button" aria-pressed="true" data-lph="7"><span class="no mono">LPH 7</span><span class="nm">Mitwirkung bei der Vergabe</span></button></li>
+        <li><button type="button" aria-pressed="true" data-lph="8"><span class="no mono">LPH 8</span><span class="nm">Objektüberwachung</span></button></li>
+        <li><button type="button" aria-pressed="true" data-lph="9"><span class="no mono">LPH 9</span><span class="nm">Objektbetreuung</span></button></li>
+      </ol>
+    </div>
+    <div class="rail-out">
+      <p class="sel" aria-live="polite">Ihre Auswahl <b class="mono" data-sel>LPH 1–9</b></p>
+      <a class="btn btn-quiet" data-mail href="mailto:info@ib-cc.de?subject=Anfrage%20LPH%201%E2%80%939">Anfrage zu dieser Auswahl senden<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<section class="sec callout" aria-labelledby="h-kontakt">
+  <div class="wrap">
+    <div>
+      <h2 id="h-kontakt">Wie können wir Sie bei Ihrem Vorhaben unterstützen?</h2>
+      <p>Wenn Sie Wert auf Verlässlichkeit, Fairness und eine partnerschaftliche Zusammenarbeit legen, stehen wir Ihnen gerne zur Seite. Wir freuen uns darauf, Ihr Projekt gemeinsam voranzubringen.</p>
+    </div>
+    <div class="direct">
+      <a class="btn btn-primary" href="kontakt.html">Kontakt aufnehmen<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
+      <p class="lines"><a href="mailto:info@ib-cc.de">info@ib-cc.de</a><a href="tel:+491736992298">Tel <span class="tel">+49 173 6992298</span></a></p>
+    </div>
+  </div>
+</section>
+
+<section class="sec partners" aria-labelledby="h-partner-liste">
+  <div class="wrap">
+    <h2 id="h-partner-liste">Unsere Partner</h2>
+    <ul class="partner-list">
+      <li>DB InfraGO AG</li>
+      <li>DB Bahnbau Gruppe GmbH</li>
+      <li>Autobahn GmbH</li>
+      <li>Stadt Heidelberg</li>
+      <li>Stadt Wetzlar</li>
+      <li>Stadt Frankfurt am Main</li>
+      <li>Stadt Altena</li>
+      <li>RNV</li>
+      <li>Lipoid</li>
+    </ul>
+  </div>
+</section>
+
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <span class="foot-plate"><img src="../assets/logo-lockup.svg" alt="C&amp;C Ingenieure GmbH" width="150" height="119"></span>
+      </div>
+      <address>
+        <strong>C&amp;C Ingenieure GmbH</strong><br>
+        Werner-von-Siemens-Straße 2-6<br>
+        Gebäude 5110b<br>
+        76646 Bruchsal
+      </address>
+      <dl>
+        <div><dt>Kontakt</dt><dd><a href="tel:+491736992298">Tel <span class="tel">+49 173 6992298</span></a></dd><dd><a href="mailto:info@ib-cc.de">info@ib-cc.de</a></dd><dd>www.ib-cc.de</dd></div>
+      </dl>
+      <dl>
+        <div><dt>Geschäftsführer</dt><dd>M.Eng. Hüsnü Cetinkaya</dd></div>
+        <div><dt>Handelsregister</dt><dd><span class="mono">HRB 743910</span> Mannheim</dd><dd>USt-IdNr. <span class="mono">DE353174530</span></dd></div>
+      </dl>
+    </div>
+    <div class="foot-base">
+      <p>© 2026 C&amp;C Ingenieure GmbH</p>
+      <ul>
+        <li><a href="impressum.html">Impressum</a></li>
+        <li><a href="datenschutz.html">Datenschutz</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.documentElement.classList.add('js');
+(function(){var b=document.querySelector('.menu-btn'),n=document.getElementById('hauptnav');
+b.addEventListener('click',function(){var o=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',String(!o));if(o)n.removeAttribute('data-open');else n.setAttribute('data-open','');});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&b.getAttribute('aria-expanded')==='true'){b.click();b.focus();}});})();
+var PW = (function () {
+  'use strict';
+  var RAMP = ['24,60,44', '31,80,57', '43,103,74', '64,128,95', '132,166,142', '228,224,210'];
+  var BONE = '236,231,218';
+  var MUTED = '151,170,154';
+
+  function rng(a) {
+    return function () {
+      a |= 0; a = a + 0x6D2B79F5 | 0;
+      var t = Math.imul(a ^ a >>> 15, 1 | a);
+      t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
+      return ((t ^ t >>> 14) >>> 0) / 4294967296;
+    };
+  }
+  function hash2(a, b) {
+    var h = Math.imul((a | 0) * 374761393 + (b | 0) * 668265263, 1274126177);
+    h ^= h >>> 13; h = Math.imul(h, 1274126177);
+    return ((h ^ h >>> 16) >>> 0) / 4294967296;
+  }
+
+  /* ---------- primitive samplers (t = along axis, y = across, z = up; metres) ---------- */
+  function line(add, r, a, b, n, i, iv, j) {
+    for (var k = 0; k < n; k++) {
+      var v = r();
+      add(a[0] + (b[0] - a[0]) * v + (r() - .5) * j, a[1] + (b[1] - a[1]) * v + (r() - .5) * j,
+        a[2] + (b[2] - a[2]) * v + (r() - .5) * j, i + (r() - .5) * iv);
+    }
+  }
+  function rectT(add, r, t0, t1, y0, y1, z, n, i, iv) {
+    for (var k = 0; k < n; k++) add(t0 + r() * (t1 - t0), y0 + r() * (y1 - y0), z + (r() - .5) * .02, i + (r() - .5) * iv);
+  }
+  function wallT(add, r, t0, t1, y, z0, z1, n, i, iv) {
+    for (var k = 0; k < n; k++) add(t0 + r() * (t1 - t0), y + (r() - .5) * .02, z0 + r() * (z1 - z0), i + (r() - .5) * iv);
+  }
+  function wallY(add, r, t, y0, y1, z0, z1, n, i, iv) {
+    for (var k = 0; k < n; k++) add(t + (r() - .5) * .02, y0 + r() * (y1 - y0), z0 + r() * (z1 - z0), i + (r() - .5) * iv);
+  }
+  function blob(add, r, t, y, z, rx, rz, n, i, iv) {
+    for (var k = 0; k < n; k++) {
+      var u = r() * 2 - 1, th = r() * Math.PI * 2, s = Math.sqrt(1 - u * u), f = .72 + r() * .32;
+      add(t + rx * s * Math.cos(th) * f, y + rx * s * Math.sin(th) * f, z + rz * u * f, i + (r() - .5) * iv);
+    }
+  }
+  function post(add, r, t, y, z0, z1, w, n, i) {
+    var h = w / 2;
+    for (var k = 0; k < n; k++) {
+      var side = (r() * 4) | 0, a = (r() - .5) * w, z = z0 + r() * (z1 - z0), tt = t, yy = y;
+      if (side === 0) { tt += a; yy += h; } else if (side === 1) { tt += a; yy -= h; }
+      else if (side === 2) { tt += h; yy += a; } else { tt -= h; yy += a; }
+      add(tt, yy, z, i + (r() - .5) * .14);
+    }
+  }
+  function track(add, r, L, yc) {
+    [yc - .7175, yc + .7175].forEach(function (ry) {
+      var n = Math.round(L * 150);
+      for (var k = 0; k < n; k++) {
+        var t = r() * L, head = r() < .78;
+        add(t, ry + (r() - .5) * (head ? .07 : .15), head ? -r() * .03 : -.06 - r() * .11, head ? .93 + (r() - .5) * .08 : .5 + (r() - .5) * .2);
+      }
+    });
+    for (var t = .3; t < L; t += .6) rectT(add, r, t - .13, t + .13, yc - 1.3, yc + 1.3, -.17, 38, .5, .14);
+  }
+  function mast(add, r, t, y, yc, z0, top) {
+    post(add, r, t, y, z0, top, .26, Math.round((top - z0) * 80), .62);
+    line(add, r, [t, y, top - .55], [t, yc, top - .8], 110, .72, .12, .03);
+    line(add, r, [t, y, top - 1.25], [t, yc + .4, top - .8], 70, .6, .12, .03);
+  }
+  function wire(add, r, L, yc, z, n, span, i) {
+    for (var k = 0; k < n; k++) {
+      var t = r() * L, ph = (t % span) / span;
+      add(t, yc + (r() - .5) * .03, z - .14 * Math.sin(Math.PI * ph), i + (r() - .5) * .1);
+    }
+  }
+  function shelter(add, r, t0, t1, y0, y1, zb, zt) {
+    rectT(add, r, t0, t1, y0, y1, zt, Math.round((t1 - t0) * (y1 - y0) * 70), .74, .12);
+    line(add, r, [t0, y1, zt - .08], [t1, y1, zt - .08], Math.round((t1 - t0) * 50), .86, .08, .03);
+    line(add, r, [t0, y0, zt - .08], [t1, y0, zt - .08], Math.round((t1 - t0) * 30), .7, .08, .03);
+    [t0 + .15, (t0 + t1) / 2, t1 - .15].forEach(function (t) {
+      post(add, r, t, y0 + .12, zb, zt, .14, 170, .66);
+      post(add, r, t, y1 - .12, zb, zt, .14, 170, .66);
+    });
+    wallT(add, r, t0, t1, y0 + .1, zb + .1, zt - .2, Math.round((t1 - t0) * 26), .3, .14);
+    wallY(add, r, t0 + .1, y0, y1 - .5, zb + .1, zt - .2, 60, .3, .12);
+    rectT(add, r, t0 + .6, t1 - .6, y0 + .25, y0 + .7, zb + .46, Math.round((t1 - t0) * 30), .55, .12);
+  }
+  function lamp(add, r, t, y, zb, h, dir) {
+    post(add, r, t, y, zb, zb + h, .12, Math.round(h * 34), .62);
+    line(add, r, [t, y, zb + h], [t, y + .55 * dir, zb + h - .05], 34, .8, .1, .02);
+    blob(add, r, t, y + .6 * dir, zb + h - .1, .12, .06, 30, .9, .08);
+  }
+  function bushes(add, r, L, n, y0, y1, zf) {
+    for (var k = 0; k < n; k++) {
+      var t = r() * L, y = y0 + r() * (y1 - y0), rad = .45 + r() * .8;
+      blob(add, r, t, y, zf(y) + rad * .55, rad, rad * .72, Math.round(rad * 150), .15, .16);
+    }
+  }
+  function tree(add, r, t, y, zb, h, cr) {
+    post(add, r, t, y, zb, zb + h * .55, .3, Math.round(h * 22), .3);
+    blob(add, r, t, y, zb + h * .68, cr, cr * .85, Math.round(cr * cr * 120), .2, .2);
+  }
+  function fringe(add, r, len, n, y0, y1, zf, side) {
+    for (var k = 0; k < n; k++) {
+      var d = Math.pow(r(), 1.7) * len, y = y0 + r() * (y1 - y0);
+      add(side < 0 ? -d - .3 : d, y, zf(y) + (r() - .5) * .08, .08 + r() * .2);
+    }
+  }
+
+  /* ---------- scenes ---------- */
+  function formwork(panel) {
+    return function (t, y, z, i) {
+      if ((t % panel) < .05) return i * .5;
+      if (Math.abs((z % 1.25) - .62) < .028 && (t % .6) < .05) return .12;
+      return i;
+    };
+  }
+  function platformTex(wl, tactile) {
+    return function (t, y, z, i) {
+      if (y > wl[0] && y < wl[1]) return .97;
+      if (tactile && y > tactile[0] && y < tactile[1]) return .7 + (((t * 8) | 0) % 2) * .06;
+      if ((t % .5) < .03) return i * .72;
+      return i;
+    };
+  }
+  function stoneTex(t, y, z, i) {
+    var rh = .34, row = Math.floor(z / rh), off = (row & 1) * .37,
+      col = Math.floor((t + off) / .64), fz = (z / rh) - row, ft = ((t + off) / .64) - col;
+    if (fz < .1 || ft < .07) return .1;
+    return .32 + .5 * hash2(row + 11, col + 7);
+  }
+
+  var SCENES = {
+    hero: function () {
+      var tz = function (y) { return y < -1.1 ? 3.32 + (-1.1 - y) * .09 : (y < 5 ? .76 : (y < 9 ? -.4 : -.6)); };
+      return {
+        L: 30, seed: 4211, step: 3, density: 1.35,
+        box: { y0: -6.8, y1: 13.2, z0: -1.25, z1: 4.6 },
+        ticks: { y: 13.1, z: -.58, every: 1, label: 5 },
+        profile: [
+          { p: [[-6.5, 3.85], [-4, 3.6], [-1.1, 3.32]], d: 13, i: .2, iv: .22, noise: .07 },
+          { p: [[-1.1, 3.32], [-1.1, 3.55]], d: 45, i: .5 },
+          { p: [[-1.1, 3.55], [-.55, 3.55]], d: 80, i: .82, iv: .1 },
+          { p: [[-.55, 3.55], [-.42, .76]], d: 62, i: .64, iv: .16, tex: formwork(2.5) },
+          { p: [[-.42, .76], [5, .76]], d: 40, i: .45, iv: .1, tex: platformTex([4.12, 4.26], [3.5, 3.82]) },
+          { p: [[5, .76], [5, -.18]], d: 52, i: .6 },
+          { p: [[5, -.18], [8.35, -.18], [9, -.62]], d: 34, i: .3, iv: .26, noise: .05 },
+          { p: [[9, -.62], [13, -.58]], d: 9, i: .18, iv: .2, noise: .05 },
+          { p: [[-.42, .76], [-.4, -.4]], hidden: 1 },
+          { p: [[-1.1, 3.32], [-1.1, -.4]], hidden: 1 },
+          { p: [[-2.8, -.4], [.6, -.4], [.6, -1.05], [-2.8, -1.05], [-2.8, -.4]], hidden: 1 },
+          { p: [[4.55, .76], [4.55, -.75], [5, -.75], [5, -.18]], hidden: 1 },
+          { p: [[5, -.62], [9, -.62]], hidden: 1 }
+        ],
+        long: [[-.55, 3.55], [-1.1, 3.55], [-.42, .76], [5, .76], [5, -.18], [5.9325, 0], [7.3675, 0]],
+        objects: function (add, r, L) {
+          track(add, r, L, 6.65);
+          mast(add, r, 4, 10.3, 6.65, -.6, 6.3); mast(add, r, 25, 10.3, 6.65, -.6, 6.3);
+          wire(add, r, L, 6.65, 5.3, 1400, 21, .9); wire(add, r, L, 6.65, 6.02, 900, 21, .78);
+          shelter(add, r, 13, 19.5, .25, 2.35, .76, 3.1);
+          lamp(add, r, 3, 1.4, .76, 4.4, 1); lamp(add, r, 10, 1.4, .76, 4.4, 1); lamp(add, r, 23, 1.4, .76, 4.4, 1);
+          bushes(add, r, L, 16, -6.3, -2.2, tz);
+          fringe(add, r, 26, 3000, -6.5, 13, tz, -1);
+          fringe(add, r, 10, 900, -6.5, 13, tz, 1);
+        }
+      };
+    },
+    stuetzwand: function () {
+      var tz = function (y) { return y < -.9 ? 2.85 + (-.9 - y) * .07 : (y < 2 ? .12 : 0); };
+      return {
+        L: 14, seed: 77, step: 2, density: .55,
+        box: { y0: -5, y1: 9.2, z0: -1.1, z1: 4.3 },
+        profile: [
+          { p: [[-5, 3.15], [-.9, 2.85]], d: 14, i: .2, iv: .22, noise: .06 },
+          { p: [[-.9, 2.85], [-.9, 3.1]], d: 40, i: .5 },
+          { p: [[-.9, 3.1], [-.45, 3.1]], d: 80, i: .82 },
+          { p: [[-.45, 3.1], [-.35, .12]], d: 64, i: .64, iv: .16, tex: formwork(2.4) },
+          { p: [[-.35, .12], [2, .12]], d: 40, i: .48, iv: .1, tex: platformTex([9, 9]) },
+          { p: [[2, .12], [2, 0]], d: 60, i: .72 },
+          { p: [[2, 0], [9, -.04]], d: 26, i: .25, iv: .1, tex: function (t, y, z, i) { if (y > 5.4 && y < 5.56 && (t % 6) < 3) return .95; if (y > 8.55 && y < 8.7) return .9; return i; } },
+          { p: [[-.35, .12], [-.3, -.5]], hidden: 1 },
+          { p: [[-.9, 2.85], [-.9, -.5]], hidden: 1 },
+          { p: [[-2.4, -.5], [.5, -.5], [.5, -1.05], [-2.4, -1.05], [-2.4, -.5]], hidden: 1 }
+        ],
+        long: [[-.45, 3.1], [-.9, 3.1], [-.35, .12], [2, .12], [2, 0]],
+        objects: function (add, r, L) {
+          for (var t = 0; t <= L; t += 2) post(add, r, t, -.7, 3.1, 4.1, .06, 40, .7);
+          line(add, r, [0, -.7, 4.1], [L, -.7, 4.1], 420, .85, .1, .02);
+          line(add, r, [0, -.7, 3.6], [L, -.7, 3.6], 260, .6, .1, .02);
+          lamp(add, r, 9, 1.6, .12, 5, 1);
+          bushes(add, r, L, 9, -4.8, -1.8, tz);
+        }
+      };
+    },
+    naturstein: function () {
+      var tz = function (y) { return y < -1.5 ? 2.7 + (-1.5 - y) * .06 : (y < 1.8 ? .1 : 0); };
+      return {
+        L: 16, seed: 913, step: 2, density: .55,
+        box: { y0: -6, y1: 8.6, z0: -.7, z1: 3 },
+        profile: [
+          { p: [[-6, 2.97], [-1.5, 2.7]], d: 12, i: .18, iv: .2, noise: .06 },
+          { p: [[-1.5, 2.7], [-.75, 2.7]], d: 60, i: .46 },
+          { p: [[-.75, 2.7], [-.15, 0]], d: 90, i: .5, tex: stoneTex },
+          { p: [[-.15, .1], [1.8, .1]], d: 36, i: .44, iv: .1 },
+          { p: [[1.8, .1], [1.8, 0]], d: 60, i: .7 },
+          { p: [[1.8, 0], [8.5, -.05]], d: 24, i: .24, iv: .1, tex: function (t, y, z, i) { if (y > 5.05 && y < 5.2 && (t % 6) < 3) return .95; return i; } },
+          { p: [[-1.5, 2.7], [-1.62, -.6], [-.1, -.6], [-.15, 0]], hidden: 1 }
+        ],
+        long: [[-.75, 2.7], [-1.5, 2.7], [-.15, 0], [1.8, .1]],
+        objects: function (add, r, L) {
+          tree(add, r, 3, -4, tz(-4), 7, 1.9); tree(add, r, 10.5, -3.6, tz(-3.6), 6, 1.6);
+          bushes(add, r, L, 7, -5.6, -2, tz);
+        }
+      };
+    },
+    bahnsteige: function () {
+      return {
+        L: 20, seed: 351, step: 2, density: .5,
+        box: { y0: -6.5, y1: 14.2, z0: -.9, z1: 3.3 },
+        profile: [
+          { p: [[-6.5, .9], [-5, .76]], d: 12, i: .18, iv: .2, noise: .05 },
+          { p: [[-5, .76], [0, .76]], d: 38, i: .46, iv: .1, tex: platformTex([-.86, -.72], [-1.5, -1.2]) },
+          { p: [[0, .76], [0, -.18]], d: 52, i: .6 },
+          { p: [[0, -.18], [7.8, -.18]], d: 30, i: .3, iv: .26, noise: .05 },
+          { p: [[7.8, -.18], [7.8, .76]], d: 52, i: .6 },
+          { p: [[7.8, .76], [12.6, .76]], d: 38, i: .46, iv: .1, tex: platformTex([8.52, 8.66], [9, 9.3]) },
+          { p: [[12.6, .76], [14.2, .9]], d: 12, i: .18, iv: .2, noise: .05 },
+          { p: [[-.45, .76], [-.45, -.75], [0, -.75], [0, -.18]], hidden: 1 },
+          { p: [[8.25, .76], [8.25, -.75], [7.8, -.75], [7.8, -.18]], hidden: 1 },
+          { p: [[0, -.62], [7.8, -.62]], hidden: 1 }
+        ],
+        long: [[0, .76], [0, -.18], [7.8, .76], [7.8, -.18], [.9325, 0], [2.3675, 0], [5.4325, 0], [6.8675, 0]],
+        objects: function (add, r, L) {
+          track(add, r, L, 1.65); track(add, r, L, 6.15);
+          shelter(add, r, 7, 13, -4.2, -2.2, .76, 3.1);
+          lamp(add, r, 3, -2.6, .76, 4, 1); lamp(add, r, 17, -2.6, .76, 4, 1);
+          lamp(add, r, 5, 10.6, .76, 4, -1); lamp(add, r, 15, 10.6, .76, 4, -1);
+        }
+      };
+    },
+    station: function () {
+      var hole = function (t, y, z, i) { return (t > 9 && t < 13.5 && y > 2.6 && y < 5.4) ? -1 : i; };
+      return {
+        L: 22, seed: 1207, step: 2, density: .5,
+        box: { y0: -5.2, y1: 14, z0: -2.4, z1: 4.2 },
+        profile: [
+          { p: [[-5.2, -.6], [-4.4, -.62], [-3.8, -.18], [0, -.18]], d: 30, i: .3, iv: .26, noise: .05 },
+          { p: [[0, -.18], [0, .76]], d: 52, i: .6 },
+          { p: [[0, .76], [8, .76]], d: 38, i: .46, iv: .1, tex: function (t, y, z, i) { if (hole(t, y)) return -1; if ((y > .78 && y < .92) || (y > 7.08 && y < 7.22)) return .97; return (t % .5) < .03 ? i * .72 : i; } },
+          { p: [[8, .76], [8, -.18]], d: 52, i: .6 },
+          { p: [[8, -.18], [11.8, -.18], [12.4, -.62], [14, -.6]], d: 30, i: .3, iv: .26, noise: .05 },
+          { p: [[.45, .76], [.45, -.75], [0, -.75], [0, -.18]], hidden: 1 },
+          { p: [[7.55, .76], [7.55, -.75], [8, -.75], [8, -.18]], hidden: 1 },
+          { p: [[2.6, .76], [2.6, -2.3], [5.4, -2.3], [5.4, .76]], hidden: 1 }
+        ],
+        long: [[0, .76], [8, .76], [0, -.18], [8, -.18], [-2.3675, 0], [-.9325, 0], [8.9325, 0], [10.3675, 0]],
+        objects: function (add, r, L) {
+          track(add, r, L, -1.65); track(add, r, L, 9.65);
+          rectT(add, r, 4, 19, 1.4, 6.6, 3.8, 2600, .74, .12);
+          line(add, r, [4, 6.6, 3.72], [19, 6.6, 3.72], 520, .88, .08, .03);
+          for (var t = 5; t <= 18; t += 4.3) post(add, r, t, 4, .76, 3.8, .22, 150, .66);
+          for (var s = 0; s < 9; s++) rectT(add, r, 9 + s * .5, 9.5 + s * .5, 2.7, 5.3, .76 - s * .32, 90, .5, .14);
+          wallT(add, r, 9, 13.5, 2.62, -2, .76, 260, .4, .14);
+          mast(add, r, 2, -4.6, -1.65, -.6, 6); mast(add, r, 2, 12.9, 9.65, -.6, 6);
+        }
+      };
+    },
+    tiefbau: function () {
+      var sheet = function (t, y, z, i) { return .32 + (Math.sin(t * Math.PI * 2 / .6) > 0 ? .26 : 0) + (r0() - .5) * .1; };
+      var rr = rng(5), r0 = rr;
+      return {
+        L: 16, seed: 618, step: 2, density: .55,
+        box: { y0: -7, y1: 7.5, z0: -3.2, z1: 1.2 },
+        profile: [
+          { p: [[-7, 0], [-1.4, 0]], d: 16, i: .22, iv: .1, tex: function (t, y, z, i) { return (y > -4.1 && y < -3.95 && (t % 6) < 3) ? .92 : i; } },
+          { p: [[-1.4, 0], [-1.4, -2.8]], d: 60, i: .4, tex: sheet },
+          { p: [[-1.4, -2.8], [1.4, -2.8]], d: 30, i: .2, iv: .2, noise: .05 },
+          { p: [[1.4, -2.8], [1.4, 0]], d: 40, i: .4, tex: sheet },
+          { p: [[1.4, 0], [3, 0], [4.2, .9], [5.6, 0], [7.5, 0]], d: 18, i: .18, iv: .18, noise: .08 },
+          { p: [[.5, -2.1], [.35, -1.75], [0, -1.6], [-.35, -1.75], [-.5, -2.1], [-.35, -2.45], [0, -2.6], [.35, -2.45], [.5, -2.1]] },
+          { p: [[-1.4, -2.8], [-1.4, -4.2]], hidden: 1 },
+          { p: [[1.4, -2.8], [1.4, -4.2]], hidden: 1 }
+        ],
+        long: [[-1.4, 0], [1.4, 0], [-1.4, -2.8], [1.4, -2.8], [0, -1.6]],
+        objects: function (add, r, L) {
+          for (var k = 0; k < 2600; k++) {
+            var t = r() * L, a = Math.PI * (1 + r());
+            add(t, Math.cos(a) * .5, -2.1 - Math.sin(a) * .5, .62 + (r() - .5) * .14);
+          }
+          for (var s = 2; s < L; s += 4) line(add, r, [s, -1.4, -.7], [s, 1.4, -.7], 70, .7, .1, .04);
+          line(add, r, [0, -1.55, .9], [L, -1.55, .9], 300, .7, .1, .02);
+          for (var u = 0; u <= L; u += 2.5) post(add, r, u, -1.55, 0, .9, .05, 24, .6);
+        }
+      };
+    },
+    hochbau: function () {
+      return {
+        L: 20, seed: 4410, step: 2.5, density: .5,
+        box: { y0: -8.5, y1: 8.5, z0: -1.1, z1: 7.4 },
+        profile: [
+          { p: [[-8.5, -.05], [-6.2, -.05]], d: 10, i: .18, iv: .2, noise: .05 },
+          { p: [[-6, 0], [6, 0]], d: 16, i: .4, iv: .12 },
+          { p: [[-6, 3.4], [6, 3.4]], d: 16, i: .46, iv: .12 },
+          { p: [[-6, 6.8], [6, 6.8]], d: 16, i: .5, iv: .12 },
+          { p: [[6, 3.4], [6, 3.1]], d: 70, i: .74 },
+          { p: [[6, 6.8], [6, 6.5]], d: 70, i: .78 },
+          { p: [[6, 0], [6, -.3]], d: 70, i: .7 },
+          { p: [[6.2, -.05], [8.5, -.05]], d: 10, i: .18, iv: .2, noise: .05 },
+          { p: [[-6, 3.1], [6, 3.1]] }, { p: [[-6, 6.5], [6, 6.5]] }, { p: [[-6, -.3], [6, -.3]] },
+          { p: [[-6, 6.8], [-6, -.3]] },
+          { p: [[-6.4, -.3], [6.4, -.3], [6.4, -1], [-6.4, -1], [-6.4, -.3]], hidden: 1 }
+        ],
+        long: [[6, 0], [6, 3.4], [6, 6.8], [-6, 6.8], [6, 3.1], [6, 6.5]],
+        objects: function (add, r, L) {
+          [0, 5, 10, 15, 20].forEach(function (t) {
+            [-6, -2, 2, 6].forEach(function (y) {
+              post(add, r, t, y, 0, 3.1, .3, 70, .62); post(add, r, t, y, 3.4, 6.5, .3, 70, .66);
+            });
+          });
+          wallT(add, r, 0, 20, -6, 0, 6.8, 1500, .36, .14);
+          [-1.2, 1.2].forEach(function (y) { wallT(add, r, 8, 11, y, 0, 6.8, 260, .5, .12); });
+          for (var z = 7.6; z < 8.4; z += .4) line(add, r, [0, 6.6, z], [20, 6.6, z], 160, .55, .1, .03);
+        }
+      };
+    }
+  };
+
+  function build(def) {
+    var r = rng(def.seed || 7), T = [], Y = [], Z = [], I = [];
+    var add = function (t, y, z, i) { if (i < 0) return; T.push(t); Y.push(y); Z.push(z); I.push(i > .999 ? .999 : i); };
+    var k = def.density || 1;
+    def.profile.forEach(function (s) {
+      if (s.hidden || !s.d) return;
+      var p = s.p, t0 = s.t0 || 0, t1 = s.t1 == null ? def.L : s.t1;
+      for (var j = 0; j < p.length - 1; j++) {
+        var y1 = p[j][0], z1 = p[j][1], y2 = p[j + 1][0], z2 = p[j + 1][1];
+        var len = Math.hypot(y2 - y1, z2 - z1); if (!len) continue;
+        var ny = -(z2 - z1) / len, nz = (y2 - y1) / len, n = Math.round((t1 - t0) * len * s.d * k);
+        for (var q = 0; q < n; q++) {
+          var t = t0 + r() * (t1 - t0), v = r(), e = (r() + r() - 1) * (s.noise || .02);
+          var y = y1 + (y2 - y1) * v + ny * e, z = z1 + (z2 - z1) * v + nz * e;
+          var i = s.i + (r() - .5) * (s.iv == null ? .16 : s.iv);
+          if (s.tex) i = s.tex(t, y, z, i, r);
+          add(t, y, z, i);
+        }
+      }
+    });
+    if (def.objects) {
+      var objAdd = k < 1 ? function (t, y, z, i) { if (r() < k + .15) add(t, y, z, i); } : add;
+      def.objects(objAdd, r, def.L);
+    }
+    return {
+      L: def.L, n: T.length, step: def.step, box: def.box, ticks: def.ticks,
+      profile: def.profile, long: def.long || [],
+      t: Float32Array.from(T), y: Float32Array.from(Y), z: Float32Array.from(Z), i: Float32Array.from(I)
+    };
+  }
+
+  /* ---------- projection ---------- */
+  function view(phi, eps, S, ox, oy) {
+    return { cp: Math.cos(phi), sp: Math.sin(phi), ce: Math.cos(eps), se: Math.sin(eps), S: S || 1, ox: ox || 0, oy: oy || 0 };
+  }
+  function px(v, t, y) { return v.ox + v.S * (t * v.sp + y * v.cp); }
+  function py(v, t, y, z) { return v.oy - v.S * (t * v.se * v.cp - y * v.se * v.sp + z * v.ce); }
+
+  function fit(sc, v, rect, alignX, alignY) {
+    var x0 = 1e9, x1 = -1e9, y0 = 1e9, y1 = -1e9, u = view(Math.atan2(v.sp, v.cp), Math.atan2(v.se, v.ce));
+    for (var k = 0; k < sc.n; k += 3) {
+      var t = sc.t[k]; if (t < 0 || t > sc.L) continue;
+      var a = px(u, t, sc.y[k]), b = py(u, t, sc.y[k], sc.z[k]);
+      if (a < x0) x0 = a; if (a > x1) x1 = a; if (b < y0) y0 = b; if (b > y1) y1 = b;
+    }
+    var S = Math.min(rect.w / (x1 - x0), rect.h / (y1 - y0));
+    v.S = S;
+    v.ox = (alignX === 'left' ? rect.x : rect.x + (rect.w - (x1 - x0) * S) / 2) - x0 * S;
+    v.oy = (alignY === 'bottom' ? rect.y + rect.h - (y1 - y0) * S : rect.y + (rect.h - (y1 - y0) * S) / 2) - y0 * S;
+    return v;
+  }
+
+  function station(t) {
+    var m = Math.max(0, t), km = Math.floor(m / 1000), r = m - km * 1000, whole = Math.floor(r);
+    return km + '+' + String(whole).padStart(3, '0') + ',' + Math.floor((r - whole) * 10);
+  }
+
+  function pathProfile(ctx, v, p, t) {
+    ctx.beginPath();
+    for (var k = 0; k < p.length; k++) {
+      var x = px(v, t, p[k][0]), y = py(v, t, p[k][0], p[k][1]);
+      if (k) ctx.lineTo(x, y); else ctx.moveTo(x, y);
+    }
+  }
+  function drawSection(ctx, sc, v, t, alpha, hiddenAlpha, w) {
+    ctx.lineWidth = w;
+    sc.profile.forEach(function (s) {
+      if (s.hidden) { ctx.setLineDash([3, 3]); ctx.strokeStyle = 'rgba(' + BONE + ',' + hiddenAlpha + ')'; }
+      else { ctx.setLineDash([]); ctx.strokeStyle = 'rgba(' + BONE + ',' + alpha + ')'; }
+      pathProfile(ctx, v, s.p, t); ctx.stroke();
+    });
+    ctx.setLineDash([]);
+  }
+
+  /* ---------- render ---------- */
+  function render(ctx, sc, v, T, o) {
+    var W = o.W, H = o.H, dpr = o.dpr, n = sc.n, L = sc.L, band = o.band || .2, ps = o.ps || 1.4;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.clearRect(0, 0, W, H);
+    if (!sc.buf) { sc.buf = []; for (var b = 0; b < 18; b++) sc.buf.push(new Float32Array(n * 2)); sc.cnt = new Int32Array(18); }
+    var buf = sc.buf, cnt = sc.cnt; cnt.fill(0);
+    var A = v.S * v.sp, B = v.S * v.cp, C = v.S * v.se * v.cp, D = v.S * v.se * v.sp, E = v.S * v.ce;
+    var Tc = Math.min(T, L);
+    for (var k = 0; k < n; k++) {
+      var t = sc.t[k], y = sc.y[k], sx = v.ox + A * t + B * y, sy = v.oy - (C * t - D * y + E * sc.z[k]);
+      if (sx < -3 || sx > W + 3 || sy < -3 || sy > H + 3) continue;
+      var st = 0;
+      if (t >= 0 && t <= L) st = Math.abs(t - T) < band ? 2 : (t < Tc ? 1 : 0);
+      var idx = st * 6 + ((sc.i[k] * 6) | 0), c = cnt[idx];
+      buf[idx][c * 2] = sx; buf[idx][c * 2 + 1] = sy; cnt[idx] = c + 1;
+    }
+    function dots(idx, size, style) {
+      var c = cnt[idx]; if (!c) return;
+      var a = buf[idx], h = size / 2;
+      ctx.fillStyle = style; ctx.beginPath();
+      for (var q = 0; q < c; q++) ctx.rect(a[q * 2] - h, a[q * 2 + 1] - h, size, size);
+      ctx.fill();
+    }
+    var lv;
+    for (lv = 0; lv < 6; lv++) dots(6 + lv, ps, 'rgba(' + RAMP[Math.max(0, lv - 1)] + ',' + (o.sweptAlpha || .5) + ')');
+    for (lv = 0; lv < 6; lv++) dots(lv, ps, 'rgba(' + RAMP[lv] + ',' + (lv > 3 ? .95 : .88) + ')');
+
+    if (T > 0) {
+      ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+      ctx.lineWidth = 1; ctx.strokeStyle = 'rgba(' + BONE + ',' + (o.longAlpha || .42) + ')';
+      sc.long.forEach(function (p) {
+        ctx.beginPath(); ctx.moveTo(px(v, 0, p[0]), py(v, 0, p[0], p[1]));
+        ctx.lineTo(px(v, Tc, p[0]), py(v, Tc, p[0], p[1])); ctx.stroke();
+      });
+      for (var s = 0; s < Tc - sc.step * .35; s += sc.step) drawSection(ctx, sc, v, s, o.stationAlpha || .46, .22, 1);
+    }
+    for (lv = 0; lv < 6; lv++) dots(12 + lv, ps * 1.25, 'rgba(' + BONE + ',' + (.55 + lv * .08) + ')');
+
+    if (T <= L + .01) {
+      var bx = sc.box, z1 = bx.z1, corners = [[bx.y0, bx.z0], [bx.y1, bx.z0], [bx.y1, z1], [bx.y0, z1]];
+      ctx.beginPath();
+      corners.forEach(function (c, q) { var x = px(v, T, c[0]), y2 = py(v, T, c[0], c[1]); if (q) ctx.lineTo(x, y2); else ctx.moveTo(x, y2); });
+      ctx.closePath();
+      ctx.fillStyle = 'rgba(' + BONE + ',.045)'; ctx.fill();
+      ctx.lineWidth = 1; ctx.strokeStyle = 'rgba(' + BONE + ',.3)'; ctx.stroke();
+      drawSection(ctx, sc, v, T, 1, .8, o.cutWidth || 1.6);
+      if (o.label) {
+        var lx = px(v, T, bx.y0), ly = py(v, T, bx.y0, z1);
+        ctx.fillStyle = 'rgba(' + BONE + ',1)';
+        ctx.font = '500 11px "Martian Mono", ui-monospace, monospace';
+        ctx.textBaseline = 'bottom';
+        ctx.fillText('A  ' + station(T), lx + 2, ly - 8);
+        ctx.beginPath(); ctx.moveTo(lx, ly); ctx.lineTo(lx, ly - 6); ctx.strokeStyle = 'rgba(' + BONE + ',.6)'; ctx.stroke();
+      }
+    }
+    if (sc.ticks && o.ticks) {
+      var tk = sc.ticks;
+      ctx.strokeStyle = 'rgba(' + MUTED + ',.75)'; ctx.fillStyle = 'rgba(' + MUTED + ',.95)'; ctx.lineWidth = 1;
+      ctx.font = '400 10px "Martian Mono", ui-monospace, monospace'; ctx.textBaseline = 'top';
+      ctx.beginPath(); ctx.moveTo(px(v, 0, tk.y), py(v, 0, tk.y, tk.z)); ctx.lineTo(px(v, L, tk.y), py(v, L, tk.y, tk.z)); ctx.stroke();
+      for (var m = 0; m <= L + .001; m += tk.every) {
+        var major = Math.abs(m / tk.label - Math.round(m / tk.label)) < .001, len = major ? .9 : .4;
+        ctx.beginPath(); ctx.moveTo(px(v, m, tk.y), py(v, m, tk.y, tk.z)); ctx.lineTo(px(v, m, tk.y + len), py(v, m, tk.y + len, tk.z)); ctx.stroke();
+        if (major) ctx.fillText(station(m).split(',')[0], px(v, m, tk.y + 1.1) - 14, py(v, m, tk.y + 1.1, tk.z) + 3);
+      }
+    }
+  }
+
+  function setup(canvas) {
+    var r = canvas.getBoundingClientRect(), dpr = Math.min(2, window.devicePixelRatio || 1);
+    canvas.width = Math.max(1, Math.round(r.width * dpr)); canvas.height = Math.max(1, Math.round(r.height * dpr));
+    return { W: r.width, H: r.height, dpr: dpr };
+  }
+  var ease = function (p) { return p >= 1 ? 1 : 1 - Math.pow(2, -10 * p); };
+  var reduced = function () { return window.matchMedia('(prefers-reduced-motion: reduce)').matches; };
+  function fontsReady() {
+    if (!document.fonts || !document.fonts.load) return Promise.resolve();
+    return Promise.all([document.fonts.load('500 11px "Martian Mono"'), document.fonts.load('400 10px "Martian Mono"')]).catch(function () {});
+  }
+
+  /* ---------- hero ---------- */
+  function hero(canvas, hooks) {
+    var sc = build(SCENES.hero()), ctx = canvas.getContext('2d');
+    var PHI = 1.17, EPS = .53, rest = sc.L * .48, T = 0, ptr = null, dims, base, c0, raf = 0, t0 = 0, last = 0, visible = true, lastOut = 0;
+    if (hooks && hooks.points) hooks.points(sc.n);
+    function layout() {
+      dims = setup(canvas);
+      var W = dims.W, H = dims.H, wide = W >= 900;
+      var rect = wide ? { x: W * .41, y: H * .1, w: W * .62, h: H * .74 } : { x: W * .02, y: H * .08, w: W * .9, h: H * .78 };
+      base = fit(sc, view(PHI, EPS), rect, wide ? 'left' : 'center');
+      c0 = [px(base, sc.L / 2, 3), py(base, sc.L / 2, 3, 1)];
+    }
+    function drift(el) {
+      var v = view(PHI + .055 * Math.sin(el * Math.PI * 2 / 46), EPS + .018 * Math.sin(el * Math.PI * 2 / 61), base.S, 0, 0);
+      v.ox = c0[0] - (px(v, sc.L / 2, 3) - 0); v.oy = c0[1] - (py(v, sc.L / 2, 3, 1) - 0);
+      return v;
+    }
+    function draw(v) {
+      render(ctx, sc, v, T, { W: dims.W, H: dims.H, dpr: dims.dpr, ps: dims.W >= 900 ? 1.8 : 1.5, band: .18, label: true, stationAlpha: .3, sweptAlpha: .62, ticks: true });
+      if (hooks && hooks.station) hooks.station(station(T));
+    }
+    function frame(now) {
+      if (!t0) { t0 = now; last = now; }
+      var el = (now - t0) / 1000, dt = Math.min(.05, (now - last) / 1000); last = now;
+      if (ptr != null) T += (ptr - T) * (1 - Math.exp(-dt * 3.2));
+      else if (el < 6.5 && T <= rest) T = rest * ease(el / 6.5);
+      else T += (rest - T) * (1 - Math.exp(-dt * 1.2));
+      draw(drift(el));
+      raf = visible ? requestAnimationFrame(frame) : 0;
+    }
+    function start() {
+      cancelAnimationFrame(raf); raf = 0;
+      layout();
+      if (reduced()) { T = rest; draw(base); return; }
+      if (!raf && visible) raf = requestAnimationFrame(frame);
+    }
+    canvas.parentElement.addEventListener('pointermove', function (e) {
+      if (reduced() || e.pointerType !== 'mouse' || !base || dims.W < 900) return;
+      var b = canvas.getBoundingClientRect(), x = e.clientX - b.left;
+      if (x < dims.W * .42) { ptr = null; return; }
+      ptr = Math.max(0, Math.min(sc.L, ((x - base.ox) / base.S - 5 * base.cp) / base.sp));
+    });
+    canvas.parentElement.addEventListener('pointerleave', function () { ptr = null; });
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (en) {
+        visible = en[0].isIntersecting;
+        if (visible && !raf && !reduced()) { last = performance.now(); raf = requestAnimationFrame(frame); }
+      }).observe(canvas);
+    }
+    var ro = new ResizeObserver(function () { start(); }); ro.observe(canvas);
+    window.matchMedia('(prefers-reduced-motion: reduce)').addEventListener('change', start);
+    fontsReady().then(start);
+  }
+
+  /* ---------- card clouds ---------- */
+  function card(canvas, key, trigger) {
+    if (!SCENES[key]) return;
+    var sc = build(SCENES[key]()), ctx = canvas.getContext('2d'), dims, v, T, goal, from, tStart = 0, raf = 0;
+    var restT = function () { return sc.L * (reduced() ? .5 : .32); };
+    T = goal = restT();
+    function layout() {
+      dims = setup(canvas);
+      v = fit(sc, view(1.08, .48), { x: dims.W * .075, y: dims.H * .14, w: dims.W * .85, h: dims.H * .85 }, 'center', 'bottom');
+    }
+    function draw() { render(ctx, sc, v, T, { W: dims.W, H: dims.H, dpr: dims.dpr, ps: 1.25, band: .16, cutWidth: 1.4, stationAlpha: .4 }); }
+    function step(now) {
+      if (!tStart) tStart = now;
+      var p = (now - tStart) / 1100;
+      T = from + (goal - from) * ease(p);
+      draw();
+      raf = p < 1 ? requestAnimationFrame(step) : 0;
+    }
+    function go(g) {
+      goal = g;
+      if (reduced()) { T = g; draw(); return; }
+      from = T; tStart = 0; cancelAnimationFrame(raf); raf = requestAnimationFrame(step);
+    }
+    trigger.addEventListener('pointerenter', function () { go(sc.L); });
+    trigger.addEventListener('pointerleave', function () { go(restT()); });
+    trigger.addEventListener('focusin', function () { go(sc.L); });
+    trigger.addEventListener('focusout', function () { go(restT()); });
+    new ResizeObserver(function () { layout(); draw(); }).observe(canvas);
+  }
+
+  return { hero: hero, card: card };
+})();
+
+(function () {
+  var fmt = function (n) { return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ' '); };
+  var pts = document.querySelector('[data-points]'), stn = document.querySelector('[data-station]'), lastS = '';
+  PW.hero(document.getElementById('cloud'), {
+    points: function (n) { pts.textContent = fmt(n); },
+    station: function (s) { if (s !== lastS) { lastS = s; stn.textContent = s; } }
+  });
+  var sv = document.querySelector('.schnitt svg'), mq = window.matchMedia('(max-width:600px)');
+  function frameSchnitt() { sv.setAttribute('viewBox', mq.matches ? sv.dataset.vbPart : sv.dataset.vbFull); }
+  mq.addEventListener('change', frameSchnitt); frameSchnitt();
+  document.querySelectorAll('canvas[data-scene]').forEach(function (c) { PW.card(c, c.dataset.scene, c.closest('a')); });
+
+  var btns = Array.prototype.slice.call(document.querySelectorAll('[data-lph]'));
+  var out = document.querySelector('[data-sel]'), mail = document.querySelector('[data-mail]');
+  function ranges(sel) {
+    var parts = [], k = 0;
+    while (k < sel.length) {
+      var a = sel[k], b = a;
+      while (k + 1 < sel.length && sel[k + 1] === b + 1) { k++; b = sel[k]; }
+      parts.push(a === b ? String(a) : (b === a + 1 ? a + ', ' + b : a + '–' + b));
+      k++;
+    }
+    return parts.join(', ');
+  }
+  function update() {
+    var sel = btns.filter(function (b) { return b.getAttribute('aria-pressed') === 'true'; }).map(function (b) { return +b.dataset.lph; });
+    btns.forEach(function (b) {
+      var n = +b.dataset.lph, li = b.parentElement;
+      li.classList.toggle('run', sel.indexOf(n) > -1 && sel.indexOf(n + 1) > -1);
+    });
+    var txt = sel.length ? 'LPH ' + ranges(sel) : 'keine Phase';
+    out.textContent = txt;
+    mail.href = 'mailto:info@ib-cc.de' + (sel.length ? '?subject=' + encodeURIComponent('Anfrage ' + txt) : '');
+  }
+  btns.forEach(function (b) {
+    b.addEventListener('click', function () { b.setAttribute('aria-pressed', b.getAttribute('aria-pressed') === 'true' ? 'false' : 'true'); update(); });
+  });
+  update();
+})();
+
+</script>
+</body>
+</html>
