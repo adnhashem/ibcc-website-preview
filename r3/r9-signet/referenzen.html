@@ -26,6 +26,7 @@
   --k:1.5;--A:42vw;
   --o2:0px;--o3:0px;--o4:0px;--o5:0px;--o6:0px;--o7:0px;--o8:0px;
   --disp:"Schibsted Grotesk",system-ui,sans-serif;--sans:"Funnel Sans",system-ui,sans-serif;
+  --oc:#D9A441;--oc2:#C48F2E;--co:#A84A24;--co2:#8E3D1D;
   color-scheme:light;
   scrollbar-color:var(--g) #E9ECEF;
 }
@@ -233,6 +234,15 @@ ul,ol{list-style:none;padding:0}
 .empty p{font:600 clamp(24px,2.1vw,30px)/1.2 var(--disp);color:var(--g);letter-spacing:-.015em}
 .cta-r{display:flex;flex-wrap:wrap;gap:28px 64px;align-items:center;justify-content:space-between;max-width:calc(var(--cr3) - var(--pad))}
 .cta-r h2{font:700 clamp(36px,3.6vw,54px)/1.02 var(--disp);letter-spacing:-.03em;color:#fff}
+:focus-visible{outline-color:var(--co)}
+.on-g :focus-visible,.on-g:focus-visible,.gL .svc:focus-visible{outline-color:var(--oc)}
+.svc:focus-visible{outline-color:var(--co)}
+.btn-p::before{background:var(--co)}.btn-p:hover::before{background:var(--co2)}
+.btn-w::before{background:var(--oc)}.btn-w:hover::before{background:#E6BC6A}
+.nav a[aria-current=page]::after{content:"";position:absolute;left:14px;right:6px;bottom:-9px;height:3px;background:var(--oc);transform:skewX(19deg)}
+.sec::after{content:"";position:absolute;z-index:3;top:-2px;height:4px;width:72px;left:calc(var(--t) + var(--ot) - 36px);pointer-events:none}
+.gR::after{background:linear-gradient(90deg,var(--co) 50%,var(--oc) 50%)}
+.gL::after{background:linear-gradient(90deg,var(--oc) 50%,var(--co) 50%)}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{transition:none!important;animation:none!important}
   .js .t:not(.on) .t-band{clip-path:polygon(0 0,var(--T) 0,var(--B) 100%,0 100%)}

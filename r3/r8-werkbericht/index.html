@@ -189,6 +189,16 @@ button{font:inherit;color:inherit}
   .foot__logo{grid-column:1/7}.foot__a{grid-column:7/13}.foot__k{grid-column:1/7}.foot__r{grid-column:7/13}
 }
 
+/* accent: ochre on green, corten on paper */
+:root{--ocker:#D9A441;--ocker-press:#E6BC6A;--corten:#A84A24}
+.btn--light{background:var(--ocker);color:var(--green)}
+.btn--light:hover{background:var(--ocker-press)}
+.nav a[aria-current="page"]{text-decoration-color:var(--ocker);text-decoration-thickness:3px}
+:focus-visible{outline-color:var(--corten)}
+.g :focus-visible{outline-color:var(--ocker)}
+.plate__n{color:var(--ocker)}
+.spread .more{color:var(--corten)}
+
 /* cover */
 .cover{min-height:100svh;padding-top:calc(var(--head-h) + clamp(28px,5.5vh,64px))}
 .cover .op__in{align-content:start;row-gap:0}
@@ -300,6 +310,9 @@ button{font:inherit;color:inherit}
   .cover{position:relative;height:auto}
 }
 .lph li{display:grid;column-gap:var(--g)}
+.toc a .mono,.toc a:hover .mono{color:var(--ocker)}
+.lph__c{color:var(--corten)}
+.end .more{color:var(--corten)}
 
 </style>
 </head>

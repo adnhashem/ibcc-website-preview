@@ -176,6 +176,18 @@ ul,ol{margin:0;padding:0;list-style:none}
 .sec-head{flex-direction:column;align-items:flex-start;gap:8px}
 .cta-art{display:none}
 }
+/* third accent */
+:root{--ocker:#D9A441;--ocker-press:#C48F2E;--corten:#A84A24}
+:focus-visible{outline-color:var(--corten)}
+.intro :focus-visible,.cta :focus-visible,.ftr :focus-visible,.rhead :focus-visible{outline-color:var(--ocker)}
+.btn.inv{background:var(--ocker);color:var(--g)}
+.btn.inv:hover{background:var(--ocker-press);color:#06281E}
+.nav a[aria-current="page"]::after{background:var(--corten)}
+.lang .on{border-bottom-color:var(--corten)}
+.addr{color:var(--corten)}
+a.idl,.idl{color:var(--corten)}
+.srow .code,.ph .no,.node .ad,.tw .ad{color:var(--corten)}
+.node[aria-current="true"] .ad,.tw[aria-pressed="true"] .ad{color:#fff}
 /* model tree */
 .pane-h{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:17px 20px 9px}
 .pane-h h2{font:600 14px/1.2 var(--ft);letter-spacing:0;color:var(--ink)}

@@ -189,6 +189,16 @@ button{font:inherit;color:inherit}
   .foot__logo{grid-column:1/7}.foot__a{grid-column:7/13}.foot__k{grid-column:1/7}.foot__r{grid-column:7/13}
 }
 
+/* accent: ochre on green, corten on paper */
+:root{--ocker:#D9A441;--ocker-press:#E6BC6A;--corten:#A84A24}
+.btn--light{background:var(--ocker);color:var(--green)}
+.btn--light:hover{background:var(--ocker-press)}
+.nav a[aria-current="page"]{text-decoration-color:var(--ocker);text-decoration-thickness:3px}
+:focus-visible{outline-color:var(--corten)}
+.g :focus-visible{outline-color:var(--ocker)}
+.plate__n{color:var(--ocker)}
+.spread .more{color:var(--corten)}
+
 .ref-op{padding-top:calc(var(--head-h) + clamp(20px,3vh,32px))}
 .ref-op .folio{margin-top:40px}
 .ref-op+.spread{padding-top:36px}
@@ -270,6 +280,10 @@ button{font:inherit;color:inherit}
 @media (prefers-reduced-motion:no-preference) and (min-width:1024px) and (min-height:660px){
   .ref-op{height:max(660px,calc(100svh - 120px))}
 }
+.flt button .n{color:var(--ocker)}
+.flt button[aria-pressed="true"]{background:var(--ocker);color:var(--green)}
+.flt button[aria-pressed="true"] .n{color:var(--green)}
+.idx__y{color:var(--corten)}
 
 </style>
 </head>
