@@ -127,7 +127,7 @@ tr:hover .pb,tr:target .pb{background:var(--ink);color:var(--on-ink)}
 .cta p{margin:18px 0 0;max-width:58ch;color:var(--on-ink-2)}
 .cta :focus-visible{outline-color:var(--on-ink)}
 .cta-act{display:flex;flex-direction:column;gap:22px;align-items:flex-start}
-.cta dl{display:grid;grid-template-columns:auto 1fr;gap:6px 20px;margin:0;font:500 16px/1.3 var(--f-n);font-variant-numeric:tabular-nums}
+.cta dl{display:grid;grid-template-columns:auto 1fr;gap:6px 20px;align-items:baseline;margin:0;font:500 16px/1.3 var(--f-n);font-variant-numeric:tabular-nums}
 .cta dt{color:var(--on-ink-2);font-weight:500}
 .cta dd{margin:0}
 .cta dd a{text-decoration-color:rgba(241,244,240,.5)}
@@ -185,17 +185,20 @@ html{scroll-behavior:smooth}
 .btn.inv:hover{background:#E6B962;border-color:#E6B962}
 .cta :focus-visible,.ft-bar :focus-visible{outline-color:var(--ochre)}
 tr:hover .pb,tr:target .pb{background:var(--corten);border-color:var(--corten);color:#fff}
+.cta dd{font:600 clamp(22px,2vw,28px)/1.2 var(--f-n);color:var(--ochre)}
+.cta dd a{text-decoration-color:rgba(217,164,65,.55)}
+.tbl thead th{border-bottom:3px solid var(--corten)}
 .hero{display:grid;grid-template-columns:minmax(0,1fr) clamp(540px,42vw,612px);min-height:min(calc(100svh - 85px),1000px);border-bottom:1px solid var(--ink)}
 .dwg-wrap{position:relative;padding:22px 8px 46px var(--pad);display:flex;align-items:center;justify-content:center;min-width:0}
 .dwg{width:100%;height:auto;max-height:calc(100svh - 150px);overflow:visible}
 .dwg-cap{position:absolute;left:var(--pad);bottom:14px;margin:0;font:500 13px/1.3 var(--f-n);color:var(--soft)}
 .dwg .ldr{stroke:var(--ink);stroke-width:1}
 .dwg .dot{fill:var(--ink)}
-.dwg .bc{fill:var(--film);stroke:var(--ink);stroke-width:1.4;transition:fill .25s var(--ease)}
-.dwg .bn{font:600 18px var(--f-n);text-anchor:middle;fill:var(--ink);font-variant-numeric:tabular-nums;transition:fill .25s var(--ease)}
+.dwg .bc{fill:var(--corten);stroke:var(--corten);stroke-width:1.4;transition:fill .25s var(--ease)}
+.dwg .bn{font:600 18px var(--f-n);text-anchor:middle;fill:#fff;font-variant-numeric:tabular-nums;transition:fill .25s var(--ease)}
 .dwg .ring{fill:none;stroke:none}
 .dwg a{cursor:pointer;outline:none}
-.dwg a:hover .bc{fill:var(--corten);stroke:var(--corten)}.dwg a:hover .bn{fill:var(--on-ink)}
+.dwg a:hover .bc{fill:var(--ink);stroke:var(--ink)}.dwg a:hover .bn{fill:var(--on-ink)}
 .dwg a:focus-visible .ring{stroke:var(--corten);stroke-width:2}
 .lay{stroke:var(--ink);stroke-width:.6;opacity:.6;transition:stroke-width .3s var(--ease),opacity .3s}
 .dm{stroke:var(--ink);stroke-width:.9;transition:stroke-width .3s}.dme{stroke:var(--ink);stroke-width:.6;opacity:.75;transition:stroke-width .3s}.dmt{stroke:var(--ink);stroke-width:1.4}
@@ -212,7 +215,7 @@ tr:hover .pb,tr:target .pb{background:var(--corten);border-color:var(--corten);c
 .pr > span{padding:4px 12px;font:500 15px/1.3 var(--f-n);border-left:1px solid var(--rule);min-width:0}
 .pr > span:first-child{border-left:0;display:flex;justify-content:center;align-items:center;padding:4px}
 .pr .num{display:inline-grid;place-items:center;width:22px;height:22px;border:1.2px solid var(--ink);border-radius:50%;font:600 14px/1 var(--f-n);color:var(--ink);transition:background-color .25s,color .25s}
-.parts-h .pr{background:var(--ink);color:var(--on-ink);border:0;border-bottom:1px solid rgba(241,244,240,.3)}
+.parts-h .pr{background:var(--ink);color:var(--on-ink);border:0;border-top:3px solid var(--ochre);border-bottom:1px solid rgba(241,244,240,.3)}
 .parts-h .pr > span{font:600 12px/1.2 var(--f-n);letter-spacing:.07em;text-transform:uppercase;padding:8px 12px;border-left-color:rgba(241,244,240,.28)}
 .pr a{text-decoration:none;font-weight:600;color:var(--ink)}
 .pr a::after{content:"";position:absolute;inset:0}
@@ -239,23 +242,23 @@ h1 span{display:block}
 .tb-meta dd{margin:0;font:500 15px/1.3 var(--f-n);font-variant-numeric:tabular-nums;color:var(--on-ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .tb-meta a{text-decoration-color:rgba(241,244,240,.55)}
 .hero:has([data-pos="1"]:is(:hover,:focus-visible,:focus-within)) .pt.p1 :is(.ft,.fc:not(.gravel-f)){fill:var(--hi)}
-.hero:has([data-pos="1"]:is(:hover,:focus-visible,:focus-within)) .bal.p1 .bc{fill:var(--corten);stroke:var(--corten)}.hero:has([data-pos="1"]:is(:hover,:focus-visible,:focus-within)) .bal.p1 .bn{fill:var(--on-ink)}.hero:has([data-pos="1"]:is(:hover,:focus-visible,:focus-within)) .pr[data-pos="1"]{background:var(--ink)}.hero:has([data-pos="1"]:is(:hover,:focus-visible,:focus-within)) .pr[data-pos="1"] > span,.hero:has([data-pos="1"]:is(:hover,:focus-visible,:focus-within)) .pr[data-pos="1"] a{color:var(--on-ink)}.hero:has([data-pos="1"]:is(:hover,:focus-visible,:focus-within)) .pr[data-pos="1"] .num{background:var(--ochre);color:var(--ink);border-color:var(--ochre)}
+.hero:has([data-pos="1"]:is(:hover,:focus-visible,:focus-within)) .bal.p1 .bc{fill:var(--ink);stroke:var(--ink)}.hero:has([data-pos="1"]:is(:hover,:focus-visible,:focus-within)) .bal.p1 .bn{fill:var(--on-ink)}.hero:has([data-pos="1"]:is(:hover,:focus-visible,:focus-within)) .pr[data-pos="1"]{background:var(--ink)}.hero:has([data-pos="1"]:is(:hover,:focus-visible,:focus-within)) .pr[data-pos="1"] > span,.hero:has([data-pos="1"]:is(:hover,:focus-visible,:focus-within)) .pr[data-pos="1"] a{color:var(--on-ink)}.hero:has([data-pos="1"]:is(:hover,:focus-visible,:focus-within)) .pr[data-pos="1"] .num{background:var(--ochre);color:var(--ink);border-color:var(--ochre)}
 .hero:has([data-pos="2"]:is(:hover,:focus-visible,:focus-within)) .pt.p2 :is(.ft,.fc){fill:var(--hi)}
-.hero:has([data-pos="2"]:is(:hover,:focus-visible,:focus-within)) .bal.p2 .bc{fill:var(--corten);stroke:var(--corten)}.hero:has([data-pos="2"]:is(:hover,:focus-visible,:focus-within)) .bal.p2 .bn{fill:var(--on-ink)}.hero:has([data-pos="2"]:is(:hover,:focus-visible,:focus-within)) .pr[data-pos="2"]{background:var(--ink)}.hero:has([data-pos="2"]:is(:hover,:focus-visible,:focus-within)) .pr[data-pos="2"] > span,.hero:has([data-pos="2"]:is(:hover,:focus-visible,:focus-within)) .pr[data-pos="2"] a{color:var(--on-ink)}.hero:has([data-pos="2"]:is(:hover,:focus-visible,:focus-within)) .pr[data-pos="2"] .num{background:var(--ochre);color:var(--ink);border-color:var(--ochre)}
+.hero:has([data-pos="2"]:is(:hover,:focus-visible,:focus-within)) .bal.p2 .bc{fill:var(--ink);stroke:var(--ink)}.hero:has([data-pos="2"]:is(:hover,:focus-visible,:focus-within)) .bal.p2 .bn{fill:var(--on-ink)}.hero:has([data-pos="2"]:is(:hover,:focus-visible,:focus-within)) .pr[data-pos="2"]{background:var(--ink)}.hero:has([data-pos="2"]:is(:hover,:focus-visible,:focus-within)) .pr[data-pos="2"] > span,.hero:has([data-pos="2"]:is(:hover,:focus-visible,:focus-within)) .pr[data-pos="2"] a{color:var(--on-ink)}.hero:has([data-pos="2"]:is(:hover,:focus-visible,:focus-within)) .pr[data-pos="2"] .num{background:var(--ochre);color:var(--ink);border-color:var(--ochre)}
 .hero:has([data-pos="3"]:is(:hover,:focus-visible,:focus-within)) .pt.p3 .rbv{stroke-width:2.6}
 .hero:has([data-pos="3"]:is(:hover,:focus-visible,:focus-within)) .pt.p3 .rb-b{opacity:.95}
-.hero:has([data-pos="3"]:is(:hover,:focus-visible,:focus-within)) .bal.p3 .bc{fill:var(--corten);stroke:var(--corten)}.hero:has([data-pos="3"]:is(:hover,:focus-visible,:focus-within)) .bal.p3 .bn{fill:var(--on-ink)}.hero:has([data-pos="3"]:is(:hover,:focus-visible,:focus-within)) .pr[data-pos="3"]{background:var(--ink)}.hero:has([data-pos="3"]:is(:hover,:focus-visible,:focus-within)) .pr[data-pos="3"] > span,.hero:has([data-pos="3"]:is(:hover,:focus-visible,:focus-within)) .pr[data-pos="3"] a{color:var(--on-ink)}.hero:has([data-pos="3"]:is(:hover,:focus-visible,:focus-within)) .pr[data-pos="3"] .num{background:var(--ochre);color:var(--ink);border-color:var(--ochre)}
+.hero:has([data-pos="3"]:is(:hover,:focus-visible,:focus-within)) .bal.p3 .bc{fill:var(--ink);stroke:var(--ink)}.hero:has([data-pos="3"]:is(:hover,:focus-visible,:focus-within)) .bal.p3 .bn{fill:var(--on-ink)}.hero:has([data-pos="3"]:is(:hover,:focus-visible,:focus-within)) .pr[data-pos="3"]{background:var(--ink)}.hero:has([data-pos="3"]:is(:hover,:focus-visible,:focus-within)) .pr[data-pos="3"] > span,.hero:has([data-pos="3"]:is(:hover,:focus-visible,:focus-within)) .pr[data-pos="3"] a{color:var(--on-ink)}.hero:has([data-pos="3"]:is(:hover,:focus-visible,:focus-within)) .pr[data-pos="3"] .num{background:var(--ochre);color:var(--ink);border-color:var(--ochre)}
 .hero:has([data-pos="4"]:is(:hover,:focus-visible,:focus-within)) .pt.p4 :is(.dm,.dme){stroke-width:1.8;opacity:1}
 .hero:has([data-pos="4"]:is(:hover,:focus-visible,:focus-within)) .pt.p4 .dmt{stroke-width:2.4}
 .hero:has([data-pos="4"]:is(:hover,:focus-visible,:focus-within)) .pt.bf .ft{fill:var(--hi)}
-.hero:has([data-pos="4"]:is(:hover,:focus-visible,:focus-within)) .bal.p4 .bc{fill:var(--corten);stroke:var(--corten)}.hero:has([data-pos="4"]:is(:hover,:focus-visible,:focus-within)) .bal.p4 .bn{fill:var(--on-ink)}.hero:has([data-pos="4"]:is(:hover,:focus-visible,:focus-within)) .pr[data-pos="4"]{background:var(--ink)}.hero:has([data-pos="4"]:is(:hover,:focus-visible,:focus-within)) .pr[data-pos="4"] > span,.hero:has([data-pos="4"]:is(:hover,:focus-visible,:focus-within)) .pr[data-pos="4"] a{color:var(--on-ink)}.hero:has([data-pos="4"]:is(:hover,:focus-visible,:focus-within)) .pr[data-pos="4"] .num{background:var(--ochre);color:var(--ink);border-color:var(--ochre)}
+.hero:has([data-pos="4"]:is(:hover,:focus-visible,:focus-within)) .bal.p4 .bc{fill:var(--ink);stroke:var(--ink)}.hero:has([data-pos="4"]:is(:hover,:focus-visible,:focus-within)) .bal.p4 .bn{fill:var(--on-ink)}.hero:has([data-pos="4"]:is(:hover,:focus-visible,:focus-within)) .pr[data-pos="4"]{background:var(--ink)}.hero:has([data-pos="4"]:is(:hover,:focus-visible,:focus-within)) .pr[data-pos="4"] > span,.hero:has([data-pos="4"]:is(:hover,:focus-visible,:focus-within)) .pr[data-pos="4"] a{color:var(--on-ink)}.hero:has([data-pos="4"]:is(:hover,:focus-visible,:focus-within)) .pr[data-pos="4"] .num{background:var(--ochre);color:var(--ink);border-color:var(--ochre)}
 .hero:has([data-pos="5"]:is(:hover,:focus-visible,:focus-within)) .pt.p5 .lay{stroke-width:1.7;opacity:1}
-.hero:has([data-pos="5"]:is(:hover,:focus-visible,:focus-within)) .bal.p5 .bc{fill:var(--corten);stroke:var(--corten)}.hero:has([data-pos="5"]:is(:hover,:focus-visible,:focus-within)) .bal.p5 .bn{fill:var(--on-ink)}.hero:has([data-pos="5"]:is(:hover,:focus-visible,:focus-within)) .pr[data-pos="5"]{background:var(--ink)}.hero:has([data-pos="5"]:is(:hover,:focus-visible,:focus-within)) .pr[data-pos="5"] > span,.hero:has([data-pos="5"]:is(:hover,:focus-visible,:focus-within)) .pr[data-pos="5"] a{color:var(--on-ink)}.hero:has([data-pos="5"]:is(:hover,:focus-visible,:focus-within)) .pr[data-pos="5"] .num{background:var(--ochre);color:var(--ink);border-color:var(--ochre)}
+.hero:has([data-pos="5"]:is(:hover,:focus-visible,:focus-within)) .bal.p5 .bc{fill:var(--ink);stroke:var(--ink)}.hero:has([data-pos="5"]:is(:hover,:focus-visible,:focus-within)) .bal.p5 .bn{fill:var(--on-ink)}.hero:has([data-pos="5"]:is(:hover,:focus-visible,:focus-within)) .pr[data-pos="5"]{background:var(--ink)}.hero:has([data-pos="5"]:is(:hover,:focus-visible,:focus-within)) .pr[data-pos="5"] > span,.hero:has([data-pos="5"]:is(:hover,:focus-visible,:focus-within)) .pr[data-pos="5"] a{color:var(--on-ink)}.hero:has([data-pos="5"]:is(:hover,:focus-visible,:focus-within)) .pr[data-pos="5"] .num{background:var(--ochre);color:var(--ink);border-color:var(--ochre)}
 .hero:has([data-pos="6"]:is(:hover,:focus-visible,:focus-within)) .axes .ax{opacity:1;stroke-width:1.6}
-.hero:has([data-pos="6"]:is(:hover,:focus-visible,:focus-within)) .bal.p6 .bc{fill:var(--corten);stroke:var(--corten)}.hero:has([data-pos="6"]:is(:hover,:focus-visible,:focus-within)) .bal.p6 .bn{fill:var(--on-ink)}.hero:has([data-pos="6"]:is(:hover,:focus-visible,:focus-within)) .pr[data-pos="6"]{background:var(--ink)}.hero:has([data-pos="6"]:is(:hover,:focus-visible,:focus-within)) .pr[data-pos="6"] > span,.hero:has([data-pos="6"]:is(:hover,:focus-visible,:focus-within)) .pr[data-pos="6"] a{color:var(--on-ink)}.hero:has([data-pos="6"]:is(:hover,:focus-visible,:focus-within)) .pr[data-pos="6"] .num{background:var(--ochre);color:var(--ink);border-color:var(--ochre)}
+.hero:has([data-pos="6"]:is(:hover,:focus-visible,:focus-within)) .bal.p6 .bc{fill:var(--ink);stroke:var(--ink)}.hero:has([data-pos="6"]:is(:hover,:focus-visible,:focus-within)) .bal.p6 .bn{fill:var(--on-ink)}.hero:has([data-pos="6"]:is(:hover,:focus-visible,:focus-within)) .pr[data-pos="6"]{background:var(--ink)}.hero:has([data-pos="6"]:is(:hover,:focus-visible,:focus-within)) .pr[data-pos="6"] > span,.hero:has([data-pos="6"]:is(:hover,:focus-visible,:focus-within)) .pr[data-pos="6"] a{color:var(--on-ink)}.hero:has([data-pos="6"]:is(:hover,:focus-visible,:focus-within)) .pr[data-pos="6"] .num{background:var(--ochre);color:var(--ink);border-color:var(--ochre)}
 .hero:has([data-pos="7"]:is(:hover,:focus-visible,:focus-within)) .pt.p7 .clash{stroke-width:2.6;fill:var(--hi)}
 .hero:has([data-pos="7"]:is(:hover,:focus-visible,:focus-within)) .pt.pp .fc{fill:var(--hi)}
-.hero:has([data-pos="7"]:is(:hover,:focus-visible,:focus-within)) .bal.p7 .bc{fill:var(--corten);stroke:var(--corten)}.hero:has([data-pos="7"]:is(:hover,:focus-visible,:focus-within)) .bal.p7 .bn{fill:var(--on-ink)}.hero:has([data-pos="7"]:is(:hover,:focus-visible,:focus-within)) .pr[data-pos="7"]{background:var(--ink)}.hero:has([data-pos="7"]:is(:hover,:focus-visible,:focus-within)) .pr[data-pos="7"] > span,.hero:has([data-pos="7"]:is(:hover,:focus-visible,:focus-within)) .pr[data-pos="7"] a{color:var(--on-ink)}.hero:has([data-pos="7"]:is(:hover,:focus-visible,:focus-within)) .pr[data-pos="7"] .num{background:var(--ochre);color:var(--ink);border-color:var(--ochre)}
+.hero:has([data-pos="7"]:is(:hover,:focus-visible,:focus-within)) .bal.p7 .bc{fill:var(--ink);stroke:var(--ink)}.hero:has([data-pos="7"]:is(:hover,:focus-visible,:focus-within)) .bal.p7 .bn{fill:var(--on-ink)}.hero:has([data-pos="7"]:is(:hover,:focus-visible,:focus-within)) .pr[data-pos="7"]{background:var(--ink)}.hero:has([data-pos="7"]:is(:hover,:focus-visible,:focus-within)) .pr[data-pos="7"] > span,.hero:has([data-pos="7"]:is(:hover,:focus-visible,:focus-within)) .pr[data-pos="7"] a{color:var(--on-ink)}.hero:has([data-pos="7"]:is(:hover,:focus-visible,:focus-within)) .pr[data-pos="7"] .num{background:var(--ochre);color:var(--ink);border-color:var(--ochre)}
 /* services list */
 .sl col.c-pos{width:76px}.sl col.c-part{width:clamp(170px,16vw,230px)}.sl col.c-name{width:34%}
 .sl td.pos{padding-top:20px}
@@ -288,7 +291,7 @@ h1 span{display:block}
 .lph ol{display:grid;grid-template-columns:repeat(9,minmax(0,1fr));list-style:none;margin:0;padding:0}
 .lph li{position:relative;display:flex;flex-direction:column}
 .lph li::before{left:-8px;top:29px}.lph li:last-child::after{right:-8px;top:29px}
-.lph .num{display:block;text-align:center;font:600 16px/1 var(--f-n);color:var(--ink);padding:8px 0 14px;border-bottom:1px solid var(--ink)}
+.lph .num{display:block;text-align:center;font:600 17px/1 var(--f-n);color:var(--corten);padding:8px 0 14px;border-bottom:1px solid var(--ink)}
 .lph strong{display:block;font:600 18px/1.14 var(--f-d);color:var(--ink);padding:14px 10px 4px 12px;border-left:1px solid var(--rule);min-height:84px;hyphens:manual}
 .lph li:last-child strong{border-right:1px solid var(--rule)}
 /* statement + management */

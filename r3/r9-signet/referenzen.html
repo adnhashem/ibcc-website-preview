@@ -243,6 +243,12 @@ ul,ol{list-style:none;padding:0}
 .sec::after{content:"";position:absolute;z-index:3;top:-2px;height:4px;width:72px;left:calc(var(--t) + var(--ot) - 36px);pointer-events:none}
 .gR::after{background:linear-gradient(90deg,var(--co) 50%,var(--oc) 50%)}
 .gL::after{background:linear-gradient(90deg,var(--oc) 50%,var(--co) 50%)}
+.gR .t-band{background:var(--co)}
+.gL .t-band{background:var(--oc)}
+.s-lph .t-band{background:#fff}
+.lph-no{color:var(--oc)}
+.kon-act a.plain{font:600 clamp(22px,1.9vw,28px)/1.2 var(--disp);letter-spacing:-.01em;color:var(--oc)}
+.kon-act .num{color:var(--oc)}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{transition:none!important;animation:none!important}
   .js .t:not(.on) .t-band{clip-path:polygon(0 0,var(--T) 0,var(--B) 100%,0 100%)}
