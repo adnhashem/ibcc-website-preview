@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title data-i18n="meta.referenzen.title">Referenzen · C&amp;C Ingenieure GmbH</title>
 <meta name="description" content="Projekte, die wir begleitet haben: Konstruktiver Ingenieurbau, Verkehrsanlagen und Bahnbau, Tiefbau und Hochbau." data-i18n-attr="content:meta.referenzen.description">
-<meta name="color-scheme" content="dark">
+<meta name="color-scheme" content="light">
 <meta name="theme-color" content="#0F3D2C">
 <link rel="icon" href="../assets/logo-mark-small.svg" type="image/svg+xml">
 <link rel="preload" href="fonts/sora-700.woff2" as="font" type="font/woff2" crossorigin>
@@ -18,7 +18,7 @@
 <header class="hdr" id="top">
   <div class="hdr-in">
     <a class="brand" href="index.html" aria-label="C&amp;C Ingenieure GmbH, zur Startseite" data-i18n-attr="aria-label:header.logo.aria">
-      <img src="../assets/logo-mark-small.svg" alt="" width="58" height="46"><span class="brand-w">C&amp;C Ingenieure GmbH</span>
+      <svg class="brand-mark" viewBox="220 70 980 775" width="56" height="44" aria-hidden="true" focusable="false"><g fill="none" stroke="#FFFFFF" stroke-linecap="round" vector-effect="non-scaling-stroke"><path d="M628 88 C470 182 228 298 242 364 C256 418 430 418 700 416 L1180 407" stroke-width="1.4" vector-effect="non-scaling-stroke"/><path d="M890 412 C760 500 432 700 445 764 C456 816 620 823 882 826" stroke-width="1.4" vector-effect="non-scaling-stroke"/><path d="M628 88 L882 826" stroke-width="2" vector-effect="non-scaling-stroke"/></g></svg><span class="brand-w">C&amp;C Ingenieure GmbH</span>
     </a>
     <nav class="nav"  aria-label="Hauptnavigation" data-i18n-attr="aria-label:header.nav.aria">
       <ul><li><a href="index.html" data-i18n="nav.startseite">Startseite</a></li><li><a href="leistungen.html" data-i18n="nav.leistungen">Leistungen</a></li><li><a href="referenzen.html" aria-current="page" data-i18n="nav.referenzen">Referenzen</a></li><li><a href="karriere.html" data-i18n="nav.karriere">Karriere</a></li><li><a href="ueber-uns.html" data-i18n="nav.ueberuns">Über uns</a></li><li><a href="kontakt.html" data-i18n="nav.kontakt">Kontakt</a></li></ul>
@@ -37,110 +37,99 @@
 <section class="band band-hero " aria-labelledby="h1">
   <div class="band-ph" data-parallax><img class="" src="../photos/svc-bauueberwachung.jpg" srcset="../photos/svc-bauueberwachung-thumb.jpg 800w, ../photos/svc-bauueberwachung.jpg 2400w" sizes="100vw" alt="" width="2400" height="1600" fetchpriority="high" decoding="async"></div>
   <div class="scrim"></div>
-  <div class="wrap band-copy">
+  <div class="wrap-x band-copy">
     <h1 id="h1" class="h1 h1-s" data-i18n="referenzen.h1">Projekte, die wir begleitet haben</h1>
     <p class="lead" data-i18n="referenzen.lead">Eine Auswahl aus Ingenieurbau, Bahn, Tiefbau und Hochbau. Nach Bereich filtern.</p>
   </div>
   <p class="credit credit-abs"><span data-i18n="ui.photo.sample">Beispielfoto</span> · © <a href="https://commons.wikimedia.org/wiki/File:Neubau_A143_Talbr%C3%BCcke_Benkendorfer_Bach_Sep._2021.jpg" target="_blank" rel="noopener">Frank Eritt</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener">CC BY-SA 4.0</a>, via Wikimedia Commons</p>
 </section>
-<section class="band band-solid band-refpage" aria-labelledby="h1">
-  <div class="wrap filter-bar">
-    <div class="filter" role="group" aria-label="Nach Bereich filtern" data-i18n-attr="aria-label:referenzen.filter.aria">
-      <button type="button" class="filter-b" data-key="all" aria-pressed="true" data-i18n="referenzen.filter.all">Alle</button>
-      <button type="button" class="filter-b" data-key="ki" aria-pressed="false" data-i18n="referenzen.field.ki">Konstruktiver Ingenieurbau</button><button type="button" class="filter-b" data-key="bahn" aria-pressed="false" data-i18n="referenzen.field.bahn">Verkehrsanlagen / Bahnbau</button><button type="button" class="filter-b" data-key="tief" aria-pressed="false" data-i18n="referenzen.field.tief">Tiefbau</button><button type="button" class="filter-b" data-key="hoch" aria-pressed="false" data-i18n="referenzen.field.hoch">Hochbau</button>
+<section class="sec refpage" id="after-hero" aria-label="Referenzprojekte" data-i18n-attr="aria-label:referenzen.aria">
+  <div class="wrap">
+    <div class="filter-bar">
+      <div class="filter" role="group" aria-label="Nach Bereich filtern" data-i18n-attr="aria-label:referenzen.filter.aria">
+        <button type="button" class="filter-b" data-key="all" aria-pressed="true" data-i18n="referenzen.filter.all">Alle</button>
+        <button type="button" class="filter-b" data-key="ki" aria-pressed="false" data-i18n="referenzen.field.ki">Konstruktiver Ingenieurbau</button><button type="button" class="filter-b" data-key="bahn" aria-pressed="false" data-i18n="referenzen.field.bahn">Verkehrsanlagen / Bahnbau</button><button type="button" class="filter-b" data-key="tief" aria-pressed="false" data-i18n="referenzen.field.tief">Tiefbau</button><button type="button" class="filter-b" data-key="hoch" aria-pressed="false" data-i18n="referenzen.field.hoch">Hochbau</button>
+      </div>
+      <p class="count" aria-live="polite" aria-atomic="true"><span class="count-n mono">6</span> <span class="count-w" data-i18n="ui.count.n" data-count-word>Projekte</span></p>
     </div>
-    <p class="count" aria-live="polite"><span class="count-n mono">6</span> <span class="count-w" data-i18n="ui.count.n" data-count-word>Projekte</span></p>
+    <ul class="cards" data-list="refs">
+      <li class="card" data-bereich="ki">
+        <article class="card-in" aria-labelledby="c-czernyring">
+          <figure class="card-ph"><img class="" src="../photos/ref-02.jpg" srcset="../photos/ref-02-thumb.jpg 800w, ../photos/ref-02.jpg 2400w" sizes="(min-width: 1100px) 31vw, (min-width: 700px) 46vw, 92vw" alt="" width="2400" height="1600" loading="lazy" decoding="async"><p class="credit credit-card"><span data-i18n="ui.photo.sample">Beispielfoto</span> · © <a href="https://commons.wikimedia.org/wiki/File:S2415_Bohrpfahlwand_Friedrich-Ebert-Stra%C3%9Fe.jpg" target="_blank" rel="noopener">Falk2</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener">CC BY-SA 4.0</a>, via Wikimedia Commons</p></figure>
+          <div class="card-tx">
+            <h2 class="card-t" id="c-czernyring" data-i18n="ref.czernyring.title">Montpellier Carré: Stützwand Czernyring</h2>
+            <p class="card-field" data-i18n="ref.czernyring.field">Konstruktiver Ingenieurbau</p>
+            <p class="card-meta"><span data-i18n="ref.czernyring.place">Heidelberg</span> · <span class="mono" data-i18n="ref.czernyring.year">2026</span> · <span data-i18n="ref.czernyring.client">Tragwerks&shy;planung</span></p>
+            <p class="card-desc" data-i18n="ref.czernyring.desc">Statik sowie Schal- und Bewehrungspläne für die Stützwand am Czernyring (Ausführungs&shy;planung). Abgeschlossen.</p>
+          </div>
+        </article>
+      </li>
+      <li class="card" data-bereich="ki">
+        <article class="card-in" aria-labelledby="c-solmser">
+          <figure class="card-ph"><img class="" src="../photos/ref-01.jpg" srcset="../photos/ref-01-thumb.jpg 800w, ../photos/ref-01.jpg 2400w" sizes="(min-width: 1100px) 31vw, (min-width: 700px) 46vw, 92vw" alt="" width="2400" height="1610" loading="lazy" decoding="async"><p class="credit credit-card"><span data-i18n="ui.photo.sample">Beispielfoto</span> · © <a href="https://commons.wikimedia.org/wiki/File:T%C3%BCbingen,_St%C3%BCtzmauer_M%C3%BChlstra%C3%9Fe,_westlich_(1).jpg" target="_blank" rel="noopener">Karsten Ratzke</a>, <a href="http://creativecommons.org/publicdomain/zero/1.0/deed.en" target="_blank" rel="noopener">CC0</a>, via Wikimedia Commons</p></figure>
+          <div class="card-tx">
+            <h2 class="card-t" id="c-solmser" data-i18n="ref.solmser.title">Stützwand Solmserstraße</h2>
+            <p class="card-field" data-i18n="ref.solmser.field">Konstruktiver Ingenieurbau</p>
+            <p class="card-meta"><span data-i18n="ref.solmser.place">Wetzlar</span> · <span class="mono" data-i18n="ref.solmser.year">2026</span> · <span data-i18n="ref.solmser.client">Objekt- und Tragwerks&shy;planung</span></p>
+            <p class="card-desc" data-i18n="ref.solmser.desc">Instandsetzung oder Neubau einer rund 200&nbsp;m langen Natursteinstütz&shy;mauer im Zuge der Straßen&shy;erneuerung, mit Varianten bis zum Erhalt des vorhandenen Mauerwerks.</p>
+          </div>
+        </article>
+      </li>
+      <li class="card" data-bereich="bahn">
+        <article class="card-in" aria-labelledby="c-rimbach">
+          <figure class="card-ph"><img class="" src="../photos/ref-04.jpg" srcset="../photos/ref-04-thumb.jpg 800w, ../photos/ref-04.jpg 2400w" sizes="(min-width: 1100px) 31vw, (min-width: 700px) 46vw, 92vw" alt="" width="2400" height="1800" loading="lazy" decoding="async"><p class="credit credit-card"><span data-i18n="ui.photo.sample">Beispielfoto</span> · © <a href="https://commons.wikimedia.org/wiki/File:Hp._Chemnitz-Reichenhain,_neu_errichtetes_Gleis_2_mit_Bahnsteig_(1).jpg" target="_blank" rel="noopener">Aagnverglaser</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener">CC BY-SA 4.0</a>, via Wikimedia Commons</p></figure>
+          <div class="card-tx">
+            <h2 class="card-t" id="c-rimbach" data-i18n="ref.rimbach.title">Bahnhof Rimbach: Bahnsteige und Wetterschutz&shy;haus</h2>
+            <p class="card-field" data-i18n="ref.rimbach.field">Verkehrsanlagen / Bahnbau</p>
+            <p class="card-meta"><span data-i18n="ref.rimbach.place">Rimbach (Hessen)</span> · <span class="mono" data-i18n="ref.rimbach.year">2026</span> · <span data-i18n="ref.rimbach.client">DB InfraGO AG, DB Bahnbau Gruppe</span></p>
+            <p class="card-desc" data-i18n="ref.rimbach.desc">Erneuerung beider Bahnsteige und Neubau eines Wetterschutz&shy;hauses. Ausführungs&shy;planung, Statik und Dokumentation nach Ril 813.</p>
+          </div>
+        </article>
+      </li>
+      <li class="card" data-bereich="bahn">
+        <article class="card-in" aria-labelledby="c-marbach">
+          <figure class="card-ph"><img class="" src="../photos/ref-03.jpg" srcset="../photos/ref-03-thumb.jpg 800w, ../photos/ref-03.jpg 2400w" sizes="(min-width: 1100px) 31vw, (min-width: 700px) 46vw, 92vw" alt="" width="2400" height="1800" loading="lazy" decoding="async"><p class="credit credit-card"><span data-i18n="ui.photo.sample">Beispielfoto</span> · © <a href="https://commons.wikimedia.org/wiki/File:Calw-Heumaden_railway_station_2025-03-15_02.jpg" target="_blank" rel="noopener">Entbert</a>, <a href="https://creativecommons.org/licenses/by/4.0" target="_blank" rel="noopener">CC BY 4.0</a>, via Wikimedia Commons</p></figure>
+          <div class="card-tx">
+            <h2 class="card-t" id="c-marbach" data-i18n="ref.marbach.title">Verkehrs&shy;station Marbach</h2>
+            <p class="card-field" data-i18n="ref.marbach.field">Verkehrsanlagen / Bahnbau</p>
+            <p class="card-meta"><span class="mono" data-i18n="ref.marbach.year">2025/26</span> · <span data-i18n="ref.marbach.client">Deutsche Bahn</span></p>
+            <p class="card-desc" data-i18n="ref.marbach.desc">Planung der Verkehrs&shy;station, aktuell in der Vorbereitung der Vergabe (Leistungs&shy;phase 6).</p>
+          </div>
+        </article>
+      </li>
+      <li class="card" data-bereich="tief">
+        <article class="card-in" aria-labelledby="c-dorotheen">
+          <figure class="card-ph"><img class="" src="../photos/ref-05.jpg" srcset="../photos/ref-05-thumb.jpg 800w, ../photos/ref-05.jpg 2400w" sizes="(min-width: 1100px) 31vw, (min-width: 700px) 46vw, 92vw" alt="" width="2400" height="1600" loading="lazy" decoding="async"><p class="credit credit-card"><span data-i18n="ui.photo.sample">Beispielfoto</span> · © <a href="https://commons.wikimedia.org/wiki/File:Neubau_A72_-_Anschlusstelle_bei_R%C3%B6tha_November_2022.jpg" target="_blank" rel="noopener">Frank Eritt</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener">CC BY-SA 4.0</a>, via Wikimedia Commons</p></figure>
+          <div class="card-tx">
+            <h2 class="card-t" id="c-dorotheen" data-i18n="ref.dorotheen.title">Autobahn GmbH: Dorotheenstraße</h2>
+            <p class="card-field" data-i18n="ref.dorotheen.field">Tiefbau</p>
+            <p class="card-meta"><span class="mono" data-i18n="ref.dorotheen.year">2026</span> · <span data-i18n="ref.dorotheen.client">Autobahn GmbH · Tiefbau</span></p>
+            <p class="card-desc" data-i18n="ref.dorotheen.desc">Tiefbauplanung für die Autobahn GmbH. Abgeschlossen.</p>
+          </div>
+        </article>
+      </li>
+      <li class="card" data-bereich="hoch">
+        <article class="card-in" aria-labelledby="c-lipoid">
+          <figure class="card-ph"><img class="" src="../photos/ref-06.jpg" srcset="../photos/ref-06-thumb.jpg 800w, ../photos/ref-06.jpg 2400w" sizes="(min-width: 1100px) 31vw, (min-width: 700px) 46vw, 92vw" alt="" width="2400" height="1584" loading="lazy" decoding="async"><p class="credit credit-card"><span data-i18n="ui.photo.sample">Beispielfoto</span> · © <a href="https://commons.wikimedia.org/wiki/File:Rohbau_Erweiterung_Lutherschule_Engelbosteler_Damm_2022-11.jpg" target="_blank" rel="noopener">Gerd Fahrenhorst</a>, <a href="https://creativecommons.org/licenses/by/4.0" target="_blank" rel="noopener">CC BY 4.0</a>, via Wikimedia Commons</p></figure>
+          <div class="card-tx">
+            <h2 class="card-t" id="c-lipoid" data-i18n="ref.lipoid.title">Lipoid</h2>
+            <p class="card-field" data-i18n="ref.lipoid.field">Hochbau</p>
+            <p class="card-meta"><span class="mono" data-i18n="ref.lipoid.year">2026</span> · <span data-i18n="ref.lipoid.client">Hochbau</span></p>
+            <p class="card-desc" data-i18n="ref.lipoid.desc">Hochbauprojekt in Bearbeitung.</p>
+          </div>
+        </article>
+      </li></ul>
+    <div class="empty" data-empty="filter" hidden>
+      <svg class="empty-ic" viewBox="0 0 64 48" width="64" height="48" aria-hidden="true" focusable="false"><path d="M32 6L58 21L32 36L6 21Z" fill="none" stroke="#0F3D2C" stroke-width="1.4" stroke-linejoin="round"/><path d="M6 27L32 42L58 27" fill="none" stroke="#7A8380" stroke-width="1.2" stroke-dasharray="3 3"/></svg>
+      <h2 class="h3" data-i18n="referenzen.empty.h3">Keine Projekte in diesem Bereich</h2><p data-i18n="referenzen.empty.p">Für diesen Bereich ist derzeit kein Projekt veröffentlicht. Alle Bereiche zeigen die vollständige Auswahl.</p>
+      <p><button type="button" class="btn btn-ln filter-reset" data-i18n="ui.filter.reset">Filter zurücksetzen</button></p>
+    </div>
+    <div class="empty" data-empty="none" hidden>
+      <h2 class="h3" data-i18n="referenzen.none.h3">Referenzen folgen</h2><p data-i18n="referenzen.none.p">Die Projektseiten werden gerade vorbereitet. Gerne erzählen wir Ihnen direkt, woran wir arbeiten.</p>
+      <p><a class="btn btn-o" href="kontakt.html" data-i18n="cta.contact">Kontakt aufnehmen</a></p>
+    </div>
+    <p class="note" data-i18n="referenzen.draftnote">Entwurf: Projekttexte sind aus unserer Projektverwaltung übernommen und vor Veröffentlichung zu prüfen. Fotos folgen. Neue Projekte lassen sich später selbst ergänzen.</p>
   </div>
-  
-<div class="strip-wrap ">
-  <div class="wrap strip-ctl">
-    <p class="strip-pos mono"><span class="strip-i">01</span> / <span class="strip-n">06</span><span class="sr strip-live" aria-live="polite"></span></p>
-    <p class="strip-btns">
-      <button type="button" class="strip-b strip-prev" aria-label="Vorheriges Projekt" data-i18n-attr="aria-label:strip.prev"><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><path d="M14 3 6 11l8 8" fill="none" stroke="currentColor" stroke-width="2"/></svg></button>
-      <button type="button" class="strip-b strip-next" aria-label="Nächstes Projekt" data-i18n-attr="aria-label:strip.next"><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><path d="m8 3 8 8-8 8" fill="none" stroke="currentColor" stroke-width="2"/></svg></button>
-    </p>
-  </div>
-  <div class="strip" id="strip" tabindex="0" role="region" aria-label="Projekte als Filmstreifen. Mit den Pfeiltasten blättern." data-i18n-attr="aria-label:strip.aria">
-    <ul class="strip-track">
-      <li class="frame" data-bereich="ki" data-idx="0">
-        <figure class="frame-fig">
-          <div class="frame-ph"><img class="" src="../photos/ref-02.jpg" srcset="../photos/ref-02-thumb.jpg 800w, ../photos/ref-02.jpg 2400w" sizes="(min-width: 700px) 72vw, 92vw" alt="" width="2400" height="1600" fetchpriority="high" decoding="async"></div>
-          <figcaption class="frame-cap">
-            <h2 class="frame-title"><span data-i18n="ref.czernyring.title">Montpellier Carré: Stützwand Czernyring</span></h2>
-            <p class="frame-meta mono"><span data-i18n="ref.czernyring.place">Heidelberg</span> · <span data-i18n="ref.czernyring.year">2026</span></p>
-            <p class="frame-field"><span data-i18n="ref.czernyring.field">Konstruktiver Ingenieurbau</span> · <span data-i18n="ref.czernyring.client">Tragwerks&shy;planung</span></p>
-            <p class="frame-desc" data-i18n="ref.czernyring.desc">Statik sowie Schal- und Bewehrungspläne für die Stützwand am Czernyring (Ausführungs&shy;planung). Abgeschlossen.</p>
-          </figcaption>
-          <p class="credit credit-abs"><span data-i18n="ui.photo.sample">Beispielfoto</span> · © <a href="https://commons.wikimedia.org/wiki/File:S2415_Bohrpfahlwand_Friedrich-Ebert-Stra%C3%9Fe.jpg" target="_blank" rel="noopener">Falk2</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener">CC BY-SA 4.0</a>, via Wikimedia Commons</p>
-        </figure>
-      </li>
-      <li class="frame" data-bereich="ki" data-idx="1">
-        <figure class="frame-fig">
-          <div class="frame-ph"><img class="" src="../photos/ref-01.jpg" srcset="../photos/ref-01-thumb.jpg 800w, ../photos/ref-01.jpg 2400w" sizes="(min-width: 700px) 72vw, 92vw" alt="" width="2400" height="1610" fetchpriority="high" decoding="async"></div>
-          <figcaption class="frame-cap">
-            <h2 class="frame-title"><span data-i18n="ref.solmser.title">Stützwand Solmserstraße</span></h2>
-            <p class="frame-meta mono"><span data-i18n="ref.solmser.place">Wetzlar</span> · <span data-i18n="ref.solmser.year">2026</span></p>
-            <p class="frame-field"><span data-i18n="ref.solmser.field">Konstruktiver Ingenieurbau</span> · <span data-i18n="ref.solmser.client">Objekt- und Tragwerks&shy;planung</span></p>
-            <p class="frame-desc" data-i18n="ref.solmser.desc">Instandsetzung oder Neubau einer rund 200&nbsp;m langen Natursteinstütz&shy;mauer im Zuge der Straßen&shy;erneuerung, mit Varianten bis zum Erhalt des vorhandenen Mauerwerks.</p>
-          </figcaption>
-          <p class="credit credit-abs"><span data-i18n="ui.photo.sample">Beispielfoto</span> · © <a href="https://commons.wikimedia.org/wiki/File:T%C3%BCbingen,_St%C3%BCtzmauer_M%C3%BChlstra%C3%9Fe,_westlich_(1).jpg" target="_blank" rel="noopener">Karsten Ratzke</a>, <a href="http://creativecommons.org/publicdomain/zero/1.0/deed.en" target="_blank" rel="noopener">CC0</a>, via Wikimedia Commons</p>
-        </figure>
-      </li>
-      <li class="frame" data-bereich="bahn" data-idx="2">
-        <figure class="frame-fig">
-          <div class="frame-ph"><img class="" src="../photos/ref-04.jpg" srcset="../photos/ref-04-thumb.jpg 800w, ../photos/ref-04.jpg 2400w" sizes="(min-width: 700px) 72vw, 92vw" alt="" width="2400" height="1800" fetchpriority="high" decoding="async"></div>
-          <figcaption class="frame-cap">
-            <h2 class="frame-title"><span data-i18n="ref.rimbach.title">Bahnhof Rimbach: Bahnsteige und Wetterschutz&shy;haus</span></h2>
-            <p class="frame-meta mono"><span data-i18n="ref.rimbach.place">Rimbach (Hessen)</span> · <span data-i18n="ref.rimbach.year">2026</span></p>
-            <p class="frame-field"><span data-i18n="ref.rimbach.field">Verkehrsanlagen / Bahnbau</span> · <span data-i18n="ref.rimbach.client">DB InfraGO AG, DB Bahnbau Gruppe</span></p>
-            <p class="frame-desc" data-i18n="ref.rimbach.desc">Erneuerung beider Bahnsteige und Neubau eines Wetterschutz&shy;hauses. Ausführungs&shy;planung, Statik und Dokumentation nach Ril 813.</p>
-          </figcaption>
-          <p class="credit credit-abs"><span data-i18n="ui.photo.sample">Beispielfoto</span> · © <a href="https://commons.wikimedia.org/wiki/File:Hp._Chemnitz-Reichenhain,_neu_errichtetes_Gleis_2_mit_Bahnsteig_(1).jpg" target="_blank" rel="noopener">Aagnverglaser</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener">CC BY-SA 4.0</a>, via Wikimedia Commons</p>
-        </figure>
-      </li>
-      <li class="frame" data-bereich="bahn" data-idx="3">
-        <figure class="frame-fig">
-          <div class="frame-ph"><img class="" src="../photos/ref-03.jpg" srcset="../photos/ref-03-thumb.jpg 800w, ../photos/ref-03.jpg 2400w" sizes="(min-width: 700px) 72vw, 92vw" alt="" width="2400" height="1800" fetchpriority="high" decoding="async"></div>
-          <figcaption class="frame-cap">
-            <h2 class="frame-title"><span data-i18n="ref.marbach.title">Verkehrs&shy;station Marbach</span></h2>
-            <p class="frame-meta mono"><span data-i18n="ref.marbach.year">2025/26</span></p>
-            <p class="frame-field"><span data-i18n="ref.marbach.field">Verkehrsanlagen / Bahnbau</span> · <span data-i18n="ref.marbach.client">Deutsche Bahn</span></p>
-            <p class="frame-desc" data-i18n="ref.marbach.desc">Planung der Verkehrs&shy;station, aktuell in der Vorbereitung der Vergabe (Leistungs&shy;phase 6).</p>
-          </figcaption>
-          <p class="credit credit-abs"><span data-i18n="ui.photo.sample">Beispielfoto</span> · © <a href="https://commons.wikimedia.org/wiki/File:Calw-Heumaden_railway_station_2025-03-15_02.jpg" target="_blank" rel="noopener">Entbert</a>, <a href="https://creativecommons.org/licenses/by/4.0" target="_blank" rel="noopener">CC BY 4.0</a>, via Wikimedia Commons</p>
-        </figure>
-      </li>
-      <li class="frame" data-bereich="tief" data-idx="4">
-        <figure class="frame-fig">
-          <div class="frame-ph"><img class="" src="../photos/ref-05.jpg" srcset="../photos/ref-05-thumb.jpg 800w, ../photos/ref-05.jpg 2400w" sizes="(min-width: 700px) 72vw, 92vw" alt="" width="2400" height="1600" fetchpriority="high" decoding="async"></div>
-          <figcaption class="frame-cap">
-            <h2 class="frame-title"><span data-i18n="ref.dorotheen.title">Autobahn GmbH: Dorotheenstraße</span></h2>
-            <p class="frame-meta mono"><span data-i18n="ref.dorotheen.year">2026</span></p>
-            <p class="frame-field"><span data-i18n="ref.dorotheen.field">Tiefbau</span> · <span data-i18n="ref.dorotheen.client">Autobahn GmbH · Tiefbau</span></p>
-            <p class="frame-desc" data-i18n="ref.dorotheen.desc">Tiefbauplanung für die Autobahn GmbH. Abgeschlossen.</p>
-          </figcaption>
-          <p class="credit credit-abs"><span data-i18n="ui.photo.sample">Beispielfoto</span> · © <a href="https://commons.wikimedia.org/wiki/File:Neubau_A72_-_Anschlusstelle_bei_R%C3%B6tha_November_2022.jpg" target="_blank" rel="noopener">Frank Eritt</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener">CC BY-SA 4.0</a>, via Wikimedia Commons</p>
-        </figure>
-      </li>
-      <li class="frame" data-bereich="hoch" data-idx="5">
-        <figure class="frame-fig">
-          <div class="frame-ph"><img class="" src="../photos/ref-06.jpg" srcset="../photos/ref-06-thumb.jpg 800w, ../photos/ref-06.jpg 2400w" sizes="(min-width: 700px) 72vw, 92vw" alt="" width="2400" height="1584" fetchpriority="high" decoding="async"></div>
-          <figcaption class="frame-cap">
-            <h2 class="frame-title"><span data-i18n="ref.lipoid.title">Lipoid</span></h2>
-            <p class="frame-meta mono"><span data-i18n="ref.lipoid.year">2026</span></p>
-            <p class="frame-field"><span data-i18n="ref.lipoid.field">Hochbau</span> · <span data-i18n="ref.lipoid.client">Hochbau</span></p>
-            <p class="frame-desc" data-i18n="ref.lipoid.desc">Hochbauprojekt in Bearbeitung.</p>
-          </figcaption>
-          <p class="credit credit-abs"><span data-i18n="ui.photo.sample">Beispielfoto</span> · © <a href="https://commons.wikimedia.org/wiki/File:Rohbau_Erweiterung_Lutherschule_Engelbosteler_Damm_2022-11.jpg" target="_blank" rel="noopener">Gerd Fahrenhorst</a>, <a href="https://creativecommons.org/licenses/by/4.0" target="_blank" rel="noopener">CC BY 4.0</a>, via Wikimedia Commons</p>
-        </figure>
-      </li>
-      <li class="frame frame-empty" hidden><div class="frame-empty-in"><h3 class="h3" data-i18n="referenzen.empty.h3">Keine Projekte in diesem Bereich</h3><p data-i18n="referenzen.empty.p">Für diesen Bereich ist derzeit kein Projekt veröffentlicht. Alle Bereiche zeigen die vollständige Auswahl.</p><p><button type="button" class="btn btn-o filter-reset" data-i18n="ui.filter.reset">Filter zurücksetzen</button></p></div></li>
-      <li class="frame frame-none" hidden><div class="frame-empty-in"><h3 class="h3" data-i18n="referenzen.none.h3">Referenzen folgen</h3><p data-i18n="referenzen.none.p">Die Projektseiten werden gerade vorbereitet. Gerne erzählen wir Ihnen direkt, woran wir arbeiten.</p><p><a class="btn btn-o" href="kontakt.html" data-i18n="cta.contact">Kontakt aufnehmen</a></p></div></li>
-    </ul>
-  </div>
-  <div class="wrap"><div class="strip-rail" aria-hidden="true"><span class="strip-cursor"></span></div></div>
-</div>
-  <div class="wrap"><p class="note" data-i18n="referenzen.draftnote">Entwurf: Projekttexte sind aus unserer Projektverwaltung übernommen und vor Veröffentlichung zu prüfen. Fotos folgen. Neue Projekte lassen sich später selbst ergänzen.</p></div>
 </section>
 
 <section class="band band-cta" aria-labelledby="cta-h">
@@ -154,7 +143,7 @@
 </main>
 <section class="partners" aria-labelledby="partners-h">
   <div class="wrap">
-    <h2 id="partners-h" class="h3" data-i18n="partners.h2">Unsere Partner</h2>
+    <h2 id="partners-h" class="h3" data-i18n="partners.h2">Unsere Auftraggeber</h2>
     <ul class="partner-list"><li data-i18n="partners.1">DB InfraGO AG</li><li data-i18n="partners.2">DB Bahnbau Gruppe GmbH</li><li data-i18n="partners.3">Autobahn GmbH</li><li data-i18n="partners.4">Stadt Heidelberg</li><li data-i18n="partners.5">Stadt Wetzlar</li><li data-i18n="partners.6">Stadt Frankfurt am Main</li><li data-i18n="partners.7">Stadt Altena</li><li data-i18n="partners.8">RNV</li><li data-i18n="partners.9">Lipoid</li></ul>
   </div>
 </section>

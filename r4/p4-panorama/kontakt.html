@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title data-i18n="meta.kontakt.title">Kontakt · C&amp;C Ingenieure GmbH</title>
 <meta name="description" content="Kontakt zu C&amp;C Ingenieure GmbH, Werner-von-Siemens-Straße 2-6, Gebäude 5110b, 76646 Bruchsal. Telefon +49 173 6992298, info@ib-cc.de." data-i18n-attr="content:meta.kontakt.description">
-<meta name="color-scheme" content="dark">
+<meta name="color-scheme" content="light">
 <meta name="theme-color" content="#0F3D2C">
 <link rel="icon" href="../assets/logo-mark-small.svg" type="image/svg+xml">
 <link rel="preload" href="fonts/sora-700.woff2" as="font" type="font/woff2" crossorigin>
@@ -18,7 +18,7 @@
 <header class="hdr" id="top">
   <div class="hdr-in">
     <a class="brand" href="index.html" aria-label="C&amp;C Ingenieure GmbH, zur Startseite" data-i18n-attr="aria-label:header.logo.aria">
-      <img src="../assets/logo-mark-small.svg" alt="" width="58" height="46"><span class="brand-w">C&amp;C Ingenieure GmbH</span>
+      <svg class="brand-mark" viewBox="220 70 980 775" width="56" height="44" aria-hidden="true" focusable="false"><g fill="none" stroke="#FFFFFF" stroke-linecap="round" vector-effect="non-scaling-stroke"><path d="M628 88 C470 182 228 298 242 364 C256 418 430 418 700 416 L1180 407" stroke-width="1.4" vector-effect="non-scaling-stroke"/><path d="M890 412 C760 500 432 700 445 764 C456 816 620 823 882 826" stroke-width="1.4" vector-effect="non-scaling-stroke"/><path d="M628 88 L882 826" stroke-width="2" vector-effect="non-scaling-stroke"/></g></svg><span class="brand-w">C&amp;C Ingenieure GmbH</span>
     </a>
     <nav class="nav"  aria-label="Hauptnavigation" data-i18n-attr="aria-label:header.nav.aria">
       <ul><li><a href="index.html" data-i18n="nav.startseite">Startseite</a></li><li><a href="leistungen.html" data-i18n="nav.leistungen">Leistungen</a></li><li><a href="referenzen.html" data-i18n="nav.referenzen">Referenzen</a></li><li><a href="karriere.html" data-i18n="nav.karriere">Karriere</a></li><li><a href="ueber-uns.html" data-i18n="nav.ueberuns">Über uns</a></li><li><a href="kontakt.html" aria-current="page" data-i18n="nav.kontakt">Kontakt</a></li></ul>
@@ -37,13 +37,13 @@
 <section class="band band-hero " aria-labelledby="h1">
   <div class="band-ph" data-parallax><img class="" src="../photos/site-bruchsal.jpg" srcset="../photos/site-bruchsal-thumb.jpg 800w, ../photos/site-bruchsal.jpg 2400w" sizes="100vw" alt="" width="2400" height="1108" fetchpriority="high" decoding="async"></div>
   <div class="scrim"></div>
-  <div class="wrap band-copy">
+  <div class="wrap-x band-copy">
     <h1 id="h1" class="h1 h1-s h1-long" data-i18n="kontakt.h1">Wie können wir Sie bei Ihrem Vorhaben unterstützen?</h1>
     <p class="lead" data-i18n="kontakt.lead">Schreiben Sie uns kurz, worum es geht. Wir melden uns bei Ihnen.</p>
   </div>
   <p class="credit credit-abs"><span data-i18n="ui.photo.sample">Beispielfoto</span> · © <a href="https://commons.wikimedia.org/wiki/File:Aerial_image_of_the_Bruchsal_airfield.jpg" target="_blank" rel="noopener">Carsten Steger</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank" rel="noopener">CC BY-SA 4.0</a>, via Wikimedia Commons</p>
 </section>
-<section class="band band-solid" aria-label="Kontaktwege" data-i18n-attr="aria-label:kontakt.ways.aria">
+<section class="sec ways-sec" id="after-hero" aria-label="Kontaktwege" data-i18n-attr="aria-label:kontakt.ways.aria">
   <div class="wrap ways-grid">
     <dl class="ways">
       <div><dt data-i18n="kontakt.address.label">Adresse</dt><dd><span data-i18n="kontakt.address.line1">C&amp;C Ingenieure GmbH</span><br><span data-i18n="kontakt.address.line2">Werner-von-Siemens-Straße 2-6 (Gebäude 5110b)</span><br><span data-i18n="kontakt.address.line3">76646 Bruchsal</span></dd></div>
@@ -63,7 +63,7 @@
         <path class="map-street2" d="M330 205 V400" stroke="#FFFFFF" stroke-width="4" fill="none"/>
         <text x="20" y="190" fill="#FFFFFF" font-family="Figtree, sans-serif" font-size="15" data-i18n="kontakt.map.street">Werner-von-Siemens-Straße</text>
         <g class="map-site">
-          <rect x="250" y="235" width="110" height="74" fill="#0F3D2C" stroke="#F58A3C" stroke-width="2.5"/>
+          <rect x="250" y="235" width="132" height="74" fill="#0F3D2C" stroke="#F58A3C" stroke-width="2.5"/>
           <text x="262" y="265" fill="#FFFFFF" font-family="Figtree, sans-serif" font-size="14" font-weight="600" data-i18n="kontakt.map.building">Gebäude 5110b</text>
           <text x="262" y="288" fill="#D5D9DC" font-family="Martian Mono, monospace" font-size="11">C&amp;C</text>
           <circle class="map-pin" cx="250" cy="235" r="7" fill="#F58A3C"/>
@@ -72,13 +72,13 @@
         <text x="20" y="372" fill="#D5D9DC" font-family="Figtree, sans-serif" font-size="13" data-i18n="kontakt.map.schematic">Schematische Darstellung</text>
       </svg>
       <figcaption class="map-cap">
-        <a class="btn btn-w" href="https://www.openstreetmap.org/search?query=Werner-von-Siemens-Stra%C3%9Fe%202-6%2C%2076646%20Bruchsal" target="_blank" rel="noopener"><span data-i18n="kontakt.map.osm">Route in OpenStreetMap öffnen</span> <span class="sr" data-i18n="ui.newtab">öffnet in neuem Tab</span><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M5 2H2v10h10V9M8 2h4v4M12 2 6 8" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a>
+        <a class="btn btn-ln" href="https://www.openstreetmap.org/search?query=Werner-von-Siemens-Stra%C3%9Fe%202-6%2C%2076646%20Bruchsal" target="_blank" rel="noopener"><span data-i18n="kontakt.map.osm">Route in OpenStreetMap öffnen</span> <span class="sr" data-i18n="ui.newtab">öffnet in neuem Tab</span><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M5 2H2v10h10V9M8 2h4v4M12 2 6 8" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a>
         <span class="small" data-i18n="kontakt.map.osm.note">Die Karte lädt erst nach dem Klick, auf openstreetmap.org.</span>
       </figcaption>
     </figure>
   </div>
 </section>
-<section class="read" aria-labelledby="form-h">
+<section class="sec sec-paper" aria-labelledby="form-h">
   <div class="wrap form-wrap">
     <h2 id="form-h" class="h2" data-i18n="form.h2">Nachricht senden</h2>
     <form class="form" novalidate action="#" method="post">
@@ -123,7 +123,7 @@
 </main>
 <section class="partners" aria-labelledby="partners-h">
   <div class="wrap">
-    <h2 id="partners-h" class="h3" data-i18n="partners.h2">Unsere Partner</h2>
+    <h2 id="partners-h" class="h3" data-i18n="partners.h2">Unsere Auftraggeber</h2>
     <ul class="partner-list"><li data-i18n="partners.1">DB InfraGO AG</li><li data-i18n="partners.2">DB Bahnbau Gruppe GmbH</li><li data-i18n="partners.3">Autobahn GmbH</li><li data-i18n="partners.4">Stadt Heidelberg</li><li data-i18n="partners.5">Stadt Wetzlar</li><li data-i18n="partners.6">Stadt Frankfurt am Main</li><li data-i18n="partners.7">Stadt Altena</li><li data-i18n="partners.8">RNV</li><li data-i18n="partners.9">Lipoid</li></ul>
   </div>
 </section>
