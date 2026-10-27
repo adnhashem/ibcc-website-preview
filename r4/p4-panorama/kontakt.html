@@ -50,31 +50,19 @@
       <div><dt data-i18n="kontakt.phone.label">Telefon</dt><dd><a class="big" href="tel:+491736992298" data-i18n="kontakt.phone.value">+49 173 6992298</a></dd></div>
       <div><dt data-i18n="kontakt.email.label">E-Mail</dt><dd><a class="big" href="mailto:info@ib-cc.de" data-i18n="kontakt.email.value">info@ib-cc.de</a></dd></div>
     </dl>
-    <figure class="map" data-reveal>
-      <svg class="map-svg" viewBox="0 0 640 400" role="img" aria-label="Lageplan Bruchsal, schematisch" data-i18n-attr="aria-label:kontakt.map.aria">
-        <rect width="640" height="400" fill="#0B2E21"/>
-        <g stroke="#D5D9DC" stroke-width="1" fill="none" opacity=".35">
-          <path d="M0 60H640M0 140H640M0 220H640M0 300H640M0 380H640M80 0V400M160 0V400M240 0V400M320 0V400M400 0V400M480 0V400M560 0V400"/>
-        </g>
-        <g class="map-blocks" fill="none" stroke="#D5D9DC" stroke-width="1.5">
-          <rect x="70" y="80" width="120" height="70"/><rect x="70" y="250" width="150" height="80"/><rect x="430" y="70" width="140" height="90"/><rect x="460" y="260" width="110" height="70"/>
-        </g>
-        <path class="map-street" d="M0 205 H640" stroke="#FFFFFF" stroke-width="6" fill="none"/>
-        <path class="map-street2" d="M330 205 V400" stroke="#FFFFFF" stroke-width="4" fill="none"/>
-        <text x="20" y="190" fill="#FFFFFF" font-family="Figtree, sans-serif" font-size="15" data-i18n="kontakt.map.street">Werner-von-Siemens-Straße</text>
-        <g class="map-site">
-          <rect x="250" y="235" width="132" height="74" fill="#0F3D2C" stroke="#F58A3C" stroke-width="2.5"/>
-          <text x="262" y="265" fill="#FFFFFF" font-family="Figtree, sans-serif" font-size="14" font-weight="600" data-i18n="kontakt.map.building">Gebäude 5110b</text>
-          <text x="262" y="288" fill="#D5D9DC" font-family="Martian Mono, monospace" font-size="11">C&amp;C</text>
-          <circle class="map-pin" cx="250" cy="235" r="7" fill="#F58A3C"/>
-        </g>
-        <text x="20" y="40" fill="#FFFFFF" font-family="Sora, sans-serif" font-size="20" font-weight="600" data-i18n="kontakt.map.city">Bruchsal</text>
-        <text x="20" y="372" fill="#D5D9DC" font-family="Figtree, sans-serif" font-size="13" data-i18n="kontakt.map.schematic">Schematische Darstellung</text>
-      </svg>
-      <figcaption class="map-cap">
-        <a class="btn btn-ln" href="https://www.openstreetmap.org/search?query=Werner-von-Siemens-Stra%C3%9Fe%202-6%2C%2076646%20Bruchsal" target="_blank" rel="noopener"><span data-i18n="kontakt.map.osm">Route in OpenStreetMap öffnen</span> <span class="sr" data-i18n="ui.newtab">öffnet in neuem Tab</span><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M5 2H2v10h10V9M8 2h4v4M12 2 6 8" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a>
-        <span class="small" data-i18n="kontakt.map.osm.note">Die Karte lädt erst nach dem Klick, auf openstreetmap.org.</span>
-      </figcaption>
+    <figure class="gmap" data-gmap data-q="C&amp;C Ingenieure GmbH, Werner-von-Siemens-Straße 2-6, 76646 Bruchsal">
+      <div class="gmap-box">
+        <div class="gmap-ph">
+          <svg class="gmap-bg" viewBox="0 0 640 440" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><g fill="none" stroke="#E6E9EB" stroke-width="10"><path d="M-20 300 C140 270 260 250 660 230"/><path d="M330 460 L360 -20"/><path d="M-20 90 L660 140"/></g><g fill="none" stroke="#D5D9DC" stroke-width="1.5"><path d="M60 170h120v60H60zM430 300h140v80H430zM420 40h150v60H420zM70 340h130v70H70z"/></g></svg>
+          <div class="gmap-in">
+            <svg class="gmap-pin" width="28" height="36" viewBox="0 0 28 36" aria-hidden="true" focusable="false"><path d="M14 35s12-12.6 12-21A12 12 0 0 0 2 14c0 8.4 12 21 12 21z" fill="#0F3D2C"/><circle cx="14" cy="14" r="4.5" fill="#FFFFFF"/></svg>
+            <p class="gmap-addr"><span data-i18n="kontakt.address.line1">C&amp;C Ingenieure GmbH</span><br><span data-i18n="kontakt.address.line2">Werner-von-Siemens-Straße 2-6 (Gebäude 5110b)</span><br><span data-i18n="kontakt.address.line3">76646 Bruchsal</span></p>
+            <p class="gmap-act"><button type="button" class="btn btn-g gmap-load" data-i18n="p4.gmap.load">Karte laden</button></p>
+            <p class="gmap-note"><span data-i18n="p4.gmap.note.pre">Beim Laden werden Daten an Google übertragen. Mehr in der</span> <a href="impressum.html#datenschutz" data-i18n="p4.gmap.note.link">Datenschutz&shy;erklärung</a>.</p>
+          </div>
+        </div>
+      </div>
+      <figcaption class="gmap-cap"><a href="https://www.google.com/maps/search/?api=1&amp;query=C%26C%20Ingenieure%20GmbH%2C%20Werner-von-Siemens-Stra%C3%9Fe%202-6%2C%2076646%20Bruchsal" target="_blank" rel="noopener"><span data-i18n="p4.gmap.open">In Google Maps öffnen</span> <span class="sr" data-i18n="ui.newtab">öffnet in neuem Tab</span><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true" focusable="false"><path d="M5 2H2v10h10V9M8 2h4v4M12 2 6 8" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a></figcaption>
     </figure>
   </div>
 </section>
@@ -140,7 +128,7 @@
     </div>
     <div>
       <h2 class="ftr-h" data-i18n="footer.legal.h">Rechtliches</h2>
-      <p><span data-i18n="footer.md.h">Geschäftsführer</span> <span data-i18n="footer.md">M.Eng. Hüsnü Cetinkaya</span><br><span class="mono" data-i18n="footer.register">HRB 743910 Mannheim</span><br><span class="mono" data-i18n="footer.vat">USt-IdNr. DE353174530</span></p>
+      <p><span data-i18n="footer.md.h">Geschäftsführer</span> <span data-i18n="footer.md">M.Eng. Hüsnü Cetinkaya</span><br><span data-i18n="footer.register">HRB 743910 Mannheim</span><br><span data-i18n="footer.vat">USt-IdNr. DE353174530</span></p>
       <p class="ftr-links"><a href="impressum.html#impressum" data-i18n="footer.impressum">Impressum</a><a href="impressum.html#datenschutz" data-i18n="footer.datenschutz">Datenschutz</a></p>
     </div>
   </div>
