@@ -91,6 +91,23 @@ ul,ol{margin:0;padding:0}
 .nav a{display:block;padding:10px 13px;font:500 16px/1.2 var(--fig);text-decoration:none;position:relative;white-space:nowrap}
 .nav a::after{content:'';position:absolute;left:13px;right:13px;bottom:4px;height:2px;background:var(--org);transform:scaleX(0);transform-origin:left;transition:transform .25s var(--ease)}
 .nav a:hover::after,.nav a:focus-visible::after,.nav a[aria-current]::after{transform:scaleX(1)}
+/* CR-67 (2026-11-09): submenu under "Leistungen" — link + chevron button (aria-expanded), panel hangs from the header edge */
+.nav{align-self:stretch}
+.nav>ul{height:100%}
+.nav>ul>li{display:flex;align-items:center}
+.has-sub{position:relative}
+.sub-b{display:inline-flex;align-items:center;justify-content:center;width:26px;height:36px;margin-left:-10px;padding:0;background:transparent;border:0;color:inherit;cursor:pointer;border-radius:2px}
+.sub-b svg{transition:transform .25s var(--ease)}
+.sub-b[aria-expanded="true"] svg{transform:rotate(180deg)}
+.sub-b:hover{color:var(--org)}
+.nav .sub{display:none;position:absolute;top:100%;left:0;z-index:2;min-width:330px;list-style:none;margin:0;padding:8px 0 10px;background:var(--g);border-top:1px solid var(--hair);box-shadow:0 18px 36px rgba(8,30,22,.22)}
+.nav .has-sub.is-open .sub{display:block}
+html:not(.js) .nav .has-sub:is(:hover,:focus-within) .sub{display:block}
+.motion .nav .has-sub.is-open .sub{animation:wipeDown .3s var(--ease) both}
+.nav .sub a{padding:11px 22px;font:500 15px/1.3 var(--fig);white-space:nowrap;transition:background-color .15s,box-shadow .15s}
+.nav .sub a::after{display:none}
+.nav .sub a:hover,.nav .sub a:focus-visible{background:rgba(255,255,255,.09);box-shadow:inset 2px 0 0 var(--org)}
+.nav .sub a:focus-visible{outline-offset:-2px}
 .lang{display:flex;border:1px solid rgba(255,255,255,.5);flex:0 0 auto}
 .lang-b{background:transparent;color:var(--w);border:0;padding:9px 12px;font:600 13px/1 var(--fig);cursor:pointer;transition:background-color .2s,color .2s;min-height:36px}
 .lang-b[aria-pressed="true"]{background:var(--w);color:var(--g)}
@@ -106,6 +123,14 @@ ul,ol{margin:0;padding:0}
 .mnav ul{list-style:none}
 .mnav a{display:block;padding:18px 0;font:600 clamp(26px,7vw,34px)/1.1 var(--sora);letter-spacing:-.02em;text-decoration:none;border-top:1px solid var(--hair)}
 .mnav a[aria-current]{color:var(--org)}
+.mnav .has-sub{display:grid;grid-template-columns:minmax(0,1fr) auto;border-top:1px solid var(--hair)}
+.mnav .has-sub>a{border-top:0}
+.mnav .sub-b{width:52px;height:auto;min-height:52px;margin:0;align-self:stretch;border-left:1px solid var(--hair)}
+.mnav .sub-b svg{width:18px;height:18px}
+.mnav .sub{display:none;grid-column:1/-1;margin:0 0 12px;padding-left:16px;border-left:2px solid var(--org)}
+.mnav .has-sub.is-open .sub{display:block}
+.mnav .sub a{padding:12px 0;font:500 18px/1.3 var(--fig);letter-spacing:0;border-top:1px solid rgba(255,255,255,.12)}
+.mnav .sub li:first-child a{border-top:0}
 .motion .menu-open .mnav{animation:wipeDown .45s var(--ease) both}
 .motion .menu-open .mnav li{animation:rise .5s var(--ease) both;animation-delay:calc(80ms + 55ms * var(--k,0))}
 .mnav li:nth-child(2){--k:1}.mnav li:nth-child(3){--k:2}.mnav li:nth-child(4){--k:3}.mnav li:nth-child(5){--k:4}.mnav li:nth-child(6){--k:5}
@@ -345,10 +370,7 @@ ul,ol{margin:0;padding:0}
 .ftr-bottom p{margin:0}
 
 /* Leistungen */
-.svc-toc{background:var(--paper);border-bottom:1px solid var(--line)}
-.svc-toc ul{display:flex;flex-wrap:wrap;gap:6px 28px;list-style:none;padding-block:16px}
-.svc-toc a{font:500 15px var(--fig);color:var(--ink2);text-decoration:none;padding:8px 0;display:inline-block;border-bottom:2px solid transparent;transition:color .2s,border-color .2s}
-.svc-toc a:hover,.svc-toc a:focus-visible{color:var(--g);border-color:var(--g)}
+/* the grey service bar under the hero was removed by CR-68 (2026-11-09); the header submenu replaces it */
 .svc-row{display:grid;grid-template-columns:1fr 1fr;min-height:min(84vh,800px);scroll-margin-top:var(--hdr);border-bottom:1px solid var(--line)}
 .svc-media{position:relative;min-height:580px;background:var(--gd)}
 .svc-row-r .svc-media{order:2}
@@ -435,8 +457,32 @@ ul,ol{margin:0;padding:0}
 .job-meta{font-size:15px;color:var(--ink2);padding-bottom:14px;border-bottom:1px solid var(--line);margin:0 0 14px}
 .job-text{color:var(--ink2);max-width:60ch}
 .job-tag{margin:0}
+/* CR-52 … CR-55 (2026-11-09): the full job offer opens in place under the teaser */
+.job-more{margin:18px 0 0}
+.job-toggle{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:10px 18px;background:transparent;color:var(--g);border:1px solid var(--g);font:600 15px/1.2 var(--fig);cursor:pointer;transition:background-color .2s,color .2s}
+.job-toggle:hover{background:var(--g);color:var(--w)}
+.job-toggle svg{transition:transform .25s var(--ease)}
+.job-toggle[aria-expanded="true"] svg{transform:rotate(180deg)}
+.job.is-open .job-text{display:none}
+html:not(.js) .job-full[hidden]{display:block}
+html:not(.js) .job-more{display:none}
+.job-full{margin-top:26px;padding-top:22px;border-top:1px solid var(--line);max-width:64ch}
+.motion .job-full:not([hidden]){animation:rise .45s var(--ease) both}
+.job-full-t{font:600 19px/1.3 var(--sora);letter-spacing:-.01em;color:var(--ink);margin:0 0 12px}
+.job-facts{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:4px 16px;margin:0 0 18px;font-size:16px}
+.job-facts div{display:contents}
+.job-facts dt{color:var(--ink2);font-weight:600}
+.job-facts dd{margin:0;color:var(--ink)}
+.job-intro{color:var(--ink);margin:0 0 8px}
+.job-h{font:600 17px/1.3 var(--sora);letter-spacing:-.01em;color:var(--g);margin:26px 0 6px}
+.job-ul{max-width:none;margin-top:0}
+.job-ul li{padding-block:8px}
+.job-ul li::before{top:17px}
+.job-interest{color:var(--ink2);margin:0}
+.job-act-in{display:flex;flex-direction:column;justify-content:space-between;gap:20px;height:100%}
+.job.is-open .job-act-in{height:auto;position:sticky;top:calc(var(--hdr) + 24px)}
 .tag{font:600 12px/1 var(--fig);letter-spacing:.06em;text-transform:uppercase;color:var(--ink2);background:var(--paper);padding:6px 9px;display:inline-block}
-.job-act{border-left:1px solid var(--line);padding:clamp(24px,3vw,36px) 28px;display:flex;flex-direction:column;justify-content:space-between;gap:20px;background:var(--paper)}
+.job-act{border-left:1px solid var(--line);padding:clamp(24px,3vw,36px) 28px;background:var(--paper)}
 .job-mail{font-size:14px;color:var(--ink2);margin:0}
 .job-mail a{color:var(--g);font-weight:600}
 .jobs-empty{border:1px dashed var(--fb);padding:clamp(24px,3vw,40px)}
@@ -579,6 +625,12 @@ ul,ol{margin:0;padding:0}
   .lphx-rail li:nth-child(3n)::before,.lphx-rail li:nth-child(3n)::after{right:auto;width:14px}
   .cards,.people{grid-template-columns:repeat(2,minmax(0,1fr))}
   .hx-in{grid-template-columns:minmax(0,1fr) minmax(0,.9fr)}
+}
+/* 2026-11-09: between 901 and 1040 px the six nav items + chevron + DE/EN did not fit (89 px overflow at 901 DE before
+   this round); the header switches to the menu button there. Page layouts keep their 900 px breakpoint. */
+@media (max-width:1040px){
+  .nav{display:none}
+  .menu-b{display:inline-flex;margin-left:auto}
 }
 @media (max-width:900px){
   :root{--hdr:64px}
